@@ -1,5 +1,6 @@
 # AP_Project
-This Repository is Created for Our AP Project
+This Repository is Created for Our AP Project.
+The Goup name is "Bird".
 Currently 2 persons are working on this Project:
 
 1.Omid Najafi (SID:94105463)

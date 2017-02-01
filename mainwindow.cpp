@@ -24,6 +24,8 @@ MainWindow::MainWindow(QWidget *parent) :
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
 
+
+
     graphicsView = new QGraphicsView(graphicsScene);
     graphicsView->setFixedSize(800, 600);
     graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

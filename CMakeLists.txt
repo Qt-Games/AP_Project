@@ -15,7 +15,9 @@ set(SOURCE_FILES
         mainwindow.cpp
         mainwindow.h
         playerplane.cpp
-        playerplane.h)
+        playerplane.h
+        Object.cpp
+        Object.h)
 
 add_executable(AP_Project ${SOURCE_FILES})
 

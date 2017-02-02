@@ -6,6 +6,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "player.h"
 
 using namespace std;
 
@@ -14,12 +15,9 @@ int main(int argc, char *argv[])
 
     srand(time(0));
     Map* map = new Map();
-    cout << "finished" << endl;
-    while(map->mapStripes.size())
-    {
-        std::cout << "a stripe !!!" << std::endl;
-        map->mapStripes.pop();
-    }
+    Player* player = new Player(Model::SceneWidth, 0, Direction::Right);
+
+    Model model(map, player);
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

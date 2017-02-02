@@ -20,7 +20,7 @@ class Model {
 public:
     static const int SceneWidth = 1000;
     static const int SceneHeight = 1000;
-    Model(Map *map, Player *player, Bullet *bullet);
+    Model(Map *map, Player *player);
 };
 
 

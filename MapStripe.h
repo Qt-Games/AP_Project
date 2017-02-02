@@ -14,9 +14,9 @@ using namespace std;
 
 class MapStripe {
 public:
+    static const int height = 120;
 
     MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth);
-
     void addToScrollingObjects(ScrollingObject* scrollingObject);
 private:
     DestructableObject* destructableObject;

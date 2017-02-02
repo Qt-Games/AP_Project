@@ -4,4 +4,4 @@
 
 #include "Model.h"
 
-Model::Model(Map *map, Player *player, Bullet *bullet) : map(map), player(player), bullet(bullet) {}
+Model::Model(Map *map, Player *player) : map(map), player(player){}

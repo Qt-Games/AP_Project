@@ -41,98 +41,105 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
             int enemyTypeRandom = 0;
             int sizeX = 0;
 
-            if(isThereFuelDepot)
+            if(isThereFuelDepot || isThereEnemyObject)
             {
-                sizeX = FuelDepot::sizeX;
-                cout << "there is Fuel Depot Here in this stripe" << endl;
-            }
-            else{
-                if(isThereEnemyObject)
+                if(isThereFuelDepot)
                 {
-                    enemyTypeRandom = rand() % 3;
-                    switch(enemyTypeRandom)
+                    sizeX = FuelDepot::sizeX;
+                    cout << "there is Fuel Depot Here in this stripe" << endl;
+                }
+                else{
+                    if(isThereEnemyObject)
                     {
-                        case 0:
-                            cout << "there is Helicopter Here in this stripe" << endl;
-                            sizeX = Helicopter::sizeX;
-                            break;
-                        case 1:
-                            cout << "there is Ship Here in this stripe" << endl;
-                            sizeX = Ship::sizeX;
-                            break;
-                        case 2:
-                            cout << "there is Jet Here in this stripe" << endl;
-                            sizeX = Jet::sizeX;
-                            break;
-                        default:
-                            std::cout << "UnExpected Error Happened";
-                            exit(0);
+                        enemyTypeRandom = rand() % 3;
+                        switch(enemyTypeRandom)
+                        {
+                            case 0:
+                                cout << "there is Helicopter Here in this stripe" << endl;
+                                sizeX = Helicopter::sizeX;
+                                break;
+                            case 1:
+                                cout << "there is Ship Here in this stripe" << endl;
+                                sizeX = Ship::sizeX;
+                                break;
+                            case 2:
+                                cout << "there is Jet Here in this stripe" << endl;
+                                sizeX = Jet::sizeX;
+                                break;
+                            default:
+                                std::cout << "UnExpected Error Happened";
+                                exit(0);
+                        }
                     }
                 }
-            }
 
-            Direction direction;
-            int directionRandom = rand() % 2;
-            if(directionRandom == 1)    direction = Direction::Left;
-            else                        direction = Direction::Right;
-
+                Direction direction;
+                int directionRandom = rand() % 2;
+                if(directionRandom == 1)    direction = Direction::Left;
+                else                        direction = Direction::Right;
 
 
-            int sceneX = Model::SceneWidth;
-            int xRandomMin;
-            int xRandomMax;
-            int x;
 
-            if(!isThereCenterBank)
-            {
-                xRandomMin = sideBank;
-                xRandomMax = sceneX - sizeX - sideBank;
-            }
-            else
-            {
-                int whichSideRandom = rand() % 2;
-                if(whichSideRandom == 0)
+                int sceneX = Model::SceneWidth;
+                int xRandomMin;
+                int xRandomMax;
+                int x;
+
+                if(!isThereCenterBank)
                 {
                     xRandomMin = sideBank;
-                    xRandomMax = (sceneX/2) - centerBank - sizeX;
+                    xRandomMax = sceneX - sizeX - sideBank;
                 }
                 else
                 {
-                    xRandomMin = (sceneX/2) + centerBank;
-                    xRandomMax = sceneX - sideBank - sizeX;
+                    int whichSideRandom = rand() % 2;
+                    if(whichSideRandom == 0)
+                    {
+                        xRandomMin = sideBank;
+                        xRandomMax = (sceneX/2) - centerBank - sizeX;
+                    }
+                    else
+                    {
+                        xRandomMin = (sceneX/2) + centerBank;
+                        xRandomMax = sceneX - sideBank - sizeX;
+                    }
                 }
-            }
-            x = xRandomMin + rand() % (xRandomMax - xRandomMin);
+                x = xRandomMin + rand() % (xRandomMax - xRandomMin);
 
 
-            if(isThereFuelDepot)
-            {
-                destructableObject = new FuelDepot(x, 0, direction);
+                if(isThereFuelDepot)
+                {
+                    destructableObject = new FuelDepot(x, 0, direction);
+                }
+                else
+                {
+                    if(isThereEnemyObject)
+                    {
+                        switch(enemyTypeRandom)
+                        {
+                            case 0:
+                                destructableObject = new Helicopter(x, 0, direction);
+                                break;
+                            case 1:
+                                destructableObject = new Ship(x, 0, direction);
+                                break;
+                            case 2:
+                                destructableObject = new Jet(x, 0, direction);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+                cout << "sizeX : " << sizeX << endl;
+                cout << xRandomMin << "   to    " << xRandomMax << endl;
+                cout << "destructable x : " << x << endl;
+                cout << endl << endl;
             }
             else
             {
-                if(isThereEnemyObject)
-                {
-                    switch(enemyTypeRandom)
-                    {
-                        case 0:
-                            destructableObject = new Helicopter(x, 0, direction);
-                            break;
-                        case 1:
-                            destructableObject = new Ship(x, 0, direction);
-                            break;
-                        case 2:
-                            destructableObject = new Jet(x, 0, direction);
-                            break;
-                        default:
-                            break;
-                    }
-                }
+                cout << "empty stripe" << endl << endl;
             }
-            cout << "sizeX : " << sizeX << endl;
-            cout << xRandomMin << "   to    " << xRandomMax << endl;
-            cout << "destructable x : " << x << endl;
-            cout << endl << endl;
 
             MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, centerBank);
             result.push(tempMapStripe);

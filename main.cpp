@@ -2,17 +2,10 @@
 #include <QApplication>
 
 #include "Jet.h"
-#include <thread>
+#include "Model.h"
 #include <iostream>
 
-void func1()
-{
-    for(int i=0;i<10;i++)
-    {
-        std::cout<<"thread is being runed!!!"<<std::endl;
-    }
 
-}
 
 int main(int argc, char *argv[])
 {
@@ -20,7 +13,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    std::thread omid(func1);
-    omid.join();
+    Map* map = new Map();
+    Model model();
     return a.exec();
 }

@@ -13,6 +13,12 @@
 using namespace std;
 
 class MapStripe {
+public:
+
+    MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth);
+
+    void addToScrollingObjects(ScrollingObject* scrollingObject);
+private:
     DestructableObject* destructableObject;
     int sideBankWidth;
     int centerBankWidth;

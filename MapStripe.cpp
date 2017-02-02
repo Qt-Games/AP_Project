@@ -3,3 +3,16 @@
 //
 
 #include "MapStripe.h"
+
+
+
+MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth)
+        : destructableObject(destructableObject), sideBankWidth(sideBankWidth), centerBankWidth(centerBankWidth) {
+
+
+
+}
+
+void MapStripe::addToScrollingObjects(ScrollingObject *scrollingObject) {
+    scrollingObjects.push_back(scrollingObject);
+}

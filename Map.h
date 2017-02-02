@@ -12,9 +12,11 @@ class MapStripe;
 class Map {
 public:
 
-    std::queue<MapStripe> createRandomLevel();
-    void addLevel(std::queue<MapStripe> level);
+    std::queue<MapStripe*> createRandomLevel();
+    void addLevel(std::queue<MapStripe*> level);
     void cleanPassedStripes();
+
+    Map();
 
 private:
     std::queue<MapStripe*> mapStripes;

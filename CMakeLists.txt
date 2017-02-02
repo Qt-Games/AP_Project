@@ -25,7 +25,8 @@ set(SOURCE_FILES
         FuelDepot.cpp
         FuelDepot.h
         Bridge.cpp
-        Bridge.h)
+        Bridge.h
+        ScrollingObject.h EnemyObject.cpp EnemyObject.h)
 
 add_executable(AP_Project ${SOURCE_FILES})
 

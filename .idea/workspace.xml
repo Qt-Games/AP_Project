@@ -12,8 +12,12 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f8cac6b-069f-4822-922c-304a67e27725" name="Default" comment="- added ScrollingObject Class">
+    <list default="true" id="4f8cac6b-069f-4822-922c-304a67e27725" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/EnemyObject.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/EnemyObject.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/QTGraphicTest.iml" afterPath="$PROJECT_DIR$/.idea/QTGraphicTest.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
     </list>
     <ignored path="AP_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="270">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -78,8 +82,8 @@
       <file leaf-file-name="ScrollingObject.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ScrollingObject.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state relative-caret-position="144">
+              <caret line="8" column="1" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -90,6 +94,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
               <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyObject.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EnemyObject.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyObject.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EnemyObject.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -123,6 +147,8 @@
         <option value="$PROJECT_DIR$/Object.h" />
         <option value="$PROJECT_DIR$/ScrollingObject.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/EnemyObject.h" />
+        <option value="$PROJECT_DIR$/EnemyObject.cpp" />
       </list>
     </option>
   </component>
@@ -402,7 +428,7 @@
       <option name="presentableId" value="Default" />
       <updated>1484133207115</updated>
       <workItem from="1485956399647" duration="1049000" />
-      <workItem from="1486010551477" duration="1391000" />
+      <workItem from="1486010551477" duration="2429000" />
     </task>
     <task id="LOCAL-00001" summary="- testing Commit.">
       <created>1485959068832</created>
@@ -425,11 +451,18 @@
       <option name="project" value="LOCAL" />
       <updated>1486011944073</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- added ScrollingObject Class">
+      <created>1486011954498</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1486011954498</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2440000" />
+    <option name="totallyTimeSpent" value="3478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -470,9 +503,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- First Commit. &#10;- Configuring CMakeList to work with QT" />
     <MESSAGE value="- testing Commit." />
-    <MESSAGE value="- added ScrollingObject Class" />
     <MESSAGE value="- Editing ScrollingObject Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Editing ScrollingObject Class" />
+    <MESSAGE value="- added ScrollingObject Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="- added ScrollingObject Class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -553,6 +586,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScrollingObject.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="1" selection-start-line="6" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ScrollingObject.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -561,18 +610,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ScrollingObject.cpp">
+    <entry file="file://$PROJECT_DIR$/EnemyObject.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="252">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/EnemyObject.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="288">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>

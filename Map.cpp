@@ -142,7 +142,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                 cout << "empty stripe" << endl << endl;
             }
 
-            MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, centerBank);
+            MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, centerBank, k * MapStripe::height);
             result.push(tempMapStripe);
             k++;
         }

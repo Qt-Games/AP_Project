@@ -12,10 +12,13 @@ file(GLOB_RECURSE GEN_HEADER_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*.h" "S
 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+#list(APPEND CMAKE_CXX_FLAGS "-pthread -std=c++11 ${CMAKE_CXX_FLAGS} -g -ftest-coverage -fprofile-arcs")
 
 set(SOURCE_FILES
         ${GEN_HEADER_FILES}
-        ${GEN_SOURCE_FILES})
+        ${GEN_SOURCE_FILES}
+        Grass.h
+        Grass.cpp Map.cpp Map.h)
 
 add_executable(AP_Project ${SOURCE_FILES})
 

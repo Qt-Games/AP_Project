@@ -9,10 +9,11 @@
 
 class House:public ScrollingObject{
 public:
+
+
     House(int posX, int posY, int speed, Direction direction);
-
-
 };
+
 
 
 #endif //AP_PROJECT_HOUSE_H

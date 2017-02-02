@@ -4,10 +4,8 @@
 
 #include "Jet.h"
 
-Jet(int posX, int posY, int speed, Direction direction){
-
+bool Jet::canPassThroughMapObjects() {
+    return true;
 }
 
-virtual canPassThroughMapObjects(int posX, int posY, int speed, Direction direction){
-    
-}
+Jet::Jet(int posX, int posY, int speed, Direction direction) : EnemyObject(posX, posY, speed, direction) { }

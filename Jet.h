@@ -7,13 +7,12 @@
 
 #include "EnemyObject.h"
 
-class Jet {
+class Jet : EnemyObject{
 public:
     Jet(int posX, int posY, int speed, Direction direction);
-    virtual canPassThroughMapObjects(int posX, int posY, int speed, Direction direction);
 
-
-
+private:
+    virtual bool canPassThroughMapObjects();
 };
 
 

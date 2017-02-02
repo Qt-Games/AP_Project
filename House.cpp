@@ -3,6 +3,5 @@
 //
 
 #include "House.h"
-House(int posX, int posY, int speed, Direction direction){
 
-}
+House::House(int posX, int posY, int speed, Direction direction) : ScrollingObject(posX, posY, speed, direction) { }

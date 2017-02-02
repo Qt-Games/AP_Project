@@ -8,7 +8,7 @@
 
 #include "ScrollingObject.h"
 
-class Road : ScrollingObject{
+class Road : public ScrollingObject{
 
 public:
     Road(int posX, int posY, int sizeX, int sizeY);

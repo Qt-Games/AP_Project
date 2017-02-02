@@ -5,6 +5,7 @@
 #include "MapStripe.h"
 #include "Grass.h"
 #include "Model.h"
+#include "Road.h"
 #include <iostream>
 
 
@@ -14,7 +15,10 @@ MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, 
 
     if(isBridge)
     {
-
+        Road* leftSideRoad = new Road(0, posY, sideBankWidth, MapStripe::height);
+        addToScrollingObjects(leftSideRoad);
+        Road* rightSideRoad = new Road(Model::SceneWidth - sideBankWidth, posY, sideBankWidth, MapStripe::height);
+        addToScrollingObjects(rightSideRoad);
     }
     else
     {

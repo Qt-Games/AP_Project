@@ -14,21 +14,25 @@
       <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Release/AP_Project_automoc.cpp" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/DestructableObject.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/playerplane.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Object.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Bridge.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/QtCommon.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Object.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/playerplane.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DestructableObject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Object.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Bridge.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/EnemyObject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/EnemyObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mainwindow.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DestructableObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/playerplane.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

@@ -6,7 +6,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "player.h"
+#include "Player.h"
 
 using namespace std;
 

@@ -15,7 +15,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES
         ${GEN_HEADER_FILES}
-        ${GEN_SOURCE_FILES})
+        ${GEN_SOURCE_FILES}
+        Grass.h
+        Grass.cpp)
 
 add_executable(AP_Project ${SOURCE_FILES})
 

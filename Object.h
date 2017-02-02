@@ -21,6 +21,7 @@ class Object {
 
 
 public:
+
     Object(int posX, int posY, int speed, Direction direction) : posX(posX), posY(posY), speed(speed),
                                                                  direction(direction) {
         id_generator ++;

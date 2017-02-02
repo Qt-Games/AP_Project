@@ -17,7 +17,7 @@ set(SOURCE_FILES
         playerplane.cpp
         playerplane.h
         Object.cpp
-        Object.h)
+        Object.h ScrollingObject.cpp ScrollingObject.h)
 
 add_executable(AP_Project ${SOURCE_FILES})
 

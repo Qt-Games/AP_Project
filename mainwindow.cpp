@@ -5,6 +5,7 @@
 #include "ui_mainwindow.h"
 #include "playerplane.h"
 #include <QString>
+#include "GraphicScene.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     mainWidget->setLayout(mainLayout);
     this->setCentralWidget(mainWidget);
 
-    graphicsScene = new QGraphicsScene();
+    graphicsScene = GraphicScene::getInstance();
     PlayerPlane* player = new PlayerPlane();
     player->setPos(350 , 480);
     graphicsScene->addItem(player);

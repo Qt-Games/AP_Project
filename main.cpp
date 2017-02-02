@@ -4,16 +4,20 @@
 #include "Jet.h"
 #include "Model.h"
 #include <iostream>
-
+#include <cstdlib>
+#include <ctime>
 
 
 int main(int argc, char *argv[])
 {
+
+    srand(time(0));
+    Map* map = new Map();
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
 
-    Map* map = new Map();
-    Model model();
+
+
     return a.exec();
 }

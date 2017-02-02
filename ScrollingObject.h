@@ -4,9 +4,18 @@
 
 #ifndef AP_PROJECT_SCROLLINGOBJECT_H
 #define AP_PROJECT_SCROLLINGOBJECT_H
+#include <Object.h>
 
+class ScrollingObject:public Object {
 
-class ScrollingObject {
+public:
+    ScrollingObject();
+
+    ScrollingObject(int posX, int posY, int speed, Direction direction);
+
+private:
+    void ScrollDown();
+    void Collide();
 
 };
 

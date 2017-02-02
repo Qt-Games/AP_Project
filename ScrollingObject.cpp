@@ -3,3 +3,20 @@
 //
 
 #include "ScrollingObject.h"
+
+ScrollingObject::ScrollingObject() {
+
+}
+
+void ScrollingObject::ScrollDown() {
+
+}
+
+void ScrollingObject::Collide() {
+
+}
+
+ScrollingObject::ScrollingObject(int posX, int posY, int speed, Direction direction) :
+        Object(posX, posY, speed, direction) {
+
+}

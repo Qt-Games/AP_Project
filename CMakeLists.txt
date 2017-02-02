@@ -21,7 +21,7 @@ set(SOURCE_FILES
         DestructableObject.cpp
         DestructableObject.h
         ScrollingObject.cpp
-        ScrollingObject.h)
+        ScrollingObject.h EnemyObject.cpp EnemyObject.h)
 
 add_executable(AP_Project ${SOURCE_FILES})
 

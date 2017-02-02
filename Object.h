@@ -5,6 +5,8 @@
 #ifndef AP_PROJECT_OBJECT_H
 #define AP_PROJECT_OBJECT_H
 
+#include <QGraphicsPixmapItem>
+
 
 enum class Direction{
     Right, Left
@@ -19,6 +21,7 @@ class Object {
     int speed;
     Direction direction;
 
+    QGraphicsPixmapItem* GraphicObject;
 
 public:
 
@@ -33,12 +36,16 @@ public:
     int getPosY() const;
     int getSpeed() const;
     Direction getDirection() const;
+    QGraphicsPixmapItem *getGraphicObject() const;
+
 
 
     void setPosX(int posX);
     void setPosY(int posY);
     void setSpeed(int speed);
     void setDirection(Direction direction);
+    void setGraphicObject(QGraphicsPixmapItem *GraphicObject);
+
 };
 
 

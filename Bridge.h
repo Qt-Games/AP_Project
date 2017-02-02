@@ -11,8 +11,10 @@
 class Bridge : DestructableObject{
 
 public:
-    Bridge(int posX, int posY, int speed, Direction direction) :
-            DestructableObject(posX, posY, speed, direction) { }
+    static const int sizeX = 50;
+    static const int sizeY = 30;
+
+    Bridge(int posX, int posY, Direction direction);
 
 };
 

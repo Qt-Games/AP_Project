@@ -37,3 +37,11 @@ void Object::setPosX(int posX) {
 int Object::getPosX() const {
     return posX;
 }
+
+QGraphicsPixmapItem *Object::getGraphicObject() const {
+    return GraphicObject;
+}
+
+void Object::setGraphicObject(QGraphicsPixmapItem *GraphicObject) {
+    Object::GraphicObject = GraphicObject;
+}

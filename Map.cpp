@@ -161,5 +161,5 @@ void Map::cleanPassedStripes() {
 }
 
 Map::Map() {
-    addLevel(createRandomLevel(1));
+    addLevel(createRandomLevel(9));
 }

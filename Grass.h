@@ -9,7 +9,10 @@
 
 class Grass: public ScrollingObject {
 public:
-    Grass(int posX, int posY, int speed, Direction direction);
+
+    Grass(int posX, int posY, Direction direction);
+
+
 };
 
 

@@ -28,22 +28,19 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     graphicsView = new QGraphicsView(graphicsScene);
-    graphicsView->setFixedSize(800, 600);
+    graphicsView->setFixedSize(1000, 1000);
     graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    graphicsScene->setSceneRect(0 , 0 , 800, 600);
+    graphicsScene->setSceneRect(0 , 0 , 1000, 1000);
     mainLayout->addWidget(graphicsView);
 
-    QGraphicsPixmapItem* bridgepxmap=new QGraphicsPixmapItem();
-    QString tmpstr(RES_PATH);
-    tmpstr.append("/road.png");
-    QImage image(tmpstr);
-
-    image=image.scaled(100,500);
-
-    bridgepxmap->setPixmap(QPixmap::fromImage(image));
-
-    graphicsScene->addItem(bridgepxmap);
+//    QGraphicsPixmapItem* bridgepxmap=new QGraphicsPixmapItem();
+//    QString tmpstr(RES_PATH);
+//    tmpstr.append("/road.png");
+//    QImage image(tmpstr);
+//    image=image.scaled(100,500);
+//    bridgepxmap->setPixmap(QPixmap::fromImage(image));
+//    graphicsScene->addItem(bridgepxmap);
 
 
 

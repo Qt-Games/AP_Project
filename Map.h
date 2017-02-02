@@ -18,8 +18,8 @@ public:
 
     Map();
 
-private:
     std::queue<MapStripe*> mapStripes;
+private:
 
 };
 

@@ -18,15 +18,21 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
 
     for(int i = 0; i < 3; i++)
     {
-        cout << " STAGE " << i << endl << endl;
+        cout << " STAGE " << i << endl ;
         int length = 10 + rand() % 5;
-        int sideBank = 10 * (rand() % 20);
+        int sideBank = 10 * (rand() % 10 + 5) ;
         bool isThereCenterBank = (rand() % 5 == 0);
+
         int centerBank = 0;
         if(isThereCenterBank)
         {
-            centerBank = 10 * (rand()  % 10);
+            centerBank = 10 * (rand()  % 9 + 1) ;
         }
+
+        cout << "side bank : " << sideBank << endl;
+        cout << "center bank : " << centerBank << endl<< endl << endl;
+
+
         for (int j = 0; j < length; ++j) {
 
             bool isThereFuelDepot = (rand() % (hardness + 2) == 0);
@@ -38,6 +44,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
             if(isThereFuelDepot)
             {
                 sizeX = FuelDepot::sizeX;
+                cout << "there is Fuel Depot Here in this stripe" << endl;
             }
             else{
                 if(isThereEnemyObject)
@@ -46,12 +53,15 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                     switch(enemyTypeRandom)
                     {
                         case 0:
+                            cout << "there is Helicopter Here in this stripe" << endl;
                             sizeX = Helicopter::sizeX;
                             break;
                         case 1:
+                            cout << "there is Ship Here in this stripe" << endl;
                             sizeX = Ship::sizeX;
                             break;
                         case 2:
+                            cout << "there is Jet Here in this stripe" << endl;
                             sizeX = Jet::sizeX;
                             break;
                         default:
@@ -73,7 +83,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
             int xRandomMax;
             int x;
 
-            if(isThereCenterBank)
+            if(!isThereCenterBank)
             {
                 xRandomMin = sideBank;
                 xRandomMax = sceneX - sizeX - sideBank;
@@ -83,7 +93,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                 int whichSideRandom = rand() % 2;
                 if(whichSideRandom == 0)
                 {
-                    xRandomMin = sizeX;
+                    xRandomMin = sideBank;
                     xRandomMax = (sceneX/2) - centerBank - sizeX;
                 }
                 else
@@ -106,15 +116,12 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                     switch(enemyTypeRandom)
                     {
                         case 0:
-                            cout << "Helicopter" << endl;
                             destructableObject = new Helicopter(x, 0, direction);
                             break;
                         case 1:
-                            cout << "Ship" << endl;
                             destructableObject = new Ship(x, 0, direction);
                             break;
                         case 2:
-                            cout << "Jet" << endl;
                             destructableObject = new Jet(x, 0, direction);
                             break;
                         default:
@@ -122,21 +129,24 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                     }
                 }
             }
-            cout << "side bank : " << sideBank << endl;
-            cout << "center bank : " << centerBank << endl;
             cout << "sizeX : " << sizeX << endl;
             cout << xRandomMin << "   to    " << xRandomMax << endl;
             cout << "destructable x : " << x << endl;
             cout << endl << endl;
 
             MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, centerBank);
+            result.push(tempMapStripe);
         }
     }
     return result;
 }
 
 void Map::addLevel(std::queue<MapStripe*> level) {
-
+    while(level.size())
+    {
+        mapStripes.push(level.front());
+        level.pop();
+    }
 }
 
 void Map::cleanPassedStripes() {

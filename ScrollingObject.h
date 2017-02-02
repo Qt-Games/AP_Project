@@ -9,8 +9,6 @@
 class ScrollingObject:public Object {
 
 public:
-    ScrollingObject();
-
     ScrollingObject(int posX, int posY, int speed, Direction direction);
 
 private:

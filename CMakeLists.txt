@@ -21,7 +21,11 @@ set(SOURCE_FILES
         DestructableObject.cpp
         DestructableObject.h
         ScrollingObject.cpp
-        ScrollingObject.h)
+        ScrollingObject.h
+        FuelDepot.cpp
+        FuelDepot.h
+        Bridge.cpp
+        Bridge.h)
 
 add_executable(AP_Project ${SOURCE_FILES})
 

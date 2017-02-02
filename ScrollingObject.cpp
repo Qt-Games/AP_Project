@@ -4,9 +4,6 @@
 
 #include "ScrollingObject.h"
 
-ScrollingObject::ScrollingObject() {
-
-}
 
 void ScrollingObject::ScrollDown() {
 

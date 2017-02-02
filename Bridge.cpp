@@ -3,6 +3,7 @@
 //
 
 #include "Bridge.h"
+#include "GraphicScene.h"
 
 Bridge::Bridge(int posX, int posY) : DestructableObject(posX, posY, 0, Direction::Right) {
 
@@ -14,8 +15,10 @@ Bridge::Bridge(int posX, int posY) : DestructableObject(posX, posY, 0, Direction
     image=image.scaled(sizeX,sizeY);
 
     bridgepxmap->setPixmap(QPixmap::fromImage(image));
+    bridgepxmap->setPos(posX,posY);
 
     setGraphicObject(bridgepxmap);
+    GraphicScene::getInstance()->addItem(bridgepxmap);
 
 }
 

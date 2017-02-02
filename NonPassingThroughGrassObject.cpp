@@ -6,6 +6,4 @@
 
 NonPassingThroughGrassObject::NonPassingThroughGrassObject(int posX, int posY, int speed, Direction direction)
         : EnemyObject(posX, posY, speed, direction) {
-
-
 }

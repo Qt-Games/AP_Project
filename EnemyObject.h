@@ -12,7 +12,8 @@ public:
     EnemyObject(int posX, int posY, int speed, Direction direction);
 
     void move();
-    void canPassThroughMapObjects();
+
+    virtual bool canPassThroughMapObjects() = 0;
 
 
 };

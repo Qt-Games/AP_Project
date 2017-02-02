@@ -4,6 +4,7 @@
 #include <QGraphicsPixmapItem>
 #include "ui_mainwindow.h"
 #include "playerplane.h"
+#include <QString>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -25,13 +26,26 @@ MainWindow::MainWindow(QWidget *parent) :
     player->setFocus();
 
 
-
     graphicsView = new QGraphicsView(graphicsScene);
     graphicsView->setFixedSize(800, 600);
     graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     graphicsScene->setSceneRect(0 , 0 , 800, 600);
     mainLayout->addWidget(graphicsView);
+
+    QGraphicsPixmapItem* bridgepxmap=new QGraphicsPixmapItem();
+    QString tmpstr(RES_PATH);
+    tmpstr.append("/road.png");
+    QImage image(tmpstr);
+
+    image=image.scaled(100,500);
+
+    bridgepxmap->setPixmap(QPixmap::fromImage(image));
+
+    graphicsScene->addItem(bridgepxmap);
+
+
+
 }
 
 MainWindow::~MainWindow()

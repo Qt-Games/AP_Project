@@ -7,6 +7,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 set(CMAKE_PREFIX_PATH "C:\\Qt\\Qt5.3.1\\5.3\\mingw482_32")
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+add_definitions(-DRES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/Resources")
+
 file(GLOB_RECURSE GEN_SOURCE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*.cpp" "Source/*.c" "Source/*.cpp" "/Source/*.cc" "/Source/*.cxx")
 file(GLOB_RECURSE GEN_HEADER_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*.h" "Source/*.hpp")
 

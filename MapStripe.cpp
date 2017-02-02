@@ -3,7 +3,7 @@
 //
 
 #include "MapStripe.h"
-
+#include "Grass.h"
 
 
 MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth)

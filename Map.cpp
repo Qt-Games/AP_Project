@@ -15,6 +15,7 @@
 
 std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     std::queue<MapStripe*> result;
+    int k = 0;
 
     for(int i = 0; i < 3; i++)
     {
@@ -109,7 +110,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
 
                 if(isThereFuelDepot)
                 {
-                    destructableObject = new FuelDepot(x, 0, direction);
+                    destructableObject = new FuelDepot(x, k * MapStripe::height, direction);
                 }
                 else
                 {
@@ -118,13 +119,13 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                         switch(enemyTypeRandom)
                         {
                             case 0:
-                                destructableObject = new Helicopter(x, 0, direction);
+                                destructableObject = new Helicopter(x, k * MapStripe::height, direction);
                                 break;
                             case 1:
-                                destructableObject = new Ship(x, 0, direction);
+                                destructableObject = new Ship(x, k * MapStripe::height, direction);
                                 break;
                             case 2:
-                                destructableObject = new Jet(x, 0, direction);
+                                destructableObject = new Jet(x, k * MapStripe::height, direction);
                                 break;
                             default:
                                 break;
@@ -143,6 +144,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
 
             MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, centerBank);
             result.push(tempMapStripe);
+            k++;
         }
     }
     return result;

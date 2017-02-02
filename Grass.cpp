@@ -4,6 +4,6 @@
 
 #include "Grass.h"
 
-Grass::Grass(int posX, int posY, Direction direction) : ScrollingObject(posX, posY, 0, direction) {
+Grass::Grass(int posX, int posY, int sizeX, int sizeY, Direction direction) : ScrollingObject(posX, posY, 0, direction) {
 
 }

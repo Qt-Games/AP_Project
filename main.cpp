@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
 
     srand(time(0));
-    Map* map = new Map();
+    Map* map = new Map();   
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

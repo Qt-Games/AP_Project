@@ -16,7 +16,7 @@ class MapStripe {
 public:
     static const int height = 120;
 
-    MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth);
+    MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY);
     void addToScrollingObjects(ScrollingObject* scrollingObject);
 private:
     DestructableObject* destructableObject;

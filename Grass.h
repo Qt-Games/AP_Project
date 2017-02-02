@@ -12,7 +12,7 @@
 class Grass: public ScrollingObject {
 public:
 
-    Grass(int posX, int posY, int sizeX, int sizeY, Direction direction);
+    Grass(int posX, int posY, int sizeX, int sizeY);
 private:
     QGraphicsRectItem* GreenRec;
 

@@ -4,5 +4,5 @@
 
 #include "Ship.h"
 
-Ship::Ship(int posX, int posY, int speed, Direction direction) :
-        NonPassingThroughGrassObject(posX, posY, speed, direction) { }
+Ship::Ship(int posX, int posY, Direction direction) :
+        NonPassingThroughGrassObject(posX, posY, Ship::speed, direction) { }

@@ -4,7 +4,7 @@
 
 #include "Helicopter.h"
 
-Helicopter::Helicopter(int posX, int posY, int speed, Direction direction) : NonPassingThroughGrassObject(posX, posY, speed,
+Helicopter::Helicopter(int posX, int posY, Direction direction) : NonPassingThroughGrassObject(posX, posY, Helicopter::speed,
                                                                                                             direction) { }
 
 

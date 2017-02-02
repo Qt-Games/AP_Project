@@ -7,9 +7,14 @@
 
 #include "EnemyObject.h"
 
-class Jet : EnemyObject{
+class Jet : public EnemyObject{
+
 public:
-    Jet(int posX, int posY, int speed, Direction direction);
+    static const int sizeX = 50;
+    static const int sizeY = 30;
+    static const int speed = 20;
+
+    Jet(int posX, int posY, Direction direction);
 
 private:
     virtual bool canPassThroughMapObjects();

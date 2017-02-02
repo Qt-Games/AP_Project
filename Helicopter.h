@@ -11,7 +11,11 @@
 class Helicopter : public NonPassingThroughGrassObject{
 
 public:
-    Helicopter(int posX, int posY, int speed, Direction direction);
+    static const int sizeX = 50;
+    static const int sizeY = 30;
+    static const int speed = 10;
+
+    Helicopter(int posX, int posY, Direction direction);
 };
 
 

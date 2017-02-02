@@ -12,7 +12,7 @@ class MapStripe;
 class Map {
 public:
 
-    std::queue<MapStripe*> createRandomLevel();
+    std::queue<MapStripe*> createRandomLevel(int hardness);
     void addLevel(std::queue<MapStripe*> level);
     void cleanPassedStripes();
 

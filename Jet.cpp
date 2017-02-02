@@ -8,4 +8,4 @@ bool Jet::canPassThroughMapObjects() {
     return true;
 }
 
-Jet::Jet(int posX, int posY, int speed, Direction direction) : EnemyObject(posX, posY, speed, direction) { }
+Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet::speed, direction) { }

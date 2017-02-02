@@ -23,8 +23,6 @@ private:
     int sideBankWidth;
     int centerBankWidth;
     vector<ScrollingObject*> scrollingObjects;
-
-    thread* handlerThread;
 };
 
 

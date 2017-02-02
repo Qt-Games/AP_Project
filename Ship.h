@@ -11,7 +11,11 @@
 class Ship : public NonPassingThroughGrassObject{
 
 public:
-    Ship(int posX, int posY, int speed, Direction direction);
+    static const int sizeX = 100;
+    static const int sizeY = 30;
+    static const int speed = 10;
+
+    Ship(int posX, int posY, Direction direction);
 };
 
 

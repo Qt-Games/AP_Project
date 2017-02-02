@@ -13,9 +13,9 @@ class FuelDepot : public DestructableObject{
 public:
     static const int sizeX = 50;
     static const int sizeY = 100;
-
-    FuelDepot(int posX, int posY, int speed, Direction direction) :
-            DestructableObject(posX, posY, speed, direction) { }
+    static const int speed = 0;
+    FuelDepot(int posX, int posY, Direction direction) :
+            DestructableObject(posX, posY, FuelDepot::speed, direction) { }
 };
 
 

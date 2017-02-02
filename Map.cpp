@@ -12,17 +12,26 @@
 #include "Helicopter.h"
 #include "Ship.h"
 #include "Jet.h"
+#include "Bridge.h"
 
 std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     std::queue<MapStripe*> result;
-    int k = 0;
+    int k = 1;
+
+    for(int i = 0; i < 3; i++)
+    {
+        int sideBank = (int)(0.2 * Model::SceneWidth);
+        MapStripe* tempMapStripe = new MapStripe(NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), false);
+        result.push(tempMapStripe);
+        k++;
+    }
 
     for(int i = 0; i < 3; i++)
     {
         cout << " STAGE " << i << endl ;
         int length = 10 + rand() % 5;
         int sideBank = 10 * (rand() % 10 + 5) ;
-        bool isThereCenterBank = (rand() % 5 == 0);
+        bool isThereCenterBank = (rand() % 3 == 0);
 
         int centerBank = 0;
         if(isThereCenterBank)
@@ -41,6 +50,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
             DestructableObject* destructableObject = NULL;
             int enemyTypeRandom = 0;
             int sizeX = 0;
+            int sizeY = 0;
 
             if(isThereFuelDepot || isThereEnemyObject)
             {
@@ -58,14 +68,17 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                             case 0:
                                 cout << "there is Helicopter Here in this stripe" << endl;
                                 sizeX = Helicopter::sizeX;
+                                sizeY = Helicopter::sizeY;
                                 break;
                             case 1:
                                 cout << "there is Ship Here in this stripe" << endl;
                                 sizeX = Ship::sizeX;
+                                sizeY = Ship::sizeY;
                                 break;
                             case 2:
                                 cout << "there is Jet Here in this stripe" << endl;
                                 sizeX = Jet::sizeX;
+                                sizeY = Jet::sizeY;
                                 break;
                             default:
                                 std::cout << "UnExpected Error Happened";
@@ -107,10 +120,13 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                 }
                 x = xRandomMin + rand() % (xRandomMax - xRandomMin);
 
+                int startY = Model::SceneHeight - (k * MapStripe::height);
+                startY += MapStripe::height / 2;
+                startY -= sizeY / 2;
 
                 if(isThereFuelDepot)
                 {
-                    destructableObject = new FuelDepot(x, k * MapStripe::height, direction);
+                    destructableObject = new FuelDepot(x, startY , direction);
                 }
                 else
                 {
@@ -119,13 +135,13 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                         switch(enemyTypeRandom)
                         {
                             case 0:
-                                destructableObject = new Helicopter(x, k * MapStripe::height, direction);
+                                destructableObject = new Helicopter(x, startY, direction);
                                 break;
                             case 1:
-                                destructableObject = new Ship(x, k * MapStripe::height, direction);
+                                destructableObject = new Ship(x, startY, direction);
                                 break;
                             case 2:
-                                destructableObject = new Jet(x, k * MapStripe::height, direction);
+                                destructableObject = new Jet(x, startY, direction);
                                 break;
                             default:
                                 break;
@@ -142,11 +158,30 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                 cout << "empty stripe" << endl << endl;
             }
 
-            MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, centerBank, k * MapStripe::height);
+            MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, centerBank, Model::SceneHeight - (k * MapStripe::height), false);
             result.push(tempMapStripe);
             k++;
         }
     }
+
+    for(int i = 0; i < 3; i++)
+    {
+        int sideBank = (int)(0.2 * Model::SceneWidth);
+        MapStripe* tempMapStripe = new MapStripe(NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), false);
+        result.push(tempMapStripe);
+        k++;
+    }
+
+    int startY = Model::SceneHeight - (k * MapStripe::height);
+    startY += MapStripe::height / 2;
+    startY -= Bridge::sizeY / 2;
+
+    int sideBank = (int)(0.4 * Model::SceneWidth);
+    DestructableObject* destructableObject = new Bridge(sideBank, startY);
+    MapStripe* tempMapStripe = new MapStripe(NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), true);
+    result.push(tempMapStripe);
+
+
     return result;
 }
 

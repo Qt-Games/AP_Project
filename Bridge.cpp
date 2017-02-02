@@ -4,7 +4,7 @@
 
 #include "Bridge.h"
 
-Bridge::Bridge(int posX, int posY, Direction direction) : DestructableObject(posX, posY, 0, direction) {
+Bridge::Bridge(int posX, int posY) : DestructableObject(posX, posY, 0, Direction::Right) {
 
     QGraphicsPixmapItem* bridgepxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);

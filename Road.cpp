@@ -4,4 +4,6 @@
 
 #include "Road.h"
 
-Road::Road(int posX, int posY, int speed, Direction direction) : ScrollingObject(posX, posY, speed, direction) { }
+Road::Road(int posX, int posY, int sizeX, int sizeY) : ScrollingObject(posX, posY, 0, Direction::Right) {
+
+}

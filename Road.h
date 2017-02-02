@@ -11,7 +11,7 @@
 class Road : ScrollingObject{
 
 public:
-    Road(int posX, int posY, int speed, Direction direction);
+    Road(int posX, int posY, int sizeX, int sizeY);
 };
 
 

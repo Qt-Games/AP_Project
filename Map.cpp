@@ -13,6 +13,8 @@
 #include "Ship.h"
 #include "Jet.h"
 #include "Bridge.h"
+#include "Player.h"
+#include "GraphicScene.h"
 
 std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     std::queue<MapStripe*> result;
@@ -197,4 +199,7 @@ void Map::cleanPassedStripes() {
 
 Map::Map() {
     addLevel(createRandomLevel(5));
+
+    Player* plan=new Player(GraphicScene::getInstance()->width()/2,GraphicScene::getInstance()->height()-500,Direction::Right);
+    cout<<GraphicScene::getInstance()->height()-300<<endl;
 }

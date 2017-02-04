@@ -11,6 +11,10 @@
 class Player : public Object {
 
 public:
+    static const int sizeX = 50;
+    static const int sizeY = 50;
+    static const int speed = 0;
+
     Player(int posX, int posY, Direction direction);
 };
 

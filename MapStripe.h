@@ -21,20 +21,15 @@ class MapStripe {
     bool finished;
     DestructableObject* destructableObject;
 
-
 public:
     static const int height = 20;
-
     MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY, bool isBridge);
     void addToScrollingObjects(ScrollingObject* scrollingObject);
     int getPosY() const;
     void setPosY(int posY);
     bool isFinished() const;
     void setFinished(bool isFinished);
-
     void scrollDown();
-
-
     virtual ~MapStripe();
 };
 

@@ -5,14 +5,17 @@
 #include "MapStripe.h"
 #include "Grass.h"
 #include "Model.h"
+#include <cstdlib>
 #include "Road.h"
 #include <iostream>
 
 
 MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY, bool isBridge)
         : destructableObject(destructableObject), sideBankWidth(sideBankWidth), centerBankWidth(centerBankWidth) {
+
     finished = false;
     this->posY = posY;
+
     if(isBridge)
     {
         Road* leftSideRoad = new Road(0, posY, sideBankWidth, MapStripe::height);
@@ -36,12 +39,11 @@ MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, 
         addToScrollingObjects(rightSideGrass);
 
         std::cout << std::endl << std::endl;
-        }
+    }
 }
 
 
 MapStripe::~MapStripe() {
-    //join thread;
     for(ScrollingObject* scrollingObject: scrollingObjects)
     {
         delete scrollingObject;
@@ -71,11 +73,47 @@ bool MapStripe::isFinished() const {
 }
 
 void MapStripe::scrollDown() {
-    for(ScrollingObject* scrollingObject: scrollingObjects)
-    {
-        scrollingObject->scrollDown();
-    }
-    destructableObject->scrollDown();
 
-    posY += Model::ScrollAmount;
+    while(!this->isFinished())
+    {
+        cout << "shit" << endl;
+        for(ScrollingObject* scrollingObject: scrollingObjects)
+        {
+            if(scrollingObject != NULL)
+            {
+                cout << "not null";
+            }
+            scrollingObject->scrollDown();
+        }
+        if(destructableObject != NULL)
+        {
+            destructableObject->scrollDown();
+        }
+
+        posY += Model::ScrollAmount;
+
+        if(posY >= Model::SceneHeight)
+        {
+            this->setFinished(true);
+        }
+    }
+
+
+//    for(ScrollingObject* scrollingObject: mapStripe->scrollingObjects)
+//    {
+//        scrollingObject->scrollDown();
+//    }
+//    if(mapStripe->destructableObject != NULL)
+//    {
+//        mapStripe->destructableObject->scrollDown();
+//    }
+//
+//    mapStripe->posY += Model::ScrollAmount;
+//
+//    if(mapStripe->posY >= Model::SceneHeight)
+//    {
+//        mapStripe->setFinished(true);
+//        break;
+//    }
+
 }

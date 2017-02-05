@@ -2,6 +2,7 @@
 // Created by dot_blue on 02/02/17.
 //
 
+#include <iostream>
 #include "ScrollingObject.h"
 #include "Model.h"
 

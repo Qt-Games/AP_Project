@@ -10,7 +10,6 @@ Grass::Grass(int posX, int posY, int sizeX, int sizeY) : ScrollingObject(posX, p
     GreenRec=new QGraphicsRectItem(posX,posY,sizeX,sizeY);
     GreenRec->setBrush(QBrush(QColor(0,255,0,255)));
     GreenRec->setPen(QPen(QColor(0,255,0,255)));
-
     GraphicScene::getInstance()->addItem(GreenRec);
 
 

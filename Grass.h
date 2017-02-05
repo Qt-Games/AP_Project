@@ -6,6 +6,7 @@
 #define AP_PROJECT_GRASS_H
 
 #include "ScrollingObject.h"
+#include "Model.h"
 #include <QBrush>
 #include <QPen>
 
@@ -15,6 +16,12 @@ public:
     Grass(int posX, int posY, int sizeX, int sizeY);
 private:
     QGraphicsRectItem* GreenRec;
+public:
+    virtual void scrollDown() override {
+        this->GreenRec->moveBy(0, Model::ScrollAmount);
+        this->setPosY(this->getPosY() + Model::ScrollAmount);
+    }
+
 
 };
 

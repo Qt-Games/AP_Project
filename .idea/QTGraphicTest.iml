@@ -1,95 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Debug/AP_Project_automoc.cpp">
-      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Debug/AP_Project_automoc.cpp" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Debug/AP_Project_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Debug/AP_Project_automoc.cpp" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/MinSizeRel/AP_Project_automoc.cpp">
-      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/MinSizeRel/AP_Project_automoc.cpp" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/MinSizeRel/AP_Project_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/MinSizeRel/AP_Project_automoc.cpp" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/RelWithDebInfo/AP_Project_automoc.cpp">
-      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/RelWithDebInfo/AP_Project_automoc.cpp" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/RelWithDebInfo/AP_Project_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/RelWithDebInfo/AP_Project_automoc.cpp" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Release/AP_Project_automoc.cpp">
-      <sourceFolder url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Release/AP_Project_automoc.cpp" isTestSource="false" />
+    <content url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Release/AP_Project_automoc.cpp">
+      <sourceFolder url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Release/AP_Project_automoc.cpp" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/Jet.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/NonPassingThroughGrassObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Helicopter.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Player.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Object.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/bullet.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ship.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphicScene.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/playerplane.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/NonPassingThroughGrassObject.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EnemyObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Map.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/House.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EnemyObject.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Road.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/House.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Jet.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Bridge.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/DestructableObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Object.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/playerplane.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Model.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Map.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Grass.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/QtCommon.cmake" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/bullet.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Ship.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MapStripe.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Player.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/DestructableObject.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/mainwindow.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/GraphicScene.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MapStripe.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Model.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/QtCommon.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Bullet.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Road.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Object.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QMngPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QDDSPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Core/Qt5CoreConfig.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Core/Qt5CoreMacros.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Widgets/Qt5Widgets_AccessibleFactory.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Qt/Qt5.3.1/5.3/mingw482_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/House.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/playerplane.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Object.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MapStripe.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphicScene.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/NonPassingThroughGrassObject.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DestructableObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Bridge.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Road.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Grass.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Grass.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Bridge.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/EnemyObject.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/GraphicScene.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Model.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Helicopter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/EnemyObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Jet.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Ship.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/NonPassingThroughGrassObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/playerplane.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/House.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Map.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Bullet.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Road.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Map.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DestructableObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helicopter.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mainwindow.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Player.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Player.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Jet.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/MapStripe.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Grass.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library name="Header Search Paths">
         <CLASSES>
-          <root url="file:///usr/include" />
-          <root url="file:///usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-          <root url="file:///usr/local/include" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Release" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Debug" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/RelWithDebInfo" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/MinSizeRel" />
+          <root url="file://C:/MinGW/include" />
+          <root url="file://C:/MinGW/mingw32/include" />
+          <root url="file://C:/MinGW/lib/gcc/mingw32/5.3.0/include" />
+          <root url="file://C:/MinGW/lib/gcc/mingw32/5.3.0/include-fixed" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Release" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Debug" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/MinSizeRel" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/RelWithDebInfo" />
+          <root url="file://C:/Qt/Qt5.3.1/5.3/mingw482_32/include" />
+          <root url="file://C:/Qt/Qt5.3.1/5.3/mingw482_32/mkspecs/win32-g++" />
         </CLASSES>
         <SOURCES>
-          <root url="file:///usr/include" />
-          <root url="file:///usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-          <root url="file:///usr/local/include" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Release" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Debug" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/RelWithDebInfo" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/MinSizeRel" />
+          <root url="file://C:/MinGW/include" />
+          <root url="file://C:/MinGW/mingw32/include" />
+          <root url="file://C:/MinGW/lib/gcc/mingw32/5.3.0/include" />
+          <root url="file://C:/MinGW/lib/gcc/mingw32/5.3.0/include-fixed" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Release" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Debug" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/MinSizeRel" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/RelWithDebInfo" />
+          <root url="file://C:/Qt/Qt5.3.1/5.3/mingw482_32/include" />
+          <root url="file://C:/Qt/Qt5.3.1/5.3/mingw482_32/mkspecs/win32-g++" />
         </SOURCES>
         <excluded>
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Release/AP_Project_automoc.cpp" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/Debug/AP_Project_automoc.cpp" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/RelWithDebInfo/AP_Project_automoc.cpp" />
-          <root url="file://$USER_HOME$/.CLion2016.2/system/cmake/generated/AP_Project-447814d7/447814d7/MinSizeRel/AP_Project_automoc.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Release/AP_Project_automoc.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/Debug/AP_Project_automoc.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/MinSizeRel/AP_Project_automoc.cpp" />
+          <root url="file://$USER_HOME$/.CLion2016.1/system/cmake/generated/AP_Project-64477a47/64477a47/RelWithDebInfo/AP_Project_automoc.cpp" />
         </excluded>
       </library>
     </orderEntry>

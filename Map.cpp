@@ -166,7 +166,6 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
             k++;
         }
     }
-
     for(int i = 0; i < 3; i++)
     {
         int sideBank = (int)(0.2 * Model::SceneWidth);

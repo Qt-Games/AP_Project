@@ -2,6 +2,7 @@
 // Created by Y50 on 2/2/2017.
 //
 
+#include <iostream>
 #include "Road.h"
 #include "GraphicScene.h"
 
@@ -17,7 +18,10 @@ Road::Road(int posX, int posY, int sizeX, int sizeY) : ScrollingObject(posX, pos
     roadpxmap->setPixmap(QPixmap::fromImage(image));
     roadpxmap->setPos(posX,posY);
 
+    std::cout << "a road is created : " << roadpxmap->pos().x() << std::endl;
     setGraphicObject(roadpxmap);
     GraphicScene::getInstance()->addItem(roadpxmap);
+
+
 
 }

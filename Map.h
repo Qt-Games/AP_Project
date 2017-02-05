@@ -6,6 +6,7 @@
 #define AP_PROJECT_MAP_H
 
 #include <queue>
+#include "MapStripe.h"
 
 class MapStripe;
 

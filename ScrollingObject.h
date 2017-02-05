@@ -9,11 +9,9 @@
 class ScrollingObject:public Object {
 
 public:
+    void scrollDown();
+    void collide();
     ScrollingObject(int posX, int posY, int speed, Direction direction);
-
-private:
-    void ScrollDown();
-    void Collide();
 
 };
 

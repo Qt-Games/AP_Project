@@ -7,23 +7,45 @@
 
 
 #include "DestructableObject.h"
+#include "Model.h"
 #include <thread>
 #include <vector>
 
 using namespace std;
 
 class MapStripe {
+    int posY;
+    int sideBankWidth;
+    int centerBankWidth;
+    vector<ScrollingObject*> scrollingObjects;
+    bool finished;
+    DestructableObject* destructableObject;
+
+
 public:
     static const int height = 20;
 
     MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY, bool isBridge);
     void addToScrollingObjects(ScrollingObject* scrollingObject);
-private:
-    DestructableObject* destructableObject;
-    int sideBankWidth;
-    int centerBankWidth;
-    vector<ScrollingObject*> scrollingObjects;
+    int getPosY() const;
+    void setPosY(int posY);
+    bool isFinished() const;
+    void setFinished(bool isFinished);
+    void scrollDown()
+    {
+        for(ScrollingObject* scrollingObject: scrollingObjects)
+        {
+            scrollingObject->scrollDown();
+        }
+        destructableObject->scrollDown();
+
+        posY += Model::ScrollAmount;
+    }
+
+
+    virtual ~MapStripe();
 };
+
 
 
 #endif //AP_PROJECT_MAPSTRIPE_H

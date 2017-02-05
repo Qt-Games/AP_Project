@@ -11,8 +11,8 @@
 
 MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY, bool isBridge)
         : destructableObject(destructableObject), sideBankWidth(sideBankWidth), centerBankWidth(centerBankWidth) {
-
-
+    finished = false;
+    this->posY = posY;
     if(isBridge)
     {
         Road* leftSideRoad = new Road(0, posY, sideBankWidth, MapStripe::height);
@@ -39,6 +39,33 @@ MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, 
         }
 }
 
+
+virtual MapStripe::~MapStripe() {
+    //join thread;
+    for(ScrollingObject* scrollingObject: scrollingObjects)
+    {
+        delete scrollingObject;
+    }
+    delete destructableObject;
+}
+
+
 void MapStripe::addToScrollingObjects(ScrollingObject *scrollingObject) {
     scrollingObjects.push_back(scrollingObject);
+}
+
+void MapStripe::setPosY(int posY) {
+    MapStripe::posY = posY;
+}
+
+int MapStripe::getPosY() const {
+    return posY;
+}
+
+void MapStripe::setFinished(bool isFinished) {
+    MapStripe::finished = isFinished;
+}
+
+bool MapStripe::isFinished() const {
+    return finished;
 }

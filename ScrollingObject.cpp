@@ -6,11 +6,11 @@
 
 
 
-void ScrollingObject::ScrollDown() {
+void ScrollingObject::scrollDown() {
 
 }
 
-void ScrollingObject::Collide() {
+void ScrollingObject::collide() {
 
 }
 

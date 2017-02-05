@@ -3,7 +3,6 @@
 //
 
 #include "Player.h"
-#include "GraphicScene.h"
 
 Player::Player(int posX, int posY, Direction direction) :
         Object(posX, posY, 0, direction) {
@@ -11,7 +10,7 @@ Player::Player(int posX, int posY, Direction direction) :
     this->FuelPercentage = 100;
     this->Score = 0;
 
-    QGraphicsPixmapItem* playerpxmap = new QGraphicsPixmapItem();
+    playerpxmap = new MyPlan(10);
     QString tmpstr(RES_PATH);
     tmpstr.append("/raider.png");
 
@@ -26,5 +25,9 @@ Player::Player(int posX, int posY, Direction direction) :
 
     GraphicScene::getInstance()->addItem(playerpxmap);
 
+    playerpxmap->setFlag(QGraphicsItem::ItemIsFocusable);
+    playerpxmap->setFocus();
 
 }
+
+

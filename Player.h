@@ -7,10 +7,13 @@
 
 
 #include "Object.h"
+#include "GraphicScene.h"
+#include "MyPlan.h"
 
-class Player : public Object {
+class Player : public Object{
     int Score;
     int FuelPercentage;
+    MyPlan* playerpxmap;
 
 public:
     static const int sizeX = 50;
@@ -18,6 +21,7 @@ public:
     static const int speed = 0;
 
     Player(int posX, int posY, Direction direction);
+
 };
 
 

@@ -21,9 +21,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    Map* map = new Map();
-    Player* player = new Player((Model::SceneWidth-Player::sizeX)/2, (Model::SceneHeight-Player::sizeY)*0.95, Direction::Right);
-    Model model(map, player);
+    Model* model = new Model();
 
     return a.exec();
 }

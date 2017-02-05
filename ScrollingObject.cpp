@@ -3,11 +3,12 @@
 //
 
 #include "ScrollingObject.h"
-
+#include "Model.h"
 
 
 void ScrollingObject::scrollDown() {
-
+    this->getGraphicObject()->moveBy(0, Model::ScrollAmount);
+    this->setPosY(this->getPosY() + Model::ScrollAmount);
 }
 
 void ScrollingObject::collide() {

@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include "Road.h"
 #include <iostream>
+#include <QTimer>
 
 
 MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY, bool isBridge)
@@ -40,6 +41,12 @@ MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, 
 
         std::cout << std::endl << std::endl;
     }
+
+    timer = new QTimer();
+
+    connect(timer, SIGNAL(timeout()), this, SLOT(scrollDown()));
+
+    timer->start(10);
 }
 
 
@@ -74,15 +81,10 @@ bool MapStripe::isFinished() const {
 
 void MapStripe::scrollDown() {
 
-    while(!this->isFinished())
+    if(!this->isFinished())
     {
-        cout << "shit" << endl;
         for(ScrollingObject* scrollingObject: scrollingObjects)
         {
-            if(scrollingObject != NULL)
-            {
-                cout << "not null";
-            }
             scrollingObject->scrollDown();
         }
         if(destructableObject != NULL)
@@ -98,22 +100,5 @@ void MapStripe::scrollDown() {
         }
     }
 
-
-//    for(ScrollingObject* scrollingObject: mapStripe->scrollingObjects)
-//    {
-//        scrollingObject->scrollDown();
-//    }
-//    if(mapStripe->destructableObject != NULL)
-//    {
-//        mapStripe->destructableObject->scrollDown();
-//    }
-//
-//    mapStripe->posY += Model::ScrollAmount;
-//
-//    if(mapStripe->posY >= Model::SceneHeight)
-//    {
-//        mapStripe->setFinished(true);
-//        break;
-//    }
 
 }

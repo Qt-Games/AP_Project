@@ -178,7 +178,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     int sideBank = (int)(0.4 * Model::SceneWidth);
     int bridgeWidth = (int)(0.2 * Model::SceneWidth);
     DestructableObject* destructableObject = new Bridge(sideBank, startY, bridgeWidth, MapStripe::height);
-    MapStripe* tempMapStripe = new MapStripe(NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), true);
+    MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), true);
     result.push(tempMapStripe);
 
 

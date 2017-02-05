@@ -18,7 +18,7 @@ class Model {
 public:
     static const int SceneWidth = 1000;
     static const int SceneHeight = 1000;
-    static const int ScrollAmount = 5;
+    static const int ScrollAmount = 2;
 
     Model();
 };

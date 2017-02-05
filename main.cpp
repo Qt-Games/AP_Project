@@ -3,6 +3,7 @@
 
 #include "Jet.h"
 #include "Model.h"
+#include "Map.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

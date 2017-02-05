@@ -195,12 +195,21 @@ void Map::addLevel(std::queue<MapStripe*> level) {
 }
 
 void Map::cleanPassedStripes() {
-
+    while(mapStripes.size() > 0)
+    {
+        MapStripe* last = mapStripes.front();
+        if(last->isFinished())
+        {
+            mapStripes.pop();
+            delete last;
+        }
+        else
+        {
+            break;
+        }
+    }
 }
 
 Map::Map() {
-    addLevel(createRandomLevel(5));
-
-    bullet test(10,10,0,Direction::Right);
-
+    addLevel(createRandomLevel(1));
 }

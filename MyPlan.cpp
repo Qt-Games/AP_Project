@@ -3,6 +3,7 @@
 //
 
 #include "MyPlan.h"
+#include "Bullet.h"
 #include <iostream>
 #include <QKeyEvent>
 
@@ -41,6 +42,10 @@ void MyPlan::keyPressEvent(QKeyEvent *event) {
         speed++;
         if(speed<=30)
             speed+=2;
+    }
+    else if(event->key()==Qt::Key_Space)
+    {
+        Bullet* bullet=new Bullet(x(),y(),10,Direction::Right);
     }
     else
     {

@@ -8,7 +8,7 @@
 
 #include "Object.h"
 
-class Player : public Object {
+class Player : public Object{
     int Score;
     int FuelPercentage;
 

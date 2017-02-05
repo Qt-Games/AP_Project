@@ -40,7 +40,7 @@ MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, 
 }
 
 
-virtual MapStripe::~MapStripe() {
+MapStripe::~MapStripe() {
     //join thread;
     for(ScrollingObject* scrollingObject: scrollingObjects)
     {
@@ -68,4 +68,14 @@ void MapStripe::setFinished(bool isFinished) {
 
 bool MapStripe::isFinished() const {
     return finished;
+}
+
+void MapStripe::scrollDown() {
+    for(ScrollingObject* scrollingObject: scrollingObjects)
+    {
+        scrollingObject->scrollDown();
+    }
+    destructableObject->scrollDown();
+
+    posY += Model::ScrollAmount;
 }

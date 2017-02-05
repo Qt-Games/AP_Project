@@ -31,20 +31,13 @@ public:
     void setPosY(int posY);
     bool isFinished() const;
     void setFinished(bool isFinished);
-    void scrollDown()
-    {
-        for(ScrollingObject* scrollingObject: scrollingObjects)
-        {
-            scrollingObject->scrollDown();
-        }
-        destructableObject->scrollDown();
 
-        posY += Model::ScrollAmount;
-    }
+    void scrollDown();
 
 
     virtual ~MapStripe();
 };
+
 
 
 

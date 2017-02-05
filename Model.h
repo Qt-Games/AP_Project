@@ -6,10 +6,8 @@
 #define AP_PROJECT_MODEL_H
 
 
-#include "Map.h"
-
 class Player;
-
+class Map;
 class Bullet;
 
 class Model {

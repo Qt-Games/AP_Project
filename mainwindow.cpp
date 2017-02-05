@@ -6,6 +6,7 @@
 #include "playerplane.h"
 #include <QString>
 #include "GraphicScene.h"
+#include "Model.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,19 +20,12 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setCentralWidget(mainWidget);
 
     graphicsScene = GraphicScene::getInstance();
-    PlayerPlane* player = new PlayerPlane();
-    player->setPos(350 , 480);
-    graphicsScene->addItem(player);
-
-    player->setFlag(QGraphicsItem::ItemIsFocusable);
-    player->setFocus();
-
 
     graphicsView = new QGraphicsView(graphicsScene);
-    graphicsView->setFixedSize(1000, 1000);
+    graphicsView->setFixedSize(Model::SceneWidth, Model::SceneHeight);
     graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    graphicsScene->setSceneRect(0 , 0 , 1000, 1000);
+    graphicsScene->setSceneRect(0 , 0 , Model::SceneWidth, Model::SceneHeight);
     mainLayout->addWidget(graphicsView);
 
 //    QGraphicsPixmapItem* bridgepxmap=new QGraphicsPixmapItem();

@@ -10,18 +10,24 @@
 
 class MapStripe;
 
-class Map {
-public:
+class Map : public QObject{
 
-    std::queue<MapStripe*> createRandomLevel(int hardness);
-    void addLevel(std::queue<MapStripe*> level);
-    void cleanPassedStripes();
-
-    Map();
+    Q_OBJECT
 
     std::queue<MapStripe*> mapStripes;
-private:
+    QTimer* timer;
 
+public:
+    std::queue<MapStripe*> createRandomLevel(int hardness);
+    void addLevel(std::queue<MapStripe*> level);
+    Map();
+
+    virtual ~Map() {
+        delete timer;
+    }
+
+public slots:
+    void advanceTime();
 };
 
 

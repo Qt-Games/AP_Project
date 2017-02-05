@@ -193,7 +193,8 @@ void Map::addLevel(std::queue<MapStripe*> level) {
     }
 }
 
-void Map::cleanPassedStripes() {
+void Map::advanceTime() {
+
     while(mapStripes.size() > 0)
     {
         MapStripe* last = mapStripes.front();
@@ -211,4 +212,7 @@ void Map::cleanPassedStripes() {
 
 Map::Map() {
     addLevel(createRandomLevel(5));
+    timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), this, SLOT(advanceTime()));
+    timer->start(1000);
 }

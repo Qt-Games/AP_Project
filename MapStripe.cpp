@@ -51,6 +51,9 @@ MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, 
 
 
 MapStripe::~MapStripe() {
+
+    cout << "one stripe is cleaned " << endl;
+    delete timer;
     for(ScrollingObject* scrollingObject: scrollingObjects)
     {
         delete scrollingObject;
@@ -80,25 +83,19 @@ bool MapStripe::isFinished() const {
 }
 
 void MapStripe::scrollDown() {
-
-    if(!this->isFinished())
+    for(ScrollingObject* scrollingObject: scrollingObjects)
     {
-        for(ScrollingObject* scrollingObject: scrollingObjects)
-        {
-            scrollingObject->scrollDown();
-        }
-        if(destructableObject != NULL)
-        {
-            destructableObject->scrollDown();
-        }
-
-        posY += Model::ScrollAmount;
-
-        if(posY >= Model::SceneHeight)
-        {
-            this->setFinished(true);
-        }
+        scrollingObject->scrollDown();
+    }
+    if(destructableObject != NULL)
+    {
+        destructableObject->scrollDown();
     }
 
+    posY += Model::ScrollAmount;
 
+    if(posY >= Model::SceneHeight)
+    {
+        this->setFinished(true);
+    }
 }

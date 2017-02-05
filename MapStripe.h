@@ -22,10 +22,10 @@ class MapStripe : public QObject {
     int posY;
     int sideBankWidth;
     int centerBankWidth;
-    vector<ScrollingObject*> scrollingObjects;
     bool finished;
-    DestructableObject* destructableObject;
     QTimer* timer;
+    vector<ScrollingObject*> scrollingObjects;
+    DestructableObject* destructableObject;
 
 public:
     static const int height = 120;
@@ -39,8 +39,6 @@ public:
 public slots:
     void scrollDown();
 };
-
-
 
 
 #endif //AP_PROJECT_MAPSTRIPE_H

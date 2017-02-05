@@ -22,6 +22,7 @@ Player::Player(int posX, int posY, Direction direction) :
     setGraphicObject(playerpxmap);
 
     playerpxmap->setPos(posX,posY);
+    playerpxmap->setZValue(100);
 
     GraphicScene::getInstance()->addItem(playerpxmap);
 

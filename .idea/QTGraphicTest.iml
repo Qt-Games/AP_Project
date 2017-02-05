@@ -19,10 +19,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Helicopter.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Player.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Object.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bullet.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ship.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphicScene.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Object.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/playerplane.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/NonPassingThroughGrassObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/EnemyObject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map.cpp" isTestSource="false" />
@@ -32,16 +33,17 @@
       <sourceFolder url="file://$MODULE_DIR$/mainwindow.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/House.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/QtCommon.cmake" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Jet.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/FuelDepot.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Bridge.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DestructableObject.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Object.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/playerplane.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Model.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Grass.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/playerplane.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/QtCommon.cmake" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bullet.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ship.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MapStripe.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Player.cpp" isTestSource="false" />

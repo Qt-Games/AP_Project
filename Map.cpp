@@ -13,6 +13,8 @@
 #include "Ship.h"
 #include "Jet.h"
 #include "Bridge.h"
+#include "Player.h"
+#include "GraphicScene.h"
 
 std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     std::queue<MapStripe*> result;

@@ -9,6 +9,6 @@
 
 
 Model::Model(){
-    this->player = new Player(Model::SceneWidth, 0, Direction::Right);
+    this->player = new Player(Model::SceneWidth / 2 - Player::sizeX / 2, (Model::SceneHeight - Player::sizeY) * 0.95 , Direction::Right);
     this->map = new Map();
 }

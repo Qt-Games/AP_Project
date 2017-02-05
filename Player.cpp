@@ -11,7 +11,7 @@ Player::Player(int posX, int posY, Direction direction) :
     this->FuelPercentage = 100;
     this->Score = 0;
 
-    QGraphicsPixmapItem* playerpxmap=new QGraphicsPixmapItem();
+    QGraphicsPixmapItem* playerpxmap = new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/raider.png");
 

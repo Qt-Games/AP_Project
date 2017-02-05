@@ -3,8 +3,6 @@
 //
 
 #include "Player.h"
-#include "GraphicScene.h"
-#include "MyPlan.h"
 
 Player::Player(int posX, int posY, Direction direction) :
         Object(posX, posY, 0, direction) {
@@ -12,7 +10,7 @@ Player::Player(int posX, int posY, Direction direction) :
     this->FuelPercentage = 100;
     this->Score = 0;
 
-    MyPlan* playerpxmap = new MyPlan();
+    playerpxmap = new MyPlan(10);
     QString tmpstr(RES_PATH);
     tmpstr.append("/raider.png");
 

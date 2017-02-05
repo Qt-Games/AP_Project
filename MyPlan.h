@@ -10,9 +10,19 @@ class MyPlan :public QGraphicsPixmapItem{
 
 public:
 
+    MyPlan(int speed);
     void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent *event);
 
+private:
+    static const int sizeX = 50;
+    static const int sizeY = 50;
 
+    int lastmove;
+    int speed;
+    QImage* IMGraider;
+    QImage* IMGraider_R;
+    QImage* IMGraider_L;
 
 };
 

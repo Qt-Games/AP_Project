@@ -7,13 +7,13 @@
 #include "Object.h"
 
 
-class bullet: public Object {
+class Bullet: public Object {
 
 public:
     static const int sizeX = 10;
     static const int sizeY = 30;
 
-    bullet(int posX, int posY, int speed, Direction direction);
+    Bullet(int posX, int posY, int speed, Direction direction);
 
 };
 

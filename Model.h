@@ -18,8 +18,9 @@ class Model {
 public:
     static const int SceneWidth = 1000;
     static const int SceneHeight = 1000;
-    static const int ScrollAmount = 10;
-    Model(Map *map, Player *player);
+    static const int ScrollAmount = 5;
+
+    Model();
 };
 
 

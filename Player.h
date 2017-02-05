@@ -9,6 +9,8 @@
 #include "Object.h"
 
 class Player : public Object {
+    int Score;
+    int FuelPercentage;
 
 public:
     static const int sizeX = 50;

@@ -21,6 +21,13 @@ public:
         }
         return instance;
     }
+
+    virtual ~GraphicScene() {
+        if(instance != NULL)
+        {
+            delete instance;
+        }
+    }
 };
 
 

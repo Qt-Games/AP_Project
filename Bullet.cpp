@@ -7,9 +7,9 @@
 
 Bullet::Bullet(int posX, int posY, int speed, Direction direction) : Object(posX, posY, speed, direction) {
 
-    QGraphicsPixmapItem* bulletpxmap=new QGraphicsPixmapItem();
+    bulletpxmap=new MyBullet();
     QString tmpstr(RES_PATH);
-    tmpstr.append("/Bullet.png");
+    tmpstr.append("/bullet.png");
 
     QImage image(tmpstr);
     image=image.scaled(sizeX,sizeY);
@@ -21,4 +21,11 @@ Bullet::Bullet(int posX, int posY, int speed, Direction direction) : Object(posX
 
     GraphicScene::getInstance()->addItem(bulletpxmap);
 
+//    QTimer* timer=new QTimer();
+//    connect(timer,SIGNAL(timeout()),this,SLOT(moveFront()));
+//
+//    timer->start()
+
 }
+
+

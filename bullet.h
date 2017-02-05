@@ -10,8 +10,8 @@
 class bullet: public Object {
 
 public:
-    static const int sizeX = 40;
-    static const int sizeY = 40;
+    static const int sizeX = 10;
+    static const int sizeY = 30;
 
     bullet(int posX, int posY, int speed, Direction direction);
 

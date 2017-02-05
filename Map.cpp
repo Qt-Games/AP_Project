@@ -15,7 +15,6 @@
 #include "Bridge.h"
 #include "Player.h"
 #include "GraphicScene.h"
-#include "bullet.h"
 
 std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     std::queue<MapStripe*> result;
@@ -211,5 +210,5 @@ void Map::cleanPassedStripes() {
 }
 
 Map::Map() {
-    addLevel(createRandomLevel(1));
+    addLevel(createRandomLevel(5));
 }

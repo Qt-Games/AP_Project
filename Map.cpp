@@ -19,22 +19,19 @@
 
 std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
 
-    int lastPresentStripePosY;
-
+    int lastPresentStripePosY = 0;
     if(this->mapStripes.size() > 0) {
         lastPresentStripePosY = mapStripes.back()->getPosY() - Model::SceneHeight;
     }
-    else {
-        lastPresentStripePosY = 0;
-    }
 
-    std::queue<MapStripe*> result;
     int k = 1;
+    std::queue<MapStripe*> result;
 
     for(int i = 0; i < 3; i++)
     {
         int sideBank = (int)(0.2 * Model::SceneWidth);
-        MapStripe* tempMapStripe = new MapStripe(model, NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY, false);
+        int startY = Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY;
+        MapStripe* tempMapStripe = new MapStripe(model, NULL, sideBank, 0, startY, false);
         result.push(tempMapStripe);
         k++;
     }
@@ -103,7 +100,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                 Direction direction;
                 int directionRandom = rand() % 2;
                 if(directionRandom == 1)    direction = Direction::Left;
-                else                        direction = Direction::Right;
+                else    direction = Direction::Right;
 
 
 
@@ -170,8 +167,8 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
             {
                 cout << "empty stripe" << endl << endl;
             }
-
-            MapStripe* tempMapStripe = new MapStripe(model,destructableObject, sideBank, centerBank, Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY, false);
+            int startY = Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY;
+            MapStripe* tempMapStripe = new MapStripe(model,destructableObject, sideBank, centerBank, startY, false);
             result.push(tempMapStripe);
             k++;
         }
@@ -179,7 +176,8 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     for(int i = 0; i < 3; i++)
     {
         int sideBank = (int)(0.2 * Model::SceneWidth);
-        MapStripe* tempMapStripe = new MapStripe(model,NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY, false);
+        int startY = Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY;
+        MapStripe* tempMapStripe = new MapStripe(model,NULL, sideBank, 0, startY, false);
         result.push(tempMapStripe);
         k++;
     }
@@ -188,9 +186,8 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     int sideBank = (int)(0.4 * Model::SceneWidth);
     int bridgeWidth = (int)(0.2 * Model::SceneWidth);
     DestructableObject* destructableObject = new Bridge(sideBank, startY, bridgeWidth, MapStripe::height);
-    MapStripe* tempMapStripe = new MapStripe(model, destructableObject, sideBank, 0, Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY, true);
+    MapStripe* tempMapStripe = new MapStripe(model, destructableObject, sideBank, 0, startY, true);
     result.push(tempMapStripe);
-
 
     return result;
 }
@@ -204,6 +201,10 @@ void Map::addLevel(std::queue<MapStripe*> level) {
 }
 
 void Map::advanceTime() {
+    if(model->isPaused())
+    {
+        return;
+    }
     while(mapStripes.size() > 0)
     {
         MapStripe* last = mapStripes.front();
@@ -220,16 +221,21 @@ void Map::advanceTime() {
 
     if(mapStripes.back()->getPosY() > (-2 * MapStripe::height))
     {
-        currentHardness++;
+        if(currentHardness < 10)
+        {
+            currentHardness++;
+        }
         addLevel(createRandomLevel(currentHardness));
     }
+
+    model->advanceTime();
 }
 
 
 void Map::startTimer() {
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(advanceTime()));
-    timer->start(1000);
+    timer->start(500);
 }
 
 Map::Map(Model* model) : model(model){
@@ -237,7 +243,6 @@ Map::Map(Model* model) : model(model){
 }
 
 void Map::startGame() {
-
     addLevel(createRandomLevel(currentHardness));
     startTimer();
 }

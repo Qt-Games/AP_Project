@@ -22,7 +22,12 @@ public:
 
     Player(int posX, int posY, Direction direction);
 
+    void setScore(int Score);
+    void setFuelPercentage(int FuelPercentage);
+    int getScore() const;
+    int getFuelPercentage() const;
 };
+
 
 
 

@@ -27,7 +27,21 @@ Player::Player(int posX, int posY, Direction direction) :
 
     playerpxmap->setFlag(QGraphicsItem::ItemIsFocusable);
     playerpxmap->setFocus();
-
 }
 
 
+void Player::setFuelPercentage(int FuelPercentage) {
+    Player::FuelPercentage = FuelPercentage;
+}
+
+void Player::setScore(int Score) {
+    Player::Score = Score;
+}
+
+int Player::getFuelPercentage() const {
+    return FuelPercentage;
+}
+
+int Player::getScore() const {
+    return Score;
+}

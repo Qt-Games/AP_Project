@@ -16,7 +16,8 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
 
     finished = false;
     this->posY = posY;
-    cout << posY << endl;
+    int x;
+    int y;
 
     if(isBridge)
     {
@@ -27,17 +28,26 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
     }
     else
     {
-        Grass* leftSideGrass = new Grass(0, posY, sideBankWidth, MapStripe::height);
+        x = 0;
+        y = posY;
+        Grass* leftSideGrass = new Grass(x, y, sideBankWidth, MapStripe::height);
         std::cout << "left side grass from 0 to " << sideBankWidth << endl;
         addToScrollingObjects(leftSideGrass);
 
         if(centerBankWidth != 0) {
-            Grass *CenterGrass = new Grass((Model::SceneWidth / 2) - centerBankWidth, posY, centerBankWidth * 2,MapStripe::height);
-            std::cout << "center grass from " << (Model::SceneWidth / 2) - centerBankWidth << " to " <<  (Model::SceneWidth / 2) - centerBankWidth + centerBankWidth*2 << endl;
+            x = (Model::SceneWidth / 2) - centerBankWidth;
+            y = posY;
+            Grass *CenterGrass = new Grass(x, y, centerBankWidth * 2,MapStripe::height);
+            std::cout << "center grass from " << (Model::SceneWidth / 2) - centerBankWidth << " to " ;
+            std::cout <<  (Model::SceneWidth / 2) - centerBankWidth + centerBankWidth*2 << endl;
             addToScrollingObjects(CenterGrass);
         }
-        Grass* rightSideGrass = new Grass(Model::SceneWidth - sideBankWidth, posY, sideBankWidth, MapStripe::height);
-        std::cout << "right side grass from " << Model::SceneWidth - sideBankWidth << " to " << Model::SceneWidth << endl;
+
+        x = Model::SceneWidth - sideBankWidth;
+        y = posY;
+        Grass* rightSideGrass = new Grass(x, y, sideBankWidth, MapStripe::height);
+        std::cout << "right side grass from " << Model::SceneWidth - sideBankWidth << " to ";
+        std::cout << Model::SceneWidth << endl;
         addToScrollingObjects(rightSideGrass);
 
         std::cout << std::endl << std::endl;

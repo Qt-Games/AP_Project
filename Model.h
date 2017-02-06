@@ -6,6 +6,7 @@
 #define AP_PROJECT_MODEL_H
 
 
+class MainWindow;
 class Player;
 class Map;
 class Bullet;
@@ -15,11 +16,13 @@ class Model {
     Player* player;
     Bullet* bullet;
     bool paused;
+    MainWindow* mainWindow;
 
 public:
     static const int SceneWidth = 1000;
     static const int SceneHeight = 1000;
     static const int ScrollAmount = 2;
+    static const int FuelDecreaseRate = 1;
 
     void start();
     void pause();
@@ -27,8 +30,12 @@ public:
 
     bool isPaused() const;
     void setPaused(bool paused);
+    void setMainWindow(MainWindow *mainWindow);
+    Player* getPlayer() const;
 
     Model();
+
+    void advanceTime();
 };
 
 

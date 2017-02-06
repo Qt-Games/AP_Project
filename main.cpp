@@ -13,16 +13,10 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-
     srand(time(0));
-
     Model* model = new Model();
-
     QApplication a(argc, argv);
     MainWindow w(model);
     w.show();
-
-
-
     return a.exec();
 }

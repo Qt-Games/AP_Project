@@ -6,7 +6,7 @@
 #include "Model.h"
 #include "Map.h"
 #include "Player.h"
-
+#include "mainwindow.h"
 
 void Model::start() {
     this->player = new Player(Model::SceneWidth / 2 - Player::sizeX / 2,
@@ -29,3 +29,18 @@ Model::Model(){
     this->paused = true;
     this->map = new Map(this);
 }
+
+void Model::setMainWindow(MainWindow *mainWindow) {
+    Model::mainWindow = mainWindow;
+}
+
+
+void Model::advanceTime() {
+    player->setFuelPercentage(player->getFuelPercentage() - Model::FuelDecreaseRate);
+    mainWindow->updateView();
+}
+
+Player *Model::getPlayer() const {
+    return player;
+}
+

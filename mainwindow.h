@@ -7,6 +7,7 @@
 #include <QtWidgets/QGraphicsPixmapItem>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QLabel>
+#include <iostream>
 #include "Model.h"
 
 namespace Ui {
@@ -34,6 +35,9 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(Model* model,QWidget *parent = 0);
+    void setScoreValue(int value);
+    void setFuelGauge(int value);
+    void updateView();
     ~MainWindow();
 
 private:

@@ -28,6 +28,7 @@ public:
 
     Object(int posX, int posY, int speed, Direction direction) : posX(posX), posY(posY), speed(speed),
                                                                  direction(direction) {
+        GraphicObject = NULL;
         id_generator ++;
         id = id_generator;
     }

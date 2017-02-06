@@ -8,7 +8,8 @@
 #include "GraphicScene.h"
 #include "Model.h"
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(Model* model, QWidget *parent) :
+    model(model),
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
@@ -20,13 +21,50 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setCentralWidget(mainWidget);
 
     graphicsScene = GraphicScene::getInstance();
-
     graphicsView = new QGraphicsView(graphicsScene);
     graphicsView->setFixedSize(Model::SceneWidth, Model::SceneHeight);
     graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     graphicsScene->setSceneRect(0 , 0 , Model::SceneWidth, Model::SceneHeight);
     mainLayout->addWidget(graphicsView);
+    graphicsView->hide();
+
+    playerInfoLayout = new QHBoxLayout();
+    playerInfoWidget = new QWidget();
+    playerInfoWidget->setLayout(playerInfoLayout);
+
+    scoreLabel = new QLabel();
+    scoreValue = new QLabel();
+    scoreLabel->setText("Score");
+    scoreValue->setText("0");
+
+    fuelGaugeLabel = new QLabel();
+    fuelGaugeLabel->setText("Remaining Fuel");
+    fuelGauge = new QProgressBar();
+    fuelGauge->setMinimum(0);
+    fuelGauge->setMaximum(100);
+
+    scoreLabel->hide();
+    scoreValue->hide();
+    fuelGaugeLabel->hide();
+    fuelGauge->hide();
+
+    playerInfoLayout->addWidget(scoreLabel);
+    playerInfoLayout->addWidget(scoreValue);
+    playerInfoLayout->addWidget(fuelGaugeLabel);
+    playerInfoLayout->addWidget(fuelGauge);
+
+    mainLayout->addWidget(playerInfoWidget);
+
+    startButton = new QPushButton();
+    startButton->setText("Start Game !");
+    connect(startButton, SIGNAL(clicked()), this, SLOT(startGame()));
+    mainLayout->addWidget(startButton);
+
+
+
+
+
 
 //    QGraphicsPixmapItem* bridgepxmap=new QGraphicsPixmapItem();
 //    QString tmpstr(RES_PATH);

@@ -217,6 +217,12 @@ void Map::advanceTime() {
             break;
         }
     }
+
+    if(mapStripes.back()->getPosY() > (-2 * MapStripe::height))
+    {
+        currentHardness++;
+        addLevel(createRandomLevel(currentHardness));
+    }
 }
 
 
@@ -227,6 +233,11 @@ void Map::startTimer() {
 }
 
 Map::Map(Model* model) : model(model){
-    addLevel(createRandomLevel(5));
-    addLevel(createRandomLevel(10));
+    currentHardness = 1;
+}
+
+void Map::startGame() {
+
+    addLevel(createRandomLevel(currentHardness));
+    startTimer();
 }

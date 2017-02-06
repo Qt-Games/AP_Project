@@ -59,7 +59,9 @@ MapStripe::~MapStripe() {
     {
         delete scrollingObject;
     }
+
     delete destructableObject;
+
 }
 
 

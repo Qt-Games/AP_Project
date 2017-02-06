@@ -14,6 +14,7 @@ class Map : public QObject{
 
     Q_OBJECT
 
+    int currentHardness;
     std::queue<MapStripe*> mapStripes;
     QTimer* timer;
     Model* model;
@@ -22,8 +23,9 @@ public:
     std::queue<MapStripe*> createRandomLevel(int hardness);
     void addLevel(std::queue<MapStripe*> level);
     Map(Model* model);
-
+    void startGame();
     void startTimer();
+
     virtual ~Map() {
         delete timer;
     }
@@ -31,6 +33,8 @@ public:
 public slots:
     void advanceTime();
 };
+
+
 
 
 #endif //AP_PROJECT_MAP_H

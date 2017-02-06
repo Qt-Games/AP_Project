@@ -16,13 +16,12 @@ int main(int argc, char *argv[])
 
     srand(time(0));
 
-
+    Model* model = new Model();
 
     QApplication a(argc, argv);
-    MainWindow w;
+    MainWindow w(model);
     w.show();
 
-    Model* model = new Model();
 
 
     return a.exec();

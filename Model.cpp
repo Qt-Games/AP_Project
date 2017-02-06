@@ -9,7 +9,11 @@
 
 
 void Model::start() {
-    this->map->startTimer();
+    this->player = new Player(Model::SceneWidth / 2 - Player::sizeX / 2,
+                              (Model::SceneHeight - Player::sizeY) * 0.95 -300  ,
+                              Direction::Right);
+    this->paused = false;
+    map->startGame();
 }
 
 bool Model::isPaused() const {
@@ -22,12 +26,6 @@ void Model::setPaused(bool paused) {
 
 
 Model::Model(){
-
-    this->paused = false;
-
-    this->player = new Player(Model::SceneWidth / 2 - Player::sizeX / 2,
-                              (Model::SceneHeight - Player::sizeY) * 0.95 -300  ,
-                              Direction::Right);
-
+    this->paused = true;
     this->map = new Map(this);
 }

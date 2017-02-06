@@ -14,12 +14,12 @@ MyPlan::MyPlan(int speed):speed(speed){
     IMGraider=new QImage(IMGtmp.scaled(sizeX,sizeY));
 
     QString raider_R(RES_PATH);
-    raider_R.append("/raider_mv.png");
+    raider_R.append("/raider_mv_right.png");
     QImage IMGtmp1(raider_R);
     IMGraider_R=new QImage(IMGtmp1.scaled(sizeX-10,sizeY));
 
     QString raider_L(RES_PATH);
-    raider_L.append("/raider_mv.png");
+    raider_L.append("/raider_mv_left.png");
     QImage IMGtmp2(raider_L);
     IMGraider_L=new QImage(IMGtmp2.scaled(sizeX-10,sizeY));
 }

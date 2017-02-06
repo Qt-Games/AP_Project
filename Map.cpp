@@ -18,13 +18,23 @@
 #include "Bullet.h"
 
 std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
+
+    int lastPresentStripePosY;
+
+    if(this->mapStripes.size() > 0) {
+        lastPresentStripePosY = mapStripes.back()->getPosY() - Model::SceneHeight;
+    }
+    else {
+        lastPresentStripePosY = 0;
+    }
+
     std::queue<MapStripe*> result;
     int k = 1;
 
     for(int i = 0; i < 3; i++)
     {
         int sideBank = (int)(0.2 * Model::SceneWidth);
-        MapStripe* tempMapStripe = new MapStripe(model, NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), false);
+        MapStripe* tempMapStripe = new MapStripe(model, NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY, false);
         result.push(tempMapStripe);
         k++;
     }
@@ -123,7 +133,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                 }
                 x = xRandomMin + rand() % (xRandomMax - xRandomMin);
 
-                int startY = Model::SceneHeight - (k * MapStripe::height);
+                int startY = Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY;
                 startY += MapStripe::height / 2;
                 startY -= sizeY / 2;
 
@@ -161,7 +171,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                 cout << "empty stripe" << endl << endl;
             }
 
-            MapStripe* tempMapStripe = new MapStripe(model,destructableObject, sideBank, centerBank, Model::SceneHeight - (k * MapStripe::height), false);
+            MapStripe* tempMapStripe = new MapStripe(model,destructableObject, sideBank, centerBank, Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY, false);
             result.push(tempMapStripe);
             k++;
         }
@@ -169,16 +179,16 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     for(int i = 0; i < 3; i++)
     {
         int sideBank = (int)(0.2 * Model::SceneWidth);
-        MapStripe* tempMapStripe = new MapStripe(model,NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), false);
+        MapStripe* tempMapStripe = new MapStripe(model,NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY, false);
         result.push(tempMapStripe);
         k++;
     }
 
-    int startY = Model::SceneHeight - (k * MapStripe::height);
+    int startY = Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY;
     int sideBank = (int)(0.4 * Model::SceneWidth);
     int bridgeWidth = (int)(0.2 * Model::SceneWidth);
     DestructableObject* destructableObject = new Bridge(sideBank, startY, bridgeWidth, MapStripe::height);
-    MapStripe* tempMapStripe = new MapStripe(model, destructableObject, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), true);
+    MapStripe* tempMapStripe = new MapStripe(model, destructableObject, sideBank, 0, Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY, true);
     result.push(tempMapStripe);
 
 
@@ -218,4 +228,5 @@ void Map::startTimer() {
 
 Map::Map(Model* model) : model(model){
     addLevel(createRandomLevel(5));
+    addLevel(createRandomLevel(10));
 }

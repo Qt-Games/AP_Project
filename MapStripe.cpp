@@ -16,6 +16,7 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
 
     finished = false;
     this->posY = posY;
+    cout << posY << endl;
 
     if(isBridge)
     {

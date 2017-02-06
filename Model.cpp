@@ -23,7 +23,7 @@ void Model::setPaused(bool paused) {
 
 Model::Model(){
 
-    this->paused = true;
+    this->paused = false;
 
     this->player = new Player(Model::SceneWidth / 2 - Player::sizeX / 2,
                               (Model::SceneHeight - Player::sizeY) * 0.95 -300  ,

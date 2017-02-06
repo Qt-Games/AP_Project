@@ -4,6 +4,10 @@
 
 #include <iostream>
 #include "MyBullet.h"
+#include "MyPlan.h"
+#include "Helicopter.h"
+#include "DestructableObject.h"
+#include <QList>
 
 MyBullet::MyBullet() {
     timer=new QTimer();
@@ -11,6 +15,8 @@ MyBullet::MyBullet() {
     connect(timer,SIGNAL(timeout()),this,SLOT(moveFront()));
 
     timer->start(40);
+
+
 
 }
 
@@ -20,6 +26,21 @@ void MyBullet::moveFront() {
     if(y()+30<0)
     {
         delete this;
+    }
+    QList<QGraphicsItem *> collidingItems=this->collidingItems();
+    for(auto it=collidingItems.begin();it!=collidingItems.end();it++){
+
+        if(typeid(**it)!=typeid(MyPlan )) {
+
+            (*it)->hide();
+            delete this;
+            std::cout << "bullet has been hit to the target" << std::endl;
+        }
+        else
+        {
+            std::cout << "heheh" << std::endl;
+        }
+
     }
 
 }

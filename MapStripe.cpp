@@ -11,8 +11,8 @@
 #include <QTimer>
 
 
-MapStripe::MapStripe(DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY, bool isBridge)
-        : destructableObject(destructableObject), sideBankWidth(sideBankWidth), centerBankWidth(centerBankWidth) {
+MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY, bool isBridge)
+        : model(model), destructableObject(destructableObject), sideBankWidth(sideBankWidth), centerBankWidth(centerBankWidth) {
 
     finished = false;
     this->posY = posY;
@@ -83,6 +83,9 @@ bool MapStripe::isFinished() const {
 }
 
 void MapStripe::scrollDown() {
+    if(model->isPaused()){
+        return;
+    }
     for(ScrollingObject* scrollingObject: scrollingObjects)
     {
         scrollingObject->scrollDown();

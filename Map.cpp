@@ -24,7 +24,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     for(int i = 0; i < 3; i++)
     {
         int sideBank = (int)(0.2 * Model::SceneWidth);
-        MapStripe* tempMapStripe = new MapStripe(NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), false);
+        MapStripe* tempMapStripe = new MapStripe(model, NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), false);
         result.push(tempMapStripe);
         k++;
     }
@@ -161,7 +161,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                 cout << "empty stripe" << endl << endl;
             }
 
-            MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, centerBank, Model::SceneHeight - (k * MapStripe::height), false);
+            MapStripe* tempMapStripe = new MapStripe(model,destructableObject, sideBank, centerBank, Model::SceneHeight - (k * MapStripe::height), false);
             result.push(tempMapStripe);
             k++;
         }
@@ -169,7 +169,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     for(int i = 0; i < 3; i++)
     {
         int sideBank = (int)(0.2 * Model::SceneWidth);
-        MapStripe* tempMapStripe = new MapStripe(NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), false);
+        MapStripe* tempMapStripe = new MapStripe(model,NULL, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), false);
         result.push(tempMapStripe);
         k++;
     }
@@ -178,7 +178,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     int sideBank = (int)(0.4 * Model::SceneWidth);
     int bridgeWidth = (int)(0.2 * Model::SceneWidth);
     DestructableObject* destructableObject = new Bridge(sideBank, startY, bridgeWidth, MapStripe::height);
-    MapStripe* tempMapStripe = new MapStripe(destructableObject, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), true);
+    MapStripe* tempMapStripe = new MapStripe(model, destructableObject, sideBank, 0, Model::SceneHeight - (k * MapStripe::height), true);
     result.push(tempMapStripe);
 
 
@@ -194,7 +194,6 @@ void Map::addLevel(std::queue<MapStripe*> level) {
 }
 
 void Map::advanceTime() {
-
     while(mapStripes.size() > 0)
     {
         MapStripe* last = mapStripes.front();
@@ -210,9 +209,13 @@ void Map::advanceTime() {
     }
 }
 
-Map::Map() {
-    addLevel(createRandomLevel(5));
+
+void Map::startTimer() {
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(advanceTime()));
     timer->start(1000);
+}
+
+Map::Map(Model* model) : model(model){
+    addLevel(createRandomLevel(5));
 }

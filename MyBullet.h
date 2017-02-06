@@ -19,8 +19,6 @@ public slots:
     void moveFront();
 private:
     QTimer * timer;
-
-
 };
 
 

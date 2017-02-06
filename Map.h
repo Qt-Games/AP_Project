@@ -16,12 +16,14 @@ class Map : public QObject{
 
     std::queue<MapStripe*> mapStripes;
     QTimer* timer;
+    Model* model;
 
 public:
     std::queue<MapStripe*> createRandomLevel(int hardness);
     void addLevel(std::queue<MapStripe*> level);
-    Map();
+    Map(Model* model);
 
+    void startTimer();
     virtual ~Map() {
         delete timer;
     }

@@ -8,6 +8,7 @@
 #include "Helicopter.h"
 #include "DestructableObject.h"
 #include <QList>
+#include <typeinfo>
 
 MyBullet::MyBullet() {
     timer=new QTimer();
@@ -29,9 +30,7 @@ void MyBullet::moveFront() {
     }
     QList<QGraphicsItem *> collidingItems=this->collidingItems();
     for(auto it=collidingItems.begin();it!=collidingItems.end();it++){
-
         if(typeid(**it)!=typeid(MyPlan )) {
-
             (*it)->hide();
             delete this;
             std::cout << "bullet has been hit to the target" << std::endl;

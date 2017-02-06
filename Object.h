@@ -6,6 +6,7 @@
 #define AP_PROJECT_OBJECT_H
 
 #include <QGraphicsPixmapItem>
+#include "GraphicScene.h"
 
 
 enum class Direction{
@@ -46,6 +47,15 @@ public:
     void setDirection(Direction direction);
     void setGraphicObject(QGraphicsPixmapItem *GraphicObject);
 
+
+    virtual ~Object() {
+        QGraphicsPixmapItem* graphicsPixmapItem = this->getGraphicObject();
+        if(graphicsPixmapItem != NULL)
+        {
+            GraphicScene::getInstance()->removeItem(graphicsPixmapItem);
+            delete graphicsPixmapItem;
+        }
+    }
 };
 
 

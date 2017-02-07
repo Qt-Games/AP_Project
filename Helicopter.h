@@ -5,7 +5,6 @@
 #ifndef AP_PROJECT_HELLICOPTER_H
 #define AP_PROJECT_HELLICOPTER_H
 
-
 #include "NonPassingThroughGrassObject.h"
 
 class Helicopter : public NonPassingThroughGrassObject{
@@ -14,6 +13,7 @@ public:
     static const int sizeX = 50;
     static const int sizeY = 30;
     static const int speed = 4;
+    static const int points = 60;
 
     Helicopter(int posX, int posY, Direction direction);
 

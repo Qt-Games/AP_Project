@@ -8,6 +8,8 @@
 Bridge::Bridge(int posX, int posY, int sizeX, int sizeY) :
         DestructableObject(posX, posY, 0, Direction::Right), sizeX(sizeX), sizeY(sizeY) {
 
+    this->destructionPoints = Bridge::points;
+
     QGraphicsPixmapItem* bridgepxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/bridge.png");

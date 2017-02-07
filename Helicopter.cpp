@@ -8,6 +8,7 @@
 Helicopter::Helicopter(int posX, int posY, Direction direction) :
         NonPassingThroughGrassObject(posX, posY, Helicopter::speed, direction) {
 
+    this->destructionPoints = Helicopter::points;
     QGraphicsPixmapItem* helicopterpxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/heli.png");

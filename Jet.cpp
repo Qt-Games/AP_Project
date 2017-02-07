@@ -11,6 +11,7 @@ bool Jet::canPassThroughMapObjects() {
 
 Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet::speed, direction) {
 
+    this->destructionPoints = Jet::destructionPoints;
     QGraphicsPixmapItem* jetpxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/jet.png");

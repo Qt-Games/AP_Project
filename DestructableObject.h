@@ -9,25 +9,19 @@
 #include "ScrollingObject.h"
 
 class DestructableObject : public ScrollingObject{
-
-
+    Player* player;
+protected:
+    int destructionPoints;
 public:
     DestructableObject(int posX, int posY, int speed, Direction direction) : ScrollingObject(posX, posY, speed,
                                                                                              direction) { }
 
-    void flip()
-    {
-        QImage image = this->getGraphicObject()->pixmap().toImage();
-        getGraphicObject()->setPixmap(QPixmap::fromImage(image.mirrored(true, false)));
-        setSpeed(-1 * getSpeed());
-    }
-
+    void flip();\
     virtual bool canPassThroughMapObjects() = 0;
-
-    void Destruct(){
-
-    }
+    void Destruct();
+    void setPlayer(Player *player);
 };
+
 
 
 #endif //AP_PROJECT_DESTRUCTABLEOBJECT_H

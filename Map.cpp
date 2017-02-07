@@ -158,6 +158,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
                         }
                     }
                 }
+                destructableObject->setPlayer(this->model->getPlayer());
                 cout << "sizeX : " << sizeX << endl;
                 cout << xRandomMin << "   to    " << xRandomMax << endl;
                 cout << "destructable x : " << x << endl;
@@ -186,6 +187,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     int sideBank = (int)(0.4 * Model::SceneWidth);
     int bridgeWidth = (int)(0.2 * Model::SceneWidth);
     DestructableObject* destructableObject = new Bridge(sideBank, startY, bridgeWidth, MapStripe::height);
+    destructableObject->setPlayer(this->model->getPlayer());
     MapStripe* tempMapStripe = new MapStripe(model, destructableObject, sideBank, 0, startY, true);
     result.push(tempMapStripe);
 

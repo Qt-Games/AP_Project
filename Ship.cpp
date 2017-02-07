@@ -8,6 +8,7 @@
 Ship::Ship(int posX, int posY, Direction direction) :
         NonPassingThroughGrassObject(posX, posY, Ship::speed, direction) {
 
+    this->destructionPoints = Ship::points;
     QGraphicsPixmapItem* shippxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/Ship.png");

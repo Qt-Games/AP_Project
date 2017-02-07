@@ -3,3 +3,17 @@
 //
 
 #include "DestructableObject.h"
+#include "Player.h"
+void DestructableObject::Destruct() {
+    player->setScore(player->getScore() + this->destructionPoints);
+}
+
+void DestructableObject::setPlayer(Player *player) {
+    DestructableObject::player = player;
+}
+
+void DestructableObject::flip() {
+    QImage image = this->getGraphicObject()->pixmap().toImage();
+    getGraphicObject()->setPixmap(QPixmap::fromImage(image.mirrored(true, false)));
+    setSpeed(-1 * getSpeed());
+}

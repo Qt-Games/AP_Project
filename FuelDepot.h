@@ -14,6 +14,8 @@ public:
     static const int sizeX = 50;
     static const int sizeY = 100;
     static const int speed = 0;
+    static const int points = 150;
+
     FuelDepot(int posX, int posY, Direction direction);
 
     virtual int getSizeX() override {

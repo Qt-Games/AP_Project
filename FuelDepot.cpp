@@ -8,6 +8,8 @@
 FuelDepot::FuelDepot(int posX, int posY, Direction direction):
         DestructableObject(posX, posY, FuelDepot::speed, direction) {
 
+    this->destructionPoints = FuelDepot::destructionPoints;
+
     QGraphicsPixmapItem* fuelpxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/fuel.png");

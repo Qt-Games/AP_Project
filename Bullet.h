@@ -9,7 +9,6 @@
 #include <QObject>
 
 
-
 class Bullet: public Object {
 
     Q_OBJECT

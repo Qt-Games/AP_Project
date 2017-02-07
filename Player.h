@@ -8,7 +8,6 @@
 
 #include "Object.h"
 #include "GraphicScene.h"
-#include "MyPlan.h"
 #include "Bullet.h"
 
 class Player :  public Object{

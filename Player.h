@@ -11,7 +11,7 @@
 #include "MyPlan.h"
 #include "Bullet.h"
 
-class Player : public QObject, public Object{
+class Player :  public Object{
 
     Q_OBJECT
 
@@ -23,6 +23,8 @@ class Player : public QObject, public Object{
     QImage* IMGraider;
     QImage* IMGraider_R;
     QImage* IMGraider_L;
+
+    Bullet* bullet;
 
     QTimer* timer;
 public:

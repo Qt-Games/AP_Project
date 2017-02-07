@@ -5,21 +5,29 @@
 #ifndef AP_PROJECT_BULLET_H
 #define AP_PROJECT_BULLET_H
 #include "Object.h"
-#include "MyBullet.h"
 #include <QTimer>
 #include <QObject>
 
 
+
 class Bullet: public Object {
 
+    Q_OBJECT
 
-    MyBullet* bulletpxmap;
+    QGraphicsPixmapItem* bulletpxmap;
+public slots:
+    void moveFront1();
 
 public:
     static const int sizeX = 40;
     static const int sizeY = 40;
+    static int NumberOfBullets;
+
+    int pos_X,pos_Y;
 
     Bullet(int posX, int posY, int speed, Direction direction);
+    ~Bullet();
+
     QTimer* timer;
 
 

@@ -7,13 +7,14 @@
 
 #include <QGraphicsPixmapItem>
 #include "GraphicScene.h"
+#include <QObject>
 
 
 enum class Direction{
     Right, Left
 };
 
-class Object {
+class Object :public QObject{
     static int id_generator;
 
     int id;

@@ -12,14 +12,21 @@
 
 class Bullet: public Object {
 
+    Q_OBJECT
 
-    MyBullet* bulletpxmap;
+    QGraphicsPixmapItem* bulletpxmap;
+public slots:
+    void moveFront();
 
 public:
     static const int sizeX = 40;
     static const int sizeY = 40;
 
+    int pos_X,pos_Y;
+
     Bullet(int posX, int posY, int speed, Direction direction);
+    ~Bullet();
+
     QTimer* timer;
 
 

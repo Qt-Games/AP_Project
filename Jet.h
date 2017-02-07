@@ -20,6 +20,8 @@ public:
 private:
     virtual bool canPassThroughMapObjects();
 
+    QGraphicsPixmapItem* jetpxmap;
+
 public:
     virtual int getSizeX() override {
         return Jet::sizeX;

@@ -44,6 +44,7 @@ Player::Player(int posX, int posY, Direction direction) :
     GraphicScene::getInstance()->addItem(getGraphicObject());
 
     startTimer();
+    bullet=NULL;
 //    playerpxmap->setFlag(QGraphicsItem::ItemIsFocusable);
 //    playerpxmap->setFocus();
 }
@@ -82,7 +83,8 @@ void Player::otherKeyPressed() {
 }
 
 void Player::spacekeyPressed() {
-    Bullet* bullet=new Bullet((int)getGraphicObject()->x(),(int)getGraphicObject()->y(),10,Direction::Right);
+    if(bullet==NULL)
+        bullet=new Bullet((int)getGraphicObject()->x(),(int)getGraphicObject()->y(),10,Direction::Right);
 }
 
 void Player::leftKeyPressed() {

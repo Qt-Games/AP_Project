@@ -5,17 +5,19 @@
 #include <iostream>
 #include "MyBullet.h"
 #include "MyPlan.h"
+#include "playerplane.h"
 #include "Helicopter.h"
-#include "DestructableObject.h"
-#include <QList>
-#include <typeinfo>
+#include "Jet.h"
+#include "FuelDepot.h"
+#include "Helicopter.h"
+#include "Ship.h"
 
 MyBullet::MyBullet() {
-    timer=new QTimer();
-
-    connect(timer,SIGNAL(timeout()),this,SLOT(moveFront()));
-
-    timer->start(40);
+//    timer=new QTimer();
+//
+//    connect(timer,SIGNAL(timeout()),this,SLOT(moveFront()));
+//
+//    timer->start(40);
 }
 
 void MyBullet::moveFront() {
@@ -25,9 +27,10 @@ void MyBullet::moveFront() {
     {
         delete this;
     }
+
 //    QList<QGraphicsItem *> collidingItems=this->collidingItems();
 //    for(auto it=collidingItems.begin();it!=collidingItems.end();it++){
-//        if(typeid(**it)!=typeid(MyPlan)) {
+//        if(typeid(**it)==typeid(QGraphicsPixmapItem)) {
 //            (*it)->hide();
 //            delete this;
 //            std::cout << "bullet has been hit to the target" << std::endl;
@@ -43,6 +46,6 @@ void MyBullet::moveFront() {
 
 MyBullet::~MyBullet() {
 
-    delete timer;
+//    delete timer;
 
 }

@@ -62,8 +62,6 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
 
 
 MapStripe::~MapStripe() {
-
-    cout << "one stripe is cleaned " << endl;
     delete timer;
     for(ScrollingObject* scrollingObject: scrollingObjects)
     {
@@ -71,7 +69,6 @@ MapStripe::~MapStripe() {
     }
 
     delete destructableObject;
-
 }
 
 

@@ -9,6 +9,7 @@
 #include <QtWidgets/QLabel>
 #include <iostream>
 #include "Model.h"
+#include <QKeyEvent>
 
 namespace Ui {
 class MainWindow;
@@ -40,22 +41,24 @@ public:
     void updateView();
     ~MainWindow();
 
+    virtual void grabKeyboard() {
+        std::cout << "shit" << std::endl;
+        QWidget::grabKeyboard();
+    }
+
+protected:
+    virtual void keyPressEvent(QKeyEvent *event);
+
+    virtual void keyReleaseEvent(QKeyEvent *event);
+
 private:
     Ui::MainWindow *ui;
 
 public slots:
-    void startGame()
-    {
-        startButton->hide();
-
-        graphicsView->show();
-        scoreLabel->show();
-        scoreValue->show();
-        fuelGaugeLabel->show();
-        fuelGauge->show();
-
-        model->start();
-    };
+    void startGame();
 };
+
+
+
 
 #endif // MAINWINDOW_H

@@ -2,6 +2,7 @@
 // Created by Y50 on 2/2/2017.
 //
 
+#include <iostream>
 #include "Player.h"
 
 Player::Player(int posX, int posY, Direction direction) :
@@ -9,24 +10,42 @@ Player::Player(int posX, int posY, Direction direction) :
 
     this->FuelPercentage = 100;
     this->Score = 0;
+    this->speed = 0;
+    this->lastmove = 0;
 
-    playerpxmap = new MyPlan(10);
+    QString raider(RES_PATH);
+    raider.append("/raider.png");
+    QImage IMGtmp(raider);
+    IMGraider=new QImage(IMGtmp.scaled(sizeX,sizeY));
+
+    QString raider_R(RES_PATH);
+    raider_R.append("/raider_mv_right.png");
+    QImage IMGtmp1(raider_R);
+    IMGraider_R=new QImage(IMGtmp1.scaled(sizeX-10,sizeY));
+
+    QString raider_L(RES_PATH);
+    raider_L.append("/raider_mv_left.png");
+    QImage IMGtmp2(raider_L);
+    IMGraider_L=new QImage(IMGtmp2.scaled(sizeX-10,sizeY));
+
+//    playerpxmap = new MyPlan(10);
     QString tmpstr(RES_PATH);
     tmpstr.append("/raider.png");
 
     QImage image(tmpstr);
     image=image.scaled(sizeX,sizeY);
 
-    playerpxmap->setPixmap(QPixmap::fromImage(image));
-    setGraphicObject(playerpxmap);
+    this->setGraphicObject(new QGraphicsPixmapItem());
+    getGraphicObject()->setPixmap(QPixmap::fromImage(image));
 
-    playerpxmap->setPos(posX,posY);
-    playerpxmap->setZValue(100);
+    getGraphicObject()->setPos(posX,posY);
+    getGraphicObject()->setZValue(100);
 
-    GraphicScene::getInstance()->addItem(playerpxmap);
+    GraphicScene::getInstance()->addItem(getGraphicObject());
 
-    playerpxmap->setFlag(QGraphicsItem::ItemIsFocusable);
-    playerpxmap->setFocus();
+    startTimer();
+//    playerpxmap->setFlag(QGraphicsItem::ItemIsFocusable);
+//    playerpxmap->setFocus();
 }
 
 
@@ -44,4 +63,59 @@ int Player::getFuelPercentage() const {
 
 int Player::getScore() const {
     return Score;
+}
+
+void Player::rightKeyReleased() {
+    getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider));
+    lastmove=0;
+}
+
+void Player::leftKeyReleased() {
+    getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider));
+    lastmove=0;
+}
+
+void Player::otherKeyPressed() {
+    getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider));
+    speed = 0;
+    lastmove = 0;
+}
+
+void Player::spacekeyPressed() {
+    Bullet* bullet=new Bullet((int)getGraphicObject()->x(),(int)getGraphicObject()->y(),10,Direction::Right);
+}
+
+void Player::leftKeyPressed() {
+    lastmove = -1;
+}
+
+void Player::rightKeyPressed() {
+    lastmove = 1;
+}
+
+
+void Player::move() {
+    if(lastmove == 1)
+    {
+        speed += 2;
+    }
+    if(lastmove == -1)
+    {
+        speed -= 2;
+    }
+    if(lastmove == 0)
+    {
+        speed = 0;
+    }
+    getGraphicObject()->moveBy(speed / 10,0);
+    if(speed < 0) {
+        getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider_L));
+    }
+    else if(speed > 0)
+    {
+        getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider_R));
+    }
+    else{
+        getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider));
+    }
 }

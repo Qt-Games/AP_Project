@@ -30,8 +30,6 @@ MainWindow::MainWindow(Model* model, QWidget *parent) :
     graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     graphicsScene->setSceneRect(0 , 0 , Model::SceneWidth, Model::SceneHeight);
     mainLayout->addWidget(graphicsView);
-    adjustSize();
-    graphicsView->hide();
 
     playerInfoLayout = new QHBoxLayout();
     playerInfoWidget = new QWidget();
@@ -43,7 +41,7 @@ MainWindow::MainWindow(Model* model, QWidget *parent) :
     scoreValue->setText("0");
 
     fuelGaugeLabel = new QLabel();
-    fuelGaugeLabel->setText("       Remaining Fuel");
+    fuelGaugeLabel->setText("              Remaining Fuel");
     fuelGauge = new QProgressBar();
     fuelGauge->setMinimum(0);
     fuelGauge->setMaximum(100);
@@ -53,6 +51,7 @@ MainWindow::MainWindow(Model* model, QWidget *parent) :
     scoreValue->hide();
     fuelGaugeLabel->hide();
     fuelGauge->hide();
+    graphicsView->hide();
 
     playerInfoLayout->addWidget(scoreLabel);
     playerInfoLayout->addWidget(scoreValue);
@@ -97,6 +96,52 @@ void MainWindow::updateView() {
     scoreValue->setText(ss.str().c_str());
 }
 
+
+void MainWindow::startGame() {
+    startButton->hide();
+    startButton->setEnabled(false);
+
+    graphicsView->show();
+    scoreLabel->show();
+    scoreValue->show();
+    fuelGaugeLabel->show();
+    fuelGauge->show();
+
+    model->start();
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *event) {
+    if(model->getPlayer() != NULL)
+    {
+        if(event->key()==Qt::Key_Left){
+            model->getPlayer()->leftKeyReleased();
+        }
+        else if(event->key()==Qt::Key_Right){
+            model->getPlayer()->rightKeyReleased();
+        }
+    }
+    QWidget::keyReleaseEvent(event);
+}
+
+
+void MainWindow::keyPressEvent(QKeyEvent *event) {
+    if(model->getPlayer() != NULL)
+    {
+        if(event->key()==Qt::Key_Left){
+            model->getPlayer()->leftKeyPressed();
+        }
+        else if(event->key()==Qt::Key_Right){
+            model->getPlayer()->rightKeyPressed();
+        }
+        else if(event->key()==Qt::Key_Space) {
+            model->getPlayer()->spacekeyPressed();
+        }
+        else {
+            model->getPlayer()->otherKeyPressed();
+        }
+    }
+    QWidget::keyPressEvent(event);
+}
 
 
 

@@ -28,19 +28,19 @@ void MyBullet::moveFront() {
     {
         delete this;
     }
-    QList<QGraphicsItem *> collidingItems=this->collidingItems();
-    for(auto it=collidingItems.begin();it!=collidingItems.end();it++){
-        if(typeid(**it)!=typeid(MyPlan )) {
-            (*it)->hide();
-            delete this;
-            std::cout << "bullet has been hit to the target" << std::endl;
-        }
-        else
-        {
-            std::cout << "heheh" << std::endl;
-        }
-
-    }
+//    QList<QGraphicsItem *> collidingItems=this->collidingItems();
+//    for(auto it=collidingItems.begin();it!=collidingItems.end();it++){
+//        if(typeid(**it)!=typeid(MyPlan)) {
+//            (*it)->hide();
+//            delete this;
+//            std::cout << "bullet has been hit to the target" << std::endl;
+//        }
+//        else
+//        {
+//            std::cout << "heheh" << std::endl;
+//        }
+//
+//    }
 
 }
 

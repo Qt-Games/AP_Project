@@ -26,6 +26,7 @@ void Model::setPaused(bool paused) {
 
 
 Model::Model(){
+    this->player = NULL;
     this->paused = true;
     this->map = new Map(this);
 }

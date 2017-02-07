@@ -20,6 +20,11 @@ Ship::Ship(int posX, int posY, Direction direction) :
 
     shippxmap->setPos(posX,posY);
 
+    if(direction == Direction::Left)
+    {
+        this->flip();
+    }
+
     GraphicScene::getInstance()->addItem(shippxmap);
 
 }

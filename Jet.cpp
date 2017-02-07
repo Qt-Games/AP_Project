@@ -23,6 +23,11 @@ Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet:
 
     jetpxmap->setPos(posX,posY);
 
+    if(direction == Direction::Left)
+    {
+        this->flip();
+    }
+
     GraphicScene::getInstance()->addItem(jetpxmap);
     getGraphicObject()->setZValue(50);
 

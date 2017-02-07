@@ -20,6 +20,11 @@ Helicopter::Helicopter(int posX, int posY, Direction direction) :
 
     helicopterpxmap->setPos(posX,posY);
 
+    if(direction == Direction::Left)
+    {
+        this->flip();
+    }
+
     GraphicScene::getInstance()->addItem(helicopterpxmap);
 
 }

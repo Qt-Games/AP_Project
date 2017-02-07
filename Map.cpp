@@ -227,7 +227,6 @@ void Map::advanceTime() {
         }
         addLevel(createRandomLevel(currentHardness));
     }
-
     model->advanceTime();
 }
 

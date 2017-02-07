@@ -38,7 +38,7 @@ public:
     void setFinished(bool isFinished);
     virtual ~MapStripe();
 public slots:
-    void scrollDown();
+    void advanceTime();
 };
 
 

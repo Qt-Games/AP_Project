@@ -9,9 +9,17 @@
 #include "ScrollingObject.h"
 
 class Road : public ScrollingObject{
+    int sizeX;
+    int sizeY;
 
 public:
     Road(int posX, int posY, int sizeX, int sizeY);
+
+    virtual int getSizeX() override {
+        return sizeX;
+    }
+
+
 };
 
 

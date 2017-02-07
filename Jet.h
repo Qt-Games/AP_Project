@@ -12,12 +12,18 @@ class Jet : public EnemyObject{
 public:
     static const int sizeX = 50;
     static const int sizeY = 30;
-    static const int speed = 20;
-
+    static const int speed = 5;
     Jet(int posX, int posY, Direction direction);
 
 private:
     virtual bool canPassThroughMapObjects();
+
+public:
+    virtual int getSizeX() override {
+        return Jet::sizeX;
+    }
+
+
 };
 
 

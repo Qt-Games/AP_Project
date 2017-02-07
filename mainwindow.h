@@ -36,19 +36,11 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(Model* model,QWidget *parent = 0);
-    void setScoreValue(int value);
-    void setFuelGauge(int value);
     void updateView();
     ~MainWindow();
 
-    virtual void grabKeyboard() {
-        std::cout << "shit" << std::endl;
-        QWidget::grabKeyboard();
-    }
-
 protected:
     virtual void keyPressEvent(QKeyEvent *event);
-
     virtual void keyReleaseEvent(QKeyEvent *event);
 
 private:

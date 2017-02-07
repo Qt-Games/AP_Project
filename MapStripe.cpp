@@ -38,7 +38,7 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
             x = (Model::SceneWidth / 2) - centerBankWidth;
             y = posY;
             Grass *CenterGrass = new Grass(x, y, centerBankWidth * 2,MapStripe::height);
-            std::cout << "center grass from " << (Model::SceneWidth / 2) - centerBankWidth << " to " ;
+            std::cout << "center grass from " << (Model::SceneWidth / 2) - centerBankWidth << " to ";
             std::cout <<  (Model::SceneWidth / 2) - centerBankWidth + centerBankWidth*2 << endl;
             addToScrollingObjects(CenterGrass);
         }
@@ -55,7 +55,7 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
 
     timer = new QTimer();
 
-    connect(timer, SIGNAL(timeout()), this, SLOT(scrollDown()));
+    connect(timer, SIGNAL(timeout()), this, SLOT(advanceTime()));
 
     timer->start(10);
 }
@@ -92,7 +92,7 @@ bool MapStripe::isFinished() const {
     return finished;
 }
 
-void MapStripe::scrollDown() {
+void MapStripe::advanceTime() {
     if(model->isPaused()){
         return;
     }
@@ -103,6 +103,23 @@ void MapStripe::scrollDown() {
     if(destructableObject != NULL)
     {
         destructableObject->scrollDown();
+        destructableObject->move();
+        if(!destructableObject->canPassThroughMapObjects())
+        {
+            int start = destructableObject->getPosX();
+            int end = destructableObject->getPosX() + destructableObject->getSizeX();
+
+            for(ScrollingObject* scrollingObject: scrollingObjects)
+            {
+                int scrollingStart = scrollingObject->getPosX();
+                int scrollingEnd = scrollingObject->getPosX() + scrollingObject->getSizeX();
+
+                if(start < scrollingEnd && end > scrollingStart)
+                {
+                    destructableObject->flip();
+                }
+            }
+        }
     }
 
     posY += Model::ScrollAmount;
@@ -111,4 +128,5 @@ void MapStripe::scrollDown() {
     {
         this->setFinished(true);
     }
+
 }

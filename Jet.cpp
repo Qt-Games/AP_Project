@@ -24,5 +24,6 @@ Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet:
     jetpxmap->setPos(posX,posY);
 
     GraphicScene::getInstance()->addItem(jetpxmap);
+    getGraphicObject()->setZValue(50);
 
 }

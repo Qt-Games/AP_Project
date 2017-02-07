@@ -16,9 +16,6 @@ MyBullet::MyBullet() {
     connect(timer,SIGNAL(timeout()),this,SLOT(moveFront()));
 
     timer->start(40);
-
-
-
 }
 
 void MyBullet::moveFront() {

@@ -239,7 +239,7 @@ void Map::startTimer() {
 }
 
 Map::Map(Model* model) : model(model){
-    currentHardness = 1;
+    currentHardness = 5;
 }
 
 void Map::startGame() {

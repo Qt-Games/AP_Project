@@ -10,12 +10,6 @@
 class EnemyObject:public DestructableObject {
 public:
     EnemyObject(int posX, int posY, int speed, Direction direction);
-
-    void move();
-
-    virtual bool canPassThroughMapObjects() = 0;
-
-
 };
 
 

@@ -15,6 +15,15 @@ public:
     static const int sizeY = 100;
     static const int speed = 0;
     FuelDepot(int posX, int posY, Direction direction);
+
+    virtual int getSizeX() override {
+        return FuelDepot::sizeX;
+    }
+
+    virtual bool canPassThroughMapObjects() override {
+        return false;
+    }
+
 };
 
 

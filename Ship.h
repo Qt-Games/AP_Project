@@ -13,9 +13,15 @@ class Ship : public NonPassingThroughGrassObject{
 public:
     static const int sizeX = 100;
     static const int sizeY = 30;
-    static const int speed = 10;
+    static const int speed = 1;
 
     Ship(int posX, int posY, Direction direction);
+
+    virtual int getSizeX() override {
+        return Ship::sizeX;
+    }
+
+
 };
 
 

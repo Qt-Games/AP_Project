@@ -11,8 +11,9 @@
 #include <QPen>
 
 class Grass: public ScrollingObject {
+    int sizeX;
+    int sizeY;
 public:
-
     Grass(int posX, int posY, int sizeX, int sizeY);
 private:
     QGraphicsRectItem* GreenRec;
@@ -22,7 +23,9 @@ public:
         this->setPosY(this->getPosY() + Model::ScrollAmount);
     }
 
-
+    virtual int getSizeX() override {
+        return sizeX;
+    }
 };
 
 

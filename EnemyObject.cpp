@@ -9,6 +9,3 @@ EnemyObject::EnemyObject(int posX, int posY, int speed, Direction direction) :
 
 }
 
-void EnemyObject::move() {
-
-}

@@ -9,11 +9,19 @@
 #include "DestructableObject.h"
 
 class Bridge : public DestructableObject{
-
+    int sizeX;
+    int sizeY;
 public:
 
     Bridge(int posX, int posY, int sizeX, int sizeY);
 
+    virtual int getSizeX() override {
+        return this->sizeX;
+    }
+
+    virtual bool canPassThroughMapObjects() override {
+        return false;
+    }
 };
 
 

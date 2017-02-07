@@ -9,9 +9,15 @@
 
 class House:public ScrollingObject{
 public:
-
-
+    static const int sizeX = 50;
+    static const int sizeY = 50;
     House(int posX, int posY, int speed, Direction direction);
+
+    virtual int getSizeX() override {
+        return House::sizeX;
+    }
+
+
 };
 
 

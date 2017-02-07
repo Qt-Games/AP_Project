@@ -5,6 +5,8 @@
 #ifndef AP_PROJECT_SCROLLINGOBJECT_H
 #define AP_PROJECT_SCROLLINGOBJECT_H
 #include "Object.h"
+#include "Model.h"
+#include <iostream>
 
 class ScrollingObject:public Object {
 
@@ -13,6 +15,24 @@ public:
     void collide();
     ScrollingObject(int posX, int posY, int speed, Direction direction);
 
+    virtual int getSizeX() = 0;
+
+    void move()
+    {
+        getGraphicObject()->moveBy(getSpeed() , 0);
+        this->setPosX(this->getPosX() + getSpeed());
+
+        if(this->getPosX() < (-1 * getSizeX()))
+        {
+            this->setPosX(Model::SceneWidth);
+            this->getGraphicObject()->setPos(Model::SceneWidth, this->getGraphicObject()->y());
+        }
+        if(this->getPosX() > Model::SceneWidth)
+        {
+            this->setPosX(-1 * getSizeX());
+            this->getGraphicObject()->setPos(-1 * getSizeX(), this->getGraphicObject()->y());
+        }
+    }
 };
 
 

@@ -83,7 +83,7 @@ void Player::otherKeyPressed() {
 }
 
 void Player::spacekeyPressed() {
-    if(bullet==NULL)
+    if(Bullet::NumberOfBullets<1)
         bullet=new Bullet((int)getGraphicObject()->x(),(int)getGraphicObject()->y(),10,Direction::Right);
 }
 

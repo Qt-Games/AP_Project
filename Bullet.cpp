@@ -4,6 +4,11 @@
 
 #include "Bullet.h"
 #include "GraphicScene.h"
+#include <iostream>
+
+using namespace std;
+
+int Bullet::NumberOfBullets=0;
 
 Bullet::Bullet(int posX, int posY, int speed, Direction direction) : Object(posX, posY, speed, direction) {
 
@@ -24,27 +29,37 @@ Bullet::Bullet(int posX, int posY, int speed, Direction direction) : Object(posX
     GraphicScene::getInstance()->addItem(bulletpxmap);
 
     QTimer* timer=new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(moveFront()));
+    connect(timer,SIGNAL(timeout()),this,SLOT(moveFront1()));
 
     timer->start(10);
+    NumberOfBullets++;
 
 }
 
-void Bullet::moveFront() {
+void Bullet::moveFront1() {
     if(bulletpxmap==NULL)
         return;
+    cout<<"Working"<<endl;
     pos_Y-=20;
     bulletpxmap->setPos(pos_X,pos_Y);
+
     if(pos_Y+30<0)
     {
-        //delete bulletpxmap;
-        // delete timer;
-        timer->stop();
+        bulletpxmap=NULL;
+        delete this;
     }
 }
 
 Bullet::~Bullet() {
-    
+    cout<<"DONE!!!"<<endl;
+    NumberOfBullets--;
+//    try {
+//        //delete timer;
+//    }
+//    catch(...)
+//    {
+//
+//    }
 }
 
 

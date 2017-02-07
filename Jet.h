@@ -12,7 +12,7 @@ class Jet : public EnemyObject{
 public:
     static const int sizeX = 50;
     static const int sizeY = 30;
-    static const int speed = 5;
+    static const int speed = 10;
     Jet(int posX, int posY, Direction direction);
 
 private:

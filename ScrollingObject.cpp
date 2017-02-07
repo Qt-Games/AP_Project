@@ -10,6 +10,7 @@
 void ScrollingObject::scrollDown() {
     this->getGraphicObject()->moveBy(0, Model::ScrollAmount);
     this->setPosY(this->getPosY() + Model::ScrollAmount);
+    std::cout << getId() << std::endl;
 }
 
 void ScrollingObject::collide() {

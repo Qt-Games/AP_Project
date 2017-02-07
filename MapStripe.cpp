@@ -30,14 +30,14 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
     {
         x = 0;
         y = posY;
-        Grass* leftSideGrass = new Grass(x, y, sideBankWidth, MapStripe::height);
+        Grass* leftSideGrass = new Grass(x, y, sideBankWidth, MapStripe::height+ 5);
         std::cout << "left side grass from 0 to " << sideBankWidth << endl;
         addToScrollingObjects(leftSideGrass);
 
         if(centerBankWidth != 0) {
             x = (Model::SceneWidth / 2) - centerBankWidth;
             y = posY;
-            Grass *CenterGrass = new Grass(x, y, centerBankWidth * 2,MapStripe::height);
+            Grass *CenterGrass = new Grass(x, y, centerBankWidth * 2,MapStripe::height + 5);
             std::cout << "center grass from " << (Model::SceneWidth / 2) - centerBankWidth << " to ";
             std::cout <<  (Model::SceneWidth / 2) - centerBankWidth + centerBankWidth*2 << endl;
             addToScrollingObjects(CenterGrass);
@@ -45,7 +45,7 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
 
         x = Model::SceneWidth - sideBankWidth;
         y = posY;
-        Grass* rightSideGrass = new Grass(x, y, sideBankWidth, MapStripe::height);
+        Grass* rightSideGrass = new Grass(x, y, sideBankWidth, MapStripe::height + 5);
         std::cout << "right side grass from " << Model::SceneWidth - sideBankWidth << " to ";
         std::cout << Model::SceneWidth << endl;
         addToScrollingObjects(rightSideGrass);
@@ -57,7 +57,7 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
 
     connect(timer, SIGNAL(timeout()), this, SLOT(advanceTime()));
 
-    timer->start(10);
+    timer->start(20);
 }
 
 
@@ -121,12 +121,10 @@ void MapStripe::advanceTime() {
             }
         }
     }
-
     posY += Model::ScrollAmount;
 
     if(posY >= Model::SceneHeight)
     {
         this->setFinished(true);
     }
-
 }

@@ -13,7 +13,7 @@ class Helicopter : public NonPassingThroughGrassObject{
 public:
     static const int sizeX = 50;
     static const int sizeY = 30;
-    static const int speed = 2;
+    static const int speed = 4;
 
     Helicopter(int posX, int posY, Direction direction);
 

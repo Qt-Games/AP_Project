@@ -21,7 +21,7 @@ class Model {
 public:
     static const int SceneWidth = 1000;
     static const int SceneHeight = 1000;
-    static const int ScrollAmount = 2;
+    static const int ScrollAmount = 4;
     static const int FuelDecreaseRate = 1;
 
     void start();

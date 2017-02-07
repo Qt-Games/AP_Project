@@ -45,3 +45,7 @@ QGraphicsPixmapItem *Object::getGraphicObject() const {
 void Object::setGraphicObject(QGraphicsPixmapItem *GraphicObject) {
     Object::GraphicObject = GraphicObject;
 }
+
+int Object::getId() const {
+    return id;
+}

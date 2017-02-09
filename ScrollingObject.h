@@ -14,6 +14,7 @@ public:
     virtual bool isInTheObject(int Xpos,int Ypos){
         return false;
     };
+
     virtual void scrollDown();
     void collide();
     ScrollingObject(int posX, int posY, int speed, Direction direction);
@@ -36,6 +37,9 @@ public:
             this->getGraphicObject()->setPos(-1 * getSizeX(), this->getGraphicObject()->y());
         }
     }
+
+    virtual void hitByBullet(){};
+    virtual void hitByPlane(){};
 };
 
 

@@ -42,7 +42,7 @@ void Bullet::moveFront1() {
     if(bulletpxmap==NULL)
         return;
 
-    pos_Y-=20;
+    pos_Y-=getSpeed();
     bulletpxmap->setPos(pos_X,pos_Y);
 
     if(pos_Y+30<0)
@@ -68,9 +68,9 @@ void Bullet::check_collision() {
 
             for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
                      pit != (*it)->scrollingObjects.end(); pit++) {
-                    if((*pit)->isInTheObject(pos_X,pos_Y)){
-                        cout<<"YAYYYYYY"<<endl;
-                        return;
+                    if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+                        (*pit)->hitByBullet();
+
                     }
                 }
 

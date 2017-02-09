@@ -25,6 +25,7 @@ public:
     static const int sizeY = 40;
     static int NumberOfBullets;
     static std::deque<MapStripe*> level;
+    static std::deque<MapStripe*> tmpLevel;
 
 
     Bullet(int posX, int posY, int speed, Direction direction);

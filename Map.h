@@ -16,7 +16,8 @@ class Map : public QObject{
 
     int currentHardness;
     std::deque<MapStripe*> mapStripes;
-    std::vector<MapStripe*> trashStripes;
+    std::vector<MapStripe*> trashStripes1;
+    std::vector<MapStripe*> trashStripes2;
     QTimer* timer;
     Model* model;
 

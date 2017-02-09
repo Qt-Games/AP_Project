@@ -10,6 +10,7 @@ using namespace std;
 
 int Bullet::NumberOfBullets=0;
 std::deque<MapStripe*> Bullet::level;
+std::deque<MapStripe*> Bullet::tmpLevel;
 
 
 Bullet::Bullet(int posX, int posY, int speed, Direction direction) : Object(posX, posY, speed, direction) {
@@ -65,7 +66,6 @@ void Bullet::check_collision() {
 
     for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
 
-
             for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
                      pit != (*it)->scrollingObjects.end(); pit++) {
                     if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
@@ -73,9 +73,17 @@ void Bullet::check_collision() {
 
                     }
                 }
+    }
 
+    for(std::deque<MapStripe*>::iterator it=tmpLevel.begin();it!=tmpLevel.end();it++){
 
+        for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
+             pit != (*it)->scrollingObjects.end(); pit++) {
+            if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+                (*pit)->hitByBullet();
 
+            }
+        }
     }
 
 

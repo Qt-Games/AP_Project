@@ -214,7 +214,7 @@ void Map::advanceTime() {
         {
             mapStripes.pop_front();
             //delete last;
-            trashStripes.push_back(last);
+            trashStripes1.push_back(last);
         }
         else
         {
@@ -230,14 +230,16 @@ void Map::advanceTime() {
         }
         std::deque<MapStripe*> tmp_level=createRandomLevel(currentHardness);
         addLevel(tmp_level);
+        Bullet::tmpLevel=Bullet::level;
         Bullet::level=tmp_level;
         cout<<"NEW_LEVEL ADDED!!!"<<endl;
 
         //deleting the useless mapstrips:
-        for_each(trashStripes.begin(),trashStripes.end(),[](MapStripe* strp){
+        for_each(trashStripes2.begin(),trashStripes2.end(),[](MapStripe* strp){
             delete strp;
         });
-        trashStripes.clear();
+        trashStripes2=trashStripes1;
+        trashStripes1.clear();
 
     }
     model->advanceTime();

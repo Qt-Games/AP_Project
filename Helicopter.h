@@ -9,6 +9,10 @@
 
 class Helicopter : public NonPassingThroughGrassObject{
 
+    bool isDestroyed;
+
+    QGraphicsPixmapItem* helicopterpxmap;
+
 public:
     static const int sizeX = 50;
     static const int sizeY = 30;
@@ -20,6 +24,13 @@ public:
     virtual int getSizeX() override {
         return Helicopter::sizeX;
     }
+
+    virtual bool isInTheObject(int Xpos, int Ypos) override;
+
+    virtual void hitByBullet() override;
+
+    virtual void hitByPlane() override;
+
 };
 
 

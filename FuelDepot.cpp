@@ -6,11 +6,11 @@
 #include "GraphicScene.h"
 
 FuelDepot::FuelDepot(int posX, int posY, Direction direction):
-        DestructableObject(posX, posY, FuelDepot::speed, direction) {
+        DestructableObject(posX, posY, FuelDepot::speed, direction),isDestroyed(false) {
 
     this->destructionPoints = FuelDepot::destructionPoints;
 
-    QGraphicsPixmapItem* fuelpxmap=new QGraphicsPixmapItem();
+    fuelpxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/fuel.png");
 
@@ -24,4 +24,27 @@ FuelDepot::FuelDepot(int posX, int posY, Direction direction):
 
     GraphicScene::getInstance()->addItem(fuelpxmap);
 
+}
+
+bool FuelDepot::isInTheObject(int Xpos, int Ypos) {
+    if(isDestroyed)
+        return false;
+    if(posX<Xpos && Xpos<posX+sizeX)
+    {
+        if(posY<Ypos && Ypos<posY+sizeY)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void FuelDepot::hitByBullet() {
+    isDestroyed=true;
+    fuelpxmap->hide();
+    std::cout<<"A FuelDepot has been destroyed!\n   What the hell are you doing?"<<std::endl;
+}
+
+void FuelDepot::hitByPlane() {
+    ScrollingObject::hitByPlane();
 }

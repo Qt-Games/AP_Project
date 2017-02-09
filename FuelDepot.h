@@ -10,6 +10,10 @@
 
 class FuelDepot : public DestructableObject{
 
+    QGraphicsPixmapItem* fuelpxmap;
+
+    bool isDestroyed;
+
 public:
     static const int sizeX = 50;
     static const int sizeY = 100;
@@ -25,6 +29,12 @@ public:
     virtual bool canPassThroughMapObjects() override {
         return false;
     }
+
+    virtual bool isInTheObject(int Xpos, int Ypos) override;
+
+    virtual void hitByBullet() override;
+
+    virtual void hitByPlane() override;
 
 };
 

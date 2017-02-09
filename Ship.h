@@ -10,6 +10,10 @@
 
 class Ship : public NonPassingThroughGrassObject{
 
+    QGraphicsPixmapItem* shippxmap;
+
+    bool isDestroyed;
+
 public:
     static const int sizeX = 100;
     static const int sizeY = 30;
@@ -22,6 +26,11 @@ public:
         return Ship::sizeX;
     }
 
+    virtual bool isInTheObject(int Xpos, int Ypos) override;
+
+    virtual void hitByBullet() override;
+
+    virtual void hitByPlane() override;
 
 };
 

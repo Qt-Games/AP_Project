@@ -19,6 +19,11 @@ public:
         return sizeX;
     }
 
+    virtual bool isInTheObject(int Xpos, int Ypos) override;
+
+    virtual void hitByBullet() override;
+
+    virtual void hitByPlane() override;
 
 };
 

@@ -26,3 +26,22 @@ Road::Road(int posX, int posY, int sizeX, int sizeY) :
 
 
 }
+
+bool Road::isInTheObject(int Xpos, int Ypos) {
+    if(posX<Xpos && Xpos<posX+sizeX)
+    {
+        if(posY<Ypos && Ypos<posY+sizeY)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Road::hitByBullet() {
+    std::cout<<"Road is hitted by bullet"<<std::endl;
+}
+
+void Road::hitByPlane() {
+    ScrollingObject::hitByPlane();
+}

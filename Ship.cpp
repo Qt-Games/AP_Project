@@ -6,10 +6,10 @@
 #include "GraphicScene.h"
 
 Ship::Ship(int posX, int posY, Direction direction) :
-        NonPassingThroughGrassObject(posX, posY, Ship::speed, direction) {
+        NonPassingThroughGrassObject(posX, posY, Ship::speed, direction),isDestroyed(false) {
 
     this->destructionPoints = Ship::points;
-    QGraphicsPixmapItem* shippxmap=new QGraphicsPixmapItem();
+    shippxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/Ship.png");
 
@@ -28,4 +28,27 @@ Ship::Ship(int posX, int posY, Direction direction) :
 
     GraphicScene::getInstance()->addItem(shippxmap);
 
+}
+
+bool Ship::isInTheObject(int Xpos, int Ypos) {
+    if(isDestroyed)
+        return false;
+    if(posX<Xpos && Xpos<posX+sizeX)
+    {
+        if(posY<Ypos && Ypos<posY+sizeY)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Ship::hitByBullet() {
+    isDestroyed=true;
+    shippxmap->hide();
+    std::cout<<"A Ship has been destroyed!"<<std::endl;
+}
+
+void Ship::hitByPlane() {
+    ScrollingObject::hitByPlane();
 }

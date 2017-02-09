@@ -70,7 +70,7 @@ void Bullet::check_collision() {
                      pit != (*it)->scrollingObjects.end(); pit++) {
                     if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
                         (*pit)->hitByBullet();
-
+                        delete this;
                     }
                 }
     }
@@ -81,7 +81,7 @@ void Bullet::check_collision() {
              pit != (*it)->scrollingObjects.end(); pit++) {
             if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
                 (*pit)->hitByBullet();
-
+                delete this;
             }
         }
     }

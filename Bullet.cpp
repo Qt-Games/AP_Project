@@ -68,13 +68,15 @@ void Bullet::check_collision() {
 
         if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
             (*it)->destructableObject->hitByBullet();
-            delete this;
+            if(NumberOfBullets!=0)
+                delete this;
         }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
             if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
                 (*pit)->hitByBullet();
-                delete this;
+                if(NumberOfBullets!=0)
+                    delete this;
             }
         }
     }
@@ -83,13 +85,15 @@ void Bullet::check_collision() {
 
         if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
             (*it)->destructableObject->hitByBullet();
-            delete this;
+            if(NumberOfBullets!=0)
+                delete this;
         }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
              if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
                  (*pit)->hitByBullet();
-                 delete this;
+                 if(NumberOfBullets!=0)
+                    delete this;
              }
         }
     }

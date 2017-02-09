@@ -18,12 +18,15 @@ class Object :public QObject{
     static int id_generator;
 
     int id;
-    int posX;
-    int posY;
+
     int speed;
     Direction direction;
 
     QGraphicsPixmapItem* GraphicObject;
+
+protected:
+    int posX;
+    int posY;
 
 public:
 

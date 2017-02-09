@@ -9,6 +9,8 @@
 using namespace std;
 
 int Bullet::NumberOfBullets=0;
+std::deque<MapStripe*> Bullet::level;
+
 
 Bullet::Bullet(int posX, int posY, int speed, Direction direction) : Object(posX, posY, speed, direction) {
 
@@ -39,7 +41,7 @@ Bullet::Bullet(int posX, int posY, int speed, Direction direction) : Object(posX
 void Bullet::moveFront1() {
     if(bulletpxmap==NULL)
         return;
-    cout<<"Working"<<endl;
+
     pos_Y-=20;
     bulletpxmap->setPos(pos_X,pos_Y);
 
@@ -48,19 +50,45 @@ void Bullet::moveFront1() {
         bulletpxmap=NULL;
         delete this;
     }
-}
 
-Bullet::~Bullet() {
-    cout<<"DONE!!!"<<endl;
-    NumberOfBullets--;
-//    try {
-//        //delete timer;
-//    }
-//    catch(...)
-//    {
+    check_collision();
+//    for(){
 //
 //    }
 
 }
+
+void Bullet::check_collision() {
+//    if(level){
+//        return;
+//    }
+
+    for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
+
+
+            for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
+                     pit != (*it)->scrollingObjects.end(); pit++) {
+                    if((*pit)->isInTheObject(pos_X,pos_Y)){
+                        cout<<"YAYYYYYY"<<endl;
+                        return;
+                    }
+                }
+
+
+
+    }
+
+
+}
+
+Bullet::~Bullet() {
+    cout<<"Bullet is killed!!!"<<endl;
+    NumberOfBullets--;
+
+}
+
+
+
+
 
 

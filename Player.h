@@ -49,6 +49,8 @@ public:
     void leftKeyReleased();
     void rightKeyReleased();
 
+    Bullet *getBullet() const;
+
 public slots:
     void move();
 };

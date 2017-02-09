@@ -29,6 +29,7 @@ Model::Model(){
     this->player = NULL;
     this->paused = true;
     this->map = new Map(this);
+
 }
 
 void Model::setMainWindow(MainWindow *mainWindow) {

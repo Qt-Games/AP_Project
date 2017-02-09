@@ -13,3 +13,15 @@ Grass::Grass(int posX, int posY, int sizeX, int sizeY)
     GreenRec->setPen(QPen(QColor(0,255,0,255)));
     GraphicScene::getInstance()->addItem(GreenRec);
 }
+
+bool Grass::isInTheObject(int Xpos, int Ypos) {
+
+    if(posX<Xpos&&Xpos<posX+sizeX)
+    {
+        if(posY<Ypos && Ypos<posY+sizeY)
+        {
+            return true;
+        }
+    }
+    return false;
+}

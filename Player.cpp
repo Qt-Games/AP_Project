@@ -121,3 +121,7 @@ void Player::move() {
         getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider));
     }
 }
+
+Bullet *Player::getBullet() const {
+    return bullet;
+}

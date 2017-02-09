@@ -21,12 +21,15 @@ public:
     virtual void scrollDown() override {
         this->GreenRec->moveBy(0, Model::ScrollAmount);
         this->setPosY(this->getPosY() + Model::ScrollAmount);
+        posY+=Model::ScrollAmount;
         //std::cout << getId() << std::endl;
     }
 
     virtual int getSizeX() override {
         return sizeX;
     }
+
+    virtual bool isInTheObject(int Xpos,int Ypos);
 };
 
 

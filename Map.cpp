@@ -17,7 +17,7 @@
 #include "GraphicScene.h"
 #include "Bullet.h"
 
-std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
+std::deque<MapStripe*> Map::createRandomLevel(int hardness) {
 
     int lastPresentStripePosY = 0;
     if(this->mapStripes.size() > 0) {
@@ -25,14 +25,14 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     }
 
     int k = 1;
-    std::queue<MapStripe*> result;
+    std::deque<MapStripe*> result;
 
     for(int i = 0; i < 3; i++)
     {
         int sideBank = (int)(0.2 * Model::SceneWidth);
         int startY = Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY;
         MapStripe* tempMapStripe = new MapStripe(model, NULL, sideBank, 0, startY, false);
-        result.push(tempMapStripe);
+        result.push_back(tempMapStripe);
         k++;
     }
 
@@ -170,7 +170,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
             }
             int startY = Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY;
             MapStripe* tempMapStripe = new MapStripe(model,destructableObject, sideBank, centerBank, startY, false);
-            result.push(tempMapStripe);
+            result.push_back(tempMapStripe);
             k++;
         }
     }
@@ -179,7 +179,7 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
         int sideBank = (int)(0.2 * Model::SceneWidth);
         int startY = Model::SceneHeight - (k * MapStripe::height) + lastPresentStripePosY;
         MapStripe* tempMapStripe = new MapStripe(model,NULL, sideBank, 0, startY, false);
-        result.push(tempMapStripe);
+        result.push_back(tempMapStripe);
         k++;
     }
 
@@ -189,16 +189,16 @@ std::queue<MapStripe*> Map::createRandomLevel(int hardness) {
     DestructableObject* destructableObject = new Bridge(sideBank, startY, bridgeWidth, MapStripe::height);
     destructableObject->setPlayer(this->model->getPlayer());
     MapStripe* tempMapStripe = new MapStripe(model, destructableObject, sideBank, 0, startY, true);
-    result.push(tempMapStripe);
+    result.push_back(tempMapStripe);
 
     return result;
 }
 
-void Map::addLevel(std::queue<MapStripe*> level) {
+void Map::addLevel(std::deque<MapStripe*> level) {
     while(level.size())
     {
-        mapStripes.push(level.front());
-        level.pop();
+        mapStripes.push_back(level.front());
+        level.pop_front();
     }
 }
 
@@ -212,8 +212,9 @@ void Map::advanceTime() {
         MapStripe* last = mapStripes.front();
         if(last->isFinished())
         {
-            mapStripes.pop();
-            delete last;
+            mapStripes.pop_front();
+            //delete last;
+            trashStripes.push_back(last);
         }
         else
         {
@@ -227,7 +228,17 @@ void Map::advanceTime() {
         {
             currentHardness++;
         }
-        addLevel(createRandomLevel(currentHardness));
+        std::deque<MapStripe*> tmp_level=createRandomLevel(currentHardness);
+        addLevel(tmp_level);
+        Bullet::level=tmp_level;
+        cout<<"NEW_LEVEL ADDED!!!"<<endl;
+
+        //deleting the useless mapstrips:
+        for_each(trashStripes.begin(),trashStripes.end(),[](MapStripe* strp){
+            delete strp;
+        });
+        trashStripes.clear();
+
     }
     model->advanceTime();
 }
@@ -244,6 +255,9 @@ Map::Map(Model* model) : model(model){
 }
 
 void Map::startGame() {
-    addLevel(createRandomLevel(currentHardness));
+    std::deque<MapStripe*> tmp_level=createRandomLevel(currentHardness);
+    Bullet::level=tmp_level;
+    addLevel(tmp_level);
+
     startTimer();
 }

@@ -39,6 +39,8 @@ public:
     virtual ~MapStripe();
 public slots:
     void advanceTime();
+
+    friend class Bullet;
 };
 
 

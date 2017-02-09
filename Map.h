@@ -5,7 +5,7 @@
 #ifndef AP_PROJECT_MAP_H
 #define AP_PROJECT_MAP_H
 
-#include <queue>
+#include <deque>
 #include "MapStripe.h"
 
 class MapStripe;
@@ -15,13 +15,14 @@ class Map : public QObject{
     Q_OBJECT
 
     int currentHardness;
-    std::queue<MapStripe*> mapStripes;
+    std::deque<MapStripe*> mapStripes;
+    std::vector<MapStripe*> trashStripes;
     QTimer* timer;
     Model* model;
 
 public:
-    std::queue<MapStripe*> createRandomLevel(int hardness);
-    void addLevel(std::queue<MapStripe*> level);
+    std::deque<MapStripe*> createRandomLevel(int hardness);
+    void addLevel(std::deque<MapStripe*> level);
     Map(Model* model);
     void startGame();
     void startTimer();

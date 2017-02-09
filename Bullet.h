@@ -5,8 +5,11 @@
 #ifndef AP_PROJECT_BULLET_H
 #define AP_PROJECT_BULLET_H
 #include "Object.h"
+#include "MapStripe.h"
 #include <QTimer>
 #include <QObject>
+#include <queue>
+#include <deque>
 
 
 class Bullet: public Object {
@@ -21,14 +24,19 @@ public:
     static const int sizeX = 40;
     static const int sizeY = 40;
     static int NumberOfBullets;
+    static std::deque<MapStripe*> level;
 
-    int pos_X,pos_Y;
 
     Bullet(int posX, int posY, int speed, Direction direction);
     ~Bullet();
 
-    QTimer* timer;
+    void check_collision();
 
+
+private:
+    int pos_X,pos_Y;
+
+    QTimer* timer;
 
 };
 

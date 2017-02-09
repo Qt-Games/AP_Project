@@ -9,7 +9,7 @@ bool Jet::canPassThroughMapObjects() {
     return true;
 }
 
-Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet::speed, direction) {
+Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet::speed, direction) ,isDestroyed(false){
 
     jetpxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
@@ -31,4 +31,26 @@ Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet:
     GraphicScene::getInstance()->addItem(jetpxmap);
     getGraphicObject()->setZValue(50);
 
+}
+
+bool Jet::isInTheObject(int Xpos, int Ypos) {
+    if(posX<Xpos && Xpos<posX+sizeX)
+    {
+        if(posY<Ypos && Ypos<posY+sizeY)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Jet::hitByBullet() {
+    isDestroyed=true;
+    jetpxmap->hide();
+    std::cout<<"A Jet has been destroyed!"<<std::endl;
+
+}
+
+void Jet::hitByPlane() {
+    ScrollingObject::hitByPlane();
 }

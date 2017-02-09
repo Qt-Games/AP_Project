@@ -22,6 +22,15 @@ private:
 
     QGraphicsPixmapItem* jetpxmap;
 
+    bool isDestroyed;
+
+public:
+    virtual bool isInTheObject(int Xpos, int Ypos) override;
+
+    virtual void hitByBullet() override;
+
+    virtual void hitByPlane() override;
+
 public:
     virtual int getSizeX() override {
         return Jet::sizeX;

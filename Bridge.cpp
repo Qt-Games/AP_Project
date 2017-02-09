@@ -6,11 +6,11 @@
 #include "GraphicScene.h"
 
 Bridge::Bridge(int posX, int posY, int sizeX, int sizeY) :
-        DestructableObject(posX, posY, 0, Direction::Right), sizeX(sizeX), sizeY(sizeY) {
+        DestructableObject(posX, posY, 0, Direction::Right), sizeX(sizeX), sizeY(sizeY),isDestroyed(false) {
 
     this->destructionPoints = Bridge::points;
 
-    QGraphicsPixmapItem* bridgepxmap=new QGraphicsPixmapItem();
+    bridgepxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/bridge.png");
 
@@ -22,6 +22,25 @@ Bridge::Bridge(int posX, int posY, int sizeX, int sizeY) :
 
     setGraphicObject(bridgepxmap);
     GraphicScene::getInstance()->addItem(bridgepxmap);
+
+}
+
+bool Bridge::isInTheObject(int Xpos, int Ypos) {
+    if(posX<Xpos && Xpos<posX+sizeX)
+    {
+        if(posY<Ypos && Ypos<posY+sizeY)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Bridge::hitByBullet() {
+
+    isDestroyed=true;
+    bridgepxmap->hide();
+    std::cout<<"Bridge destroyed!"<<std::endl;
 
 }
 

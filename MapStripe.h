@@ -37,6 +37,8 @@ public:
     bool isFinished() const;
     void setFinished(bool isFinished);
     virtual ~MapStripe();
+
+
 public slots:
     void advanceTime();
 

@@ -63,20 +63,11 @@ void Bullet::check_collision() {
 //    if(level){
 //        return;
 //    }
-
-    for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
-
-            for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
-                     pit != (*it)->scrollingObjects.end(); pit++) {
-                    if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
-                        (*pit)->hitByBullet();
-                        delete this;
-                    }
-                }
-    }
-
     for(std::deque<MapStripe*>::iterator it=tmpLevel.begin();it!=tmpLevel.end();it++){
 
+        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+            (*it)->destructableObject->hitByBullet();
+        }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
             if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
@@ -85,6 +76,22 @@ void Bullet::check_collision() {
             }
         }
     }
+
+    for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
+
+        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+            (*it)->destructableObject->hitByBullet();
+        }
+        for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
+             pit != (*it)->scrollingObjects.end(); pit++) {
+             if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+                 (*pit)->hitByBullet();
+                 delete this;
+             }
+        }
+    }
+
+
 
 
 }

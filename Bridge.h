@@ -11,7 +11,11 @@
 class Bridge : public DestructableObject{
     int sizeX;
     int sizeY;
+    QGraphicsPixmapItem* bridgepxmap;
+
     static const int points = 100;
+    bool isDestroyed;
+
 public:
 
     Bridge(int posX, int posY, int sizeX, int sizeY);
@@ -23,6 +27,10 @@ public:
     virtual bool canPassThroughMapObjects() override {
         return false;
     }
+
+    virtual bool isInTheObject(int Xpos, int Ypos) override;
+
+    virtual void hitByBullet() override;
 };
 
 

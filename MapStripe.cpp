@@ -23,6 +23,7 @@ MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int s
     {
         Road* leftSideRoad = new Road(0, posY, sideBankWidth, MapStripe::height);
         addToScrollingObjects(leftSideRoad);
+
         Road* rightSideRoad = new Road(Model::SceneWidth - sideBankWidth, posY, sideBankWidth, MapStripe::height);
         addToScrollingObjects(rightSideRoad);
     }
@@ -128,3 +129,4 @@ void MapStripe::advanceTime() {
         this->setFinished(true);
     }
 }
+

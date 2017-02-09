@@ -20,6 +20,8 @@ bool Grass::isInTheObject(int Xpos, int Ypos) {
     {
         if(posY<Ypos && Ypos<posY+sizeY)
         {
+            GreenRec->setBrush(QBrush(QColor(0,255,0,0)));
+            GreenRec->setPen(QPen(QColor(0,255,255,255)));
             return true;
         }
     }

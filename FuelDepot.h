@@ -19,6 +19,8 @@ public:
     static const int speed = 0;
     static const int points = 150;
 
+    bool hasAddedFuelToPlayer;
+
     FuelDepot(int posX, int posY, Direction direction);
 
     virtual int getSizeX() override {
@@ -32,7 +34,6 @@ public:
         return false;
     }
 
-    virtual bool isInTheObject(int Xpos, int Ypos) override;
 
     virtual void hitByBullet() override;
 

@@ -36,18 +36,6 @@ Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet:
 
 }
 
-bool Jet::isInTheObject(int Xpos, int Ypos) {
-    if(isDestroyed)
-        return false;
-    if(posX<Xpos && Xpos<posX+sizeX)
-    {
-        if(posY<Ypos && Ypos<posY+sizeY)
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
 void Jet::hitByBullet() {
     isDestroyed=true;

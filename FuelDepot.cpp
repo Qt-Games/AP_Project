@@ -9,6 +9,7 @@ FuelDepot::FuelDepot(int posX, int posY, Direction direction):
         DestructableObject(posX, posY, FuelDepot::speed, direction) {
 
     isDestroyed=false;
+    hasAddedFuelToPlayer = false;
 
     this->destructionPoints = FuelDepot::points;
 
@@ -28,18 +29,6 @@ FuelDepot::FuelDepot(int posX, int posY, Direction direction):
 
 }
 
-bool FuelDepot::isInTheObject(int Xpos, int Ypos) {
-    if(isDestroyed)
-        return false;
-    if(posX<Xpos && Xpos<posX+sizeX)
-    {
-        if(posY<Ypos && Ypos<posY+sizeY)
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
 void FuelDepot::hitByBullet() {
     isDestroyed=true;

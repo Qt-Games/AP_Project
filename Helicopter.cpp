@@ -32,19 +32,6 @@ Helicopter::Helicopter(int posX, int posY, Direction direction) :
 
 }
 
-bool Helicopter::isInTheObject(int Xpos, int Ypos) {
-    if(isDestroyed)
-        return false;
-    if(posX<Xpos && Xpos<posX+sizeX)
-    {
-        if(posY<Ypos && Ypos<posY+sizeY)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
 void Helicopter::hitByBullet() {
     isDestroyed=true;
     helicopterpxmap->hide();

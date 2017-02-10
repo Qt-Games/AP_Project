@@ -32,19 +32,6 @@ Ship::Ship(int posX, int posY, Direction direction) :
 
 }
 
-bool Ship::isInTheObject(int Xpos, int Ypos) {
-    if(isDestroyed)
-        return false;
-    if(posX<Xpos && Xpos<posX+sizeX)
-    {
-        if(posY<Ypos && Ypos<posY+sizeY)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
 void Ship::hitByBullet() {
     isDestroyed=true;
     shippxmap->hide();

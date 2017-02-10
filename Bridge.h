@@ -30,8 +30,6 @@ public:
         return false;
     }
 
-    virtual bool isInTheObject(int Xpos, int Ypos) override;
-
     virtual void hitByBullet() override;
 
     virtual bool hitByPlane() override;

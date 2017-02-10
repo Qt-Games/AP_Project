@@ -22,3 +22,12 @@ void DestructableObject::flip() {
 bool DestructableObject::Destroyed() {
     return isDestroyed;
 }
+
+
+bool DestructableObject::isInTheObject(int posX, int posY, int sizeX, int sizeY) {
+    if(this->isDestroyed)
+    {
+        return false;
+    }
+    return ScrollingObject::isInTheObject(posX, posY, sizeX, sizeY);
+}

@@ -14,17 +14,6 @@ Grass::Grass(int posX, int posY, int sizeX, int sizeY)
     GraphicScene::getInstance()->addItem(GreenRec);
 }
 
-bool Grass::isInTheObject(int Xpos, int Ypos) {
-
-    if(posX<Xpos && Xpos<posX+sizeX)
-    {
-        if(posY<Ypos && Ypos<posY+sizeY)
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
 void Grass::hitByBullet() {
     std::cout<<"Grass is hitted by bullet"<<std::endl;

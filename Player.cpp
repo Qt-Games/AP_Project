@@ -131,7 +131,7 @@ void Player::check_collision() {
     for(std::deque<MapStripe*>::iterator it=tmpLevel.begin();it!=tmpLevel.end();it++){
 
         if((*it)->destructableObject!=NULL
-           && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY)
+           && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY)
               && !((*it)->destructableObject->Destroyed())){
             if((*it)->destructableObject->hitByPlane()){
                 this->getGraphicObject()->hide();
@@ -140,7 +140,7 @@ void Player::check_collision() {
         }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
-            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY) && !((*pit)->Destroyed())){
+            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY) && !((*pit)->Destroyed())){
                 if((*pit)->hitByPlane()){
                     this->getGraphicObject()->hide();
                 }
@@ -151,7 +151,7 @@ void Player::check_collision() {
     for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
 
         if((*it)->destructableObject!=NULL
-           && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY)
+           && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY)
               && !((*it)->destructableObject->Destroyed())){
             if((*it)->destructableObject->hitByPlane()){
                 this->getGraphicObject()->hide();
@@ -160,7 +160,7 @@ void Player::check_collision() {
         }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
-            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY) && !((*pit)->Destroyed())){
+            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY) && !((*pit)->Destroyed())){
                 if((*pit)->hitByPlane()){
                     this->getGraphicObject()->hide();
                 }

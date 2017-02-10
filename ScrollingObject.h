@@ -11,8 +11,16 @@
 class ScrollingObject:public Object {
 
 public:
-    virtual bool isInTheObject(int Xpos,int Ypos){
-        return false;
+    virtual bool isInTheObject(int posX,int posY, int sizeX, int sizeY){
+        if(posX+sizeX < this->getPosX() || posX > this->getPosX() + this->getSizeX())
+        {
+            return false;
+        }
+        if(posY+sizeY < this->getPosY() || posY > this->getPosY() + this->getSizeY())
+        {
+            return false;
+        }
+        return true;
     };
     virtual bool Destroyed();
 

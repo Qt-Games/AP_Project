@@ -66,7 +66,7 @@ void Bullet::check_collision() {
 
     for(std::deque<MapStripe*>::iterator it=tmpLevel.begin();it!=tmpLevel.end();it++){
 
-        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y, Bullet::sizeX, Bullet::sizeY)){
             (*it)->destructableObject->hitByBullet();
             (*it)->explodeDestructibleObject();
             if(NumberOfBullets!=0)
@@ -74,7 +74,7 @@ void Bullet::check_collision() {
         }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
-            if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+            if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y, Bullet::sizeX, Bullet::sizeY)){
                 (*pit)->hitByBullet();
                 if(NumberOfBullets!=0)
                     delete this;
@@ -84,7 +84,7 @@ void Bullet::check_collision() {
 
     for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
 
-        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y, Bullet::sizeX, Bullet::sizeY)){
             (*it)->destructableObject->hitByBullet();
             (*it)->explodeDestructibleObject();
             if(NumberOfBullets!=0)
@@ -92,7 +92,7 @@ void Bullet::check_collision() {
         }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
-             if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
+             if((*pit)->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y, Bullet::sizeX, Bullet::sizeY)){
                  (*pit)->hitByBullet();
                  if(NumberOfBullets!=0)
                     delete this;

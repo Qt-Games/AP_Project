@@ -27,18 +27,6 @@ Bridge::Bridge(int posX, int posY, int sizeX, int sizeY) :
 
 }
 
-bool Bridge::isInTheObject(int Xpos, int Ypos) {
-    if(isDestroyed)
-        return false;
-    if(posX<Xpos && Xpos<posX+sizeX)
-    {
-        if(posY<Ypos && Ypos<posY+sizeY)
-        {
-            return true;
-        }
-    }
-    return false;
-}
 
 void Bridge::hitByBullet() {
 

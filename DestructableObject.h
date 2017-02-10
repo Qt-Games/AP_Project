@@ -21,11 +21,12 @@ public:
     void flip();
     bool Destroyed();
 
+    bool isInTheObject(int posX, int posY, int sizeX, int sizeY);
+
     virtual bool canPassThroughMapObjects() = 0;
     void Destruct();
     void setPlayer(Player *player);
 };
-
 
 
 #endif //AP_PROJECT_DESTRUCTABLEOBJECT_H

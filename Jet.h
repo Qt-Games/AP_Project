@@ -24,7 +24,6 @@ private:
 
 
 public:
-    virtual bool isInTheObject(int Xpos, int Ypos) override;
 
     virtual void hitByBullet() override;
 

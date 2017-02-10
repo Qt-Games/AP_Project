@@ -5,6 +5,9 @@
 #include <iostream>
 #include "Player.h"
 
+std::deque<MapStripe*> Player::level;
+std::deque<MapStripe*> Player::tmpLevel;
+
 Player::Player(int posX, int posY, Direction direction) :
         Object(posX, posY, 0, direction) {
 
@@ -110,6 +113,7 @@ void Player::move() {
         speed = 0;
     }
     getGraphicObject()->moveBy(speed / 10,0);
+    posX+=speed / 10;
     if(speed < 0) {
         getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider_L));
     }
@@ -120,7 +124,39 @@ void Player::move() {
     else{
         getGraphicObject()->setPixmap(QPixmap::fromImage(*IMGraider));
     }
+    check_collision();
 }
+
+void Player::check_collision() {
+    for(std::deque<MapStripe*>::iterator it=tmpLevel.begin();it!=tmpLevel.end();it++){
+
+        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY)){
+            (*it)->destructableObject->hitByPlane();
+
+        }
+        for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
+             pit != (*it)->scrollingObjects.end(); pit++) {
+            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY)){
+                (*pit)->hitByPlane();
+            }
+        }
+    }
+
+    for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
+
+        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY)){
+            (*it)->destructableObject->hitByPlane();
+
+        }
+        for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
+             pit != (*it)->scrollingObjects.end(); pit++) {
+            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY)){
+                (*pit)->hitByPlane();
+            }
+        }
+    }
+}
+
 
 Bullet *Player::getBullet() const {
     return bullet;

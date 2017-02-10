@@ -29,6 +29,8 @@ class Player :  public Object{
 public:
     static const int sizeX = 50;
     static const int sizeY = 50;
+    static std::deque<MapStripe*> level;
+    static std::deque<MapStripe*> tmpLevel;
 
     Player(int posX, int posY, Direction direction);
 
@@ -50,6 +52,8 @@ public:
     void rightKeyReleased();
 
     Bullet *getBullet() const;
+
+    void check_collision();
 
 public slots:
     void move();

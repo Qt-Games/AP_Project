@@ -230,6 +230,10 @@ void Map::advanceTime() {
         }
         std::deque<MapStripe*> tmp_level=createRandomLevel(currentHardness);
         addLevel(tmp_level);
+
+        Player::tmpLevel=Player::level;
+        Player::level=tmp_level;
+
         Bullet::tmpLevel=Bullet::level;
         Bullet::level=tmp_level;
         cout<<"NEW_LEVEL ADDED!!!"<<endl;
@@ -258,6 +262,7 @@ Map::Map(Model* model) : model(model){
 
 void Map::startGame() {
     std::deque<MapStripe*> tmp_level=createRandomLevel(currentHardness);
+    Player::level=tmp_level;
     Bullet::level=tmp_level;
     addLevel(tmp_level);
 

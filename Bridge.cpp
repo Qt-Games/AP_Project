@@ -41,3 +41,5 @@ bool Bridge::hitByPlane() {
     return true;
 }
 
+
+

@@ -22,6 +22,8 @@ public:
 
     Ship(int posX, int posY, Direction direction);
 
+    virtual ~Ship();
+
     virtual int getSizeX() override {
         return Ship::sizeX;
     }

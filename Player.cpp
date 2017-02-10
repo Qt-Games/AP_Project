@@ -154,7 +154,7 @@ void Player::check_collision() {
            && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY)
               && !((*it)->destructableObject->Destroyed())){
             if((*it)->destructableObject->hitByPlane()){
-                this->getGraphicObject()->hide();
+                this->;
             }
 
         }

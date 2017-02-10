@@ -66,7 +66,9 @@ void Bullet::check_collision() {
 
     for(std::deque<MapStripe*>::iterator it=tmpLevel.begin();it!=tmpLevel.end();it++){
 
-        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y, Bullet::sizeX, Bullet::sizeY)){
+        if((*it)->destructableObject!=NULL
+           && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y, Bullet::sizeX, Bullet::sizeY)
+           && !((*it)->destructableObject->Destroyed())){
             (*it)->destructableObject->hitByBullet();
             (*it)->explodeDestructibleObject();
             if(NumberOfBullets!=0)
@@ -84,7 +86,9 @@ void Bullet::check_collision() {
 
     for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
 
-        if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y, Bullet::sizeX, Bullet::sizeY)){
+        if((*it)->destructableObject!=NULL
+           && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y, Bullet::sizeX, Bullet::sizeY)
+           && !((*it)->destructableObject->Destroyed())){
             (*it)->destructableObject->hitByBullet();
             (*it)->explodeDestructibleObject();
             if(NumberOfBullets!=0)

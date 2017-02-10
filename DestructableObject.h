@@ -9,8 +9,8 @@
 #include "ScrollingObject.h"
 
 class DestructableObject : public ScrollingObject{
-    Player* player;
 protected:
+    Player* player;
     int destructionPoints;
     bool isDestroyed;
 
@@ -20,8 +20,6 @@ public:
 
     void flip();
     bool Destroyed();
-
-    bool isInTheObject(int posX, int posY, int sizeX, int sizeY);
 
     virtual bool canPassThroughMapObjects() = 0;
     void Destruct();

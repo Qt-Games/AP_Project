@@ -17,16 +17,25 @@ class Model {
     Bullet* bullet;
     bool paused;
     MainWindow* mainWindow;
+    int lastMove;
 
 public:
     static const int SceneWidth = 1000;
     static const int SceneHeight = 1000;
-    static const int ScrollAmount = 4;
+    static const int BaseScrollAmount = 4;
+    static const int MinScrollAmount = 1;
+    static const int MaxScrollAmount = 7;
+    static int ScrollAmount;
     static const int FuelDecreaseRate = 1;
 
     void start();
     void pause();
     void resume();
+
+    void upKeyPressed();
+    void downKeyPressed();
+    void upKeyReleased();
+    void downKeyReleased();
 
     bool isPaused() const;
     void setPaused(bool paused);

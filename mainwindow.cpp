@@ -120,6 +120,12 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event) {
             model->getPlayer()->rightKeyReleased();
         }
     }
+    if(event->key()==Qt::Key_Up){
+        model->upKeyReleased();
+    }
+    else if(event->key()==Qt::Key_Down){
+        model->downKeyReleased();
+    }
     QWidget::keyReleaseEvent(event);
 }
 
@@ -139,6 +145,12 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
         else {
             model->getPlayer()->otherKeyPressed();
         }
+    }
+    if(event->key()==Qt::Key_Up){
+        model->upKeyPressed();
+    }
+    else if (event->key()==Qt::Key_Down){
+        model->downKeyPressed();
     }
     QWidget::keyPressEvent(event);
 }

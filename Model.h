@@ -20,7 +20,7 @@ class Model {
     int lastMove;
 
 public:
-    static const int SceneWidth = 1000;
+    static const int SceneWidth = 800;
     static const int SceneHeight = 1000;
     static const int BaseScrollAmount = 4;
     static const int MinScrollAmount = 1;
@@ -29,8 +29,6 @@ public:
     static const int FuelDecreaseRate = 1;
 
     void start();
-    void pause();
-    void resume();
 
     void upKeyPressed();
     void downKeyPressed();

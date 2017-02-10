@@ -253,11 +253,11 @@ void Map::advanceTime() {
 void Map::startTimer() {
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(advanceTime()));
-    timer->start(50);
+    timer->start(500);
 }
 
 Map::Map(Model* model) : model(model){
-    currentHardness = 5;
+    currentHardness = 3;
 }
 
 void Map::startGame() {

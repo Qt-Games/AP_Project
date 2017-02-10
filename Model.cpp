@@ -14,7 +14,7 @@ int Model::ScrollAmount = Model::BaseScrollAmount;
 void Model::start() {
     this->map = new Map(this);
     this->player = new Player(Model::SceneWidth / 2 - Player::sizeX / 2,
-                              (Model::SceneHeight - Player::sizeY) * 0.95 -300  ,
+                              (int)((Model::SceneHeight - Player::sizeY) * 0.95),
                               Direction::Right);
     this->player->setModel(this);
     this->paused = false;

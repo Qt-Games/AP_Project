@@ -9,7 +9,6 @@
 
 class Helicopter : public NonPassingThroughGrassObject{
 
-    bool isDestroyed;
 
     QGraphicsPixmapItem* helicopterpxmap;
 
@@ -29,7 +28,7 @@ public:
 
     virtual void hitByBullet() override;
 
-    virtual void hitByPlane() override;
+    virtual bool hitByPlane() override;
 
 };
 

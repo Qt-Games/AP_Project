@@ -18,6 +18,7 @@ class Player :  public Object{
     int FuelPercentage;
     int lastmove;
     int speed;
+    bool isDestroyed;
 
     QImage* IMGraider;
     QImage* IMGraider_R;
@@ -50,6 +51,7 @@ public:
     void otherKeyPressed();
     void leftKeyReleased();
     void rightKeyReleased();
+    void destroy();
 
     Bullet *getBullet() const;
 

@@ -42,6 +42,8 @@ void Road::hitByBullet() {
     std::cout<<"Road is hitted by bullet"<<std::endl;
 }
 
-void Road::hitByPlane() {
-    ScrollingObject::hitByPlane();
+bool Road::hitByPlane() {
+    std::cout<<"Plane has been hit by a Road!"<<std::endl;
+
+    return true;
 }

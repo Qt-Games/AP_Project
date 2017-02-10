@@ -14,7 +14,6 @@ class Bridge : public DestructableObject{
     QGraphicsPixmapItem* bridgepxmap;
 
     static const int points = 100;
-    bool isDestroyed;
 
 public:
 
@@ -31,6 +30,8 @@ public:
     virtual bool isInTheObject(int Xpos, int Ypos) override;
 
     virtual void hitByBullet() override;
+
+    virtual bool hitByPlane() override;
 };
 
 

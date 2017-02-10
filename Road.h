@@ -23,7 +23,7 @@ public:
 
     virtual void hitByBullet() override;
 
-    virtual void hitByPlane() override;
+    virtual bool hitByPlane() override;
 
 };
 

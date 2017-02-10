@@ -6,7 +6,9 @@
 #include "GraphicScene.h"
 
 FuelDepot::FuelDepot(int posX, int posY, Direction direction):
-        DestructableObject(posX, posY, FuelDepot::speed, direction),isDestroyed(false) {
+        DestructableObject(posX, posY, FuelDepot::speed, direction) {
+
+    isDestroyed=false;
 
     this->destructionPoints = FuelDepot::points;
 
@@ -46,6 +48,8 @@ void FuelDepot::hitByBullet() {
     this->Destruct();
 }
 
-void FuelDepot::hitByPlane() {
-    ScrollingObject::hitByPlane();
+bool FuelDepot::hitByPlane() {
+    std::cout<<"Plane has got some juice!"<<std::endl;
+
+    return false;
 }

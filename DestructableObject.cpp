@@ -18,3 +18,7 @@ void DestructableObject::flip() {
     getGraphicObject()->setPixmap(QPixmap::fromImage(image.mirrored(true, false)));
     setSpeed(-1 * getSpeed());
 }
+
+bool DestructableObject::Destroyed() {
+    return isDestroyed;
+}

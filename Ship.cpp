@@ -6,7 +6,9 @@
 #include "GraphicScene.h"
 
 Ship::Ship(int posX, int posY, Direction direction) :
-        NonPassingThroughGrassObject(posX, posY, Ship::speed, direction),isDestroyed(false) {
+        NonPassingThroughGrassObject(posX, posY, Ship::speed, direction) {
+
+    isDestroyed=false;
 
     this->destructionPoints = Ship::points;
     shippxmap=new QGraphicsPixmapItem();
@@ -50,6 +52,8 @@ void Ship::hitByBullet() {
     this->Destruct();
 }
 
-void Ship::hitByPlane() {
-    ScrollingObject::hitByPlane();
+bool Ship::hitByPlane() {
+    std::cout<<"Plane has been hit by a Ship!"<<std::endl;
+
+    return true;
 }

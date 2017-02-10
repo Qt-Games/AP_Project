@@ -44,3 +44,8 @@ bool Ship::hitByPlane() {
 
     return true;
 }
+
+Ship::~Ship() {
+
+
+}

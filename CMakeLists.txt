@@ -23,7 +23,7 @@ set(SOURCE_FILES
 add_executable(AP_Project ${SOURCE_FILES})
 
 find_package(Qt5Widgets REQUIRED)
-find_package(Qt5Multimedia REQUIRED)
+#find_package(Qt5Multimedia REQUIRED)
 
 qt5_use_modules(${PROJECT_NAME} Widgets)
-qt5_use_modules(${PROJECT_NAME} Multimedia)
+#qt5_use_modules(${PROJECT_NAME} Multimedia)

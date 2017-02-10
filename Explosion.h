@@ -25,6 +25,7 @@ Q_OBJECT
     int sizeY;
 
     int currentFrame;
+    bool Done;
 public :
     static const int SpriteSize = 64;
     static const int SpritesInRow = 5;
@@ -34,6 +35,8 @@ public :
     virtual int getSizeX();
     virtual int getSizeY();
     virtual ~Explosion();
+
+    bool isDone();
 
 public slots:
 

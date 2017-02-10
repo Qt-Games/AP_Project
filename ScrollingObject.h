@@ -12,7 +12,7 @@ class ScrollingObject:public Object {
 
 public:
     virtual bool isInTheObject(int posX,int posY, int sizeX, int sizeY){
-        if(posX+sizeX < this->getPosX() || posX > this->getPosX() + this->getSizeX())
+        if(posX+(sizeX/2) < this->getPosX() || posX-(sizeX/2) > this->getPosX() + this->getSizeX())
         {
             return false;
         }

@@ -18,15 +18,15 @@
       <sourceFolder url="file://$MODULE_DIR$/NonPassingThroughGrassObject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Bullet.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Helicopter.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/EnemyObject.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Player.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Object.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ship.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphicScene.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/playerplane.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Object.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/NonPassingThroughGrassObject.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/EnemyObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Model.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Map.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Map.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/House.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/EnemyObject.cpp" isTestSource="false" />
@@ -35,25 +35,20 @@
       <sourceFolder url="file://$MODULE_DIR$/House.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Jet.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Ship.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DestructableObject.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Object.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Helicopter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Bullet.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MyPlan.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/playerplane.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MyBullet.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MyBullet.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Map.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Model.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Explosion.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Bridge.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Grass.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/QtCommon.cmake" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/MyPlan.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MapStripe.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Player.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DestructableObject.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ScrollingObject.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mainwindow.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GraphicScene.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
@@ -62,7 +57,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Bridge.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Road.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Grass.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Helicopter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FuelDepot.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Explosion.h" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">

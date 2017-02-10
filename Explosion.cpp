@@ -7,7 +7,7 @@
 #include "MapStripe.h"
 
 Explosion::Explosion(int posX, int posY, int sizeX, int sizeY, MapStripe* mapStripe) :
-        ScrollingObject(posX, posY, 0, Direction::Left), sizeX(sizeX), sizeY(sizeY), mapStripe(mapStripe) {
+        ScrollingObject(posX, posY, 0, Direction::Left), sizeX(sizeX), sizeY(sizeY), mapStripe(mapStripe),Done(false) {
 
     QString path(RES_PATH);
     path.append("/explosion_sheet.png");
@@ -53,10 +53,17 @@ void Explosion::advanceTime() {
 
     currentFrame ++;
 
-    if(currentFrame == SpritesInRow * SpritesInColumn)
-    {
-        mapStripe->clearExplosion();
+
+    if(currentFrame == SpritesInRow * SpritesInColumn) {
+        if (mapStripe != NULL)
+            mapStripe->clearExplosion();
+
+        Done = true;
     }
+}
+
+bool Explosion::isDone() {
+    return Done;
 }
 
 int Explosion::getSizeX() {

@@ -21,7 +21,6 @@ public:
     void flip();
     bool Destroyed();
 
-    void flip();\
     virtual bool canPassThroughMapObjects() = 0;
     void Destruct();
     void setPlayer(Player *player);

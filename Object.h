@@ -54,14 +54,7 @@ public:
 
     int getId() const;
 
-    virtual ~Object() {
-        QGraphicsPixmapItem* graphicsPixmapItem = this->getGraphicObject();
-        if(graphicsPixmapItem != NULL)
-        {
-            GraphicScene::getInstance()->removeItem(graphicsPixmapItem);
-            delete graphicsPixmapItem;
-        }
-    }
+    virtual ~Object();
 
 };
 

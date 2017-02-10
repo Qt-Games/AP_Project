@@ -12,9 +12,7 @@ class NonPassingThroughGrassObject : public EnemyObject{
 public:
     NonPassingThroughGrassObject(int posX, int posY, int speed, Direction direction);
 
-    virtual bool canPassThroughMapObjects() override {
-        return false;
-    }
+    virtual bool canPassThroughMapObjects() override;
 };
 
 #endif //AP_PROJECT_NONPASSINGTHROUGHGRASSOBJECT_H

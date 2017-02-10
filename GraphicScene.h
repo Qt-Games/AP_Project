@@ -13,21 +13,9 @@ class GraphicScene {
 
 
 public:
-    static QGraphicsScene* getInstance()
-    {
-        if(instance == NULL)
-        {
-            instance = new QGraphicsScene();
-        }
-        return instance;
-    }
+    static QGraphicsScene* getInstance();
 
-    virtual ~GraphicScene() {
-        if(instance != NULL)
-        {
-            delete instance;
-        }
-    }
+    virtual ~GraphicScene();
 };
 
 

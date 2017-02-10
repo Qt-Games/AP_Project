@@ -49,3 +49,12 @@ void Object::setGraphicObject(QGraphicsPixmapItem *GraphicObject) {
 int Object::getId() const {
     return id;
 }
+
+Object::~Object() {
+    QGraphicsPixmapItem* graphicsPixmapItem = this->getGraphicObject();
+    if(graphicsPixmapItem != NULL)
+    {
+        GraphicScene::getInstance()->removeItem(graphicsPixmapItem);
+        delete graphicsPixmapItem;
+    }
+}

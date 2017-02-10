@@ -27,3 +27,18 @@ bool Grass::hitByPlane() {
 //    GreenRec->setPen(QPen(QColor(0,0,0,255)));
     return true;
 }
+
+void Grass::scrollDown() {
+    this->GreenRec->moveBy(0, Model::ScrollAmount);
+    this->setPosY(this->getPosY() + Model::ScrollAmount);
+    //posY+=Model::ScrollAmount;
+    //std::cout << getId() << std::endl;
+}
+
+Grass::~Grass() {
+    if(GreenRec != NULL)
+    {
+        GraphicScene::getInstance()->removeItem(GreenRec);
+        delete GreenRec;
+    }
+}

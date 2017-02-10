@@ -38,12 +38,7 @@ public:
     void setPosY(int posY);
     bool isFinished() const;
     void setFinished(bool isFinished);
-    void explodeDestructibleObject()
-    {
-        int x = destructableObject->getPosX() + destructableObject->getSizeX() / 2 - 50;
-        int y = destructableObject->getPosY() + destructableObject->getSizeY() / 2 - 50;
-        this->explosion = new Explosion(x, y , 100 , 100, this);
-    }
+    void explodeDestructibleObject();
     virtual ~MapStripe();
 
 

@@ -16,23 +16,12 @@ class Grass: public ScrollingObject {
 public:
     Grass(int posX, int posY, int sizeX, int sizeY);
 
-    virtual ~Grass() {
-        if(GreenRec != NULL)
-        {
-            GraphicScene::getInstance()->removeItem(GreenRec);
-            delete GreenRec;
-        }
-    }
+    virtual ~Grass();
 
 private:
     QGraphicsRectItem* GreenRec;
 public:
-    virtual void scrollDown() override {
-        this->GreenRec->moveBy(0, Model::ScrollAmount);
-        this->setPosY(this->getPosY() + Model::ScrollAmount);
-        //posY+=Model::ScrollAmount;
-        //std::cout << getId() << std::endl;
-    }
+    virtual void scrollDown() override;
 
     virtual int getSizeX() override {
         return sizeX;

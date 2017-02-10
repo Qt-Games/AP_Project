@@ -140,3 +140,9 @@ void MapStripe::clearExplosion() {
     delete this->explosion;
     this->explosion = NULL;
 }
+
+void MapStripe::explodeDestructibleObject() {
+    int x = destructableObject->getPosX() + destructableObject->getSizeX() / 2 - 50;
+    int y = destructableObject->getPosY() + destructableObject->getSizeY() / 2 - 50;
+    this->explosion = new Explosion(x, y , 100 , 100, this);
+}

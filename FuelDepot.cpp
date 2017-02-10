@@ -8,7 +8,7 @@
 FuelDepot::FuelDepot(int posX, int posY, Direction direction):
         DestructableObject(posX, posY, FuelDepot::speed, direction),isDestroyed(false) {
 
-    this->destructionPoints = FuelDepot::destructionPoints;
+    this->destructionPoints = FuelDepot::points;
 
     fuelpxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
@@ -43,6 +43,7 @@ void FuelDepot::hitByBullet() {
     isDestroyed=true;
     fuelpxmap->hide();
     std::cout<<"A FuelDepot has been destroyed!\n   What the hell are you doing?"<<std::endl;
+    this->Destruct();
 }
 
 void FuelDepot::hitByPlane() {

@@ -43,6 +43,6 @@ void Bridge::hitByBullet() {
     isDestroyed=true;
     bridgepxmap->hide();
     std::cout<<"Bridge destroyed!"<<std::endl;
-
+    this->Destruct();
 }
 

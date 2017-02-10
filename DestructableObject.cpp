@@ -6,6 +6,7 @@
 #include "Player.h"
 void DestructableObject::Destruct() {
     player->setScore(player->getScore() + this->destructionPoints);
+    std::cout<<"You have received "<<this->destructionPoints<<" points!"<<std::endl;
 }
 
 void DestructableObject::setPlayer(Player *player) {

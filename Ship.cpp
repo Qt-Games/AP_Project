@@ -47,6 +47,7 @@ void Ship::hitByBullet() {
     isDestroyed=true;
     shippxmap->hide();
     std::cout<<"A Ship has been destroyed!"<<std::endl;
+    this->Destruct();
 }
 
 void Ship::hitByPlane() {

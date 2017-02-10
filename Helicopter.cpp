@@ -47,6 +47,7 @@ void Helicopter::hitByBullet() {
     isDestroyed=true;
     helicopterpxmap->hide();
     std::cout<<"A Helicopter has been destroyed!"<<std::endl;
+    this->Destruct();
 }
 
 void Helicopter::hitByPlane() {

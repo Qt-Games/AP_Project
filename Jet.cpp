@@ -11,6 +11,7 @@ bool Jet::canPassThroughMapObjects() {
 
 Jet::Jet(int posX, int posY, Direction direction) : EnemyObject(posX, posY, Jet::speed, direction) ,isDestroyed(false){
 
+    this->destructionPoints = Jet::points;
     jetpxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/jet.png");
@@ -50,6 +51,7 @@ void Jet::hitByBullet() {
     isDestroyed=true;
     jetpxmap->hide();
     std::cout<<"A Jet has been destroyed!"<<std::endl;
+    this->Destruct();
 }
 
 void Jet::hitByPlane() {

@@ -17,6 +17,9 @@ public:
         return House::sizeX;
     }
 
+    virtual int getSizeY() override {
+        return House::sizeY;
+    }
 
 };
 

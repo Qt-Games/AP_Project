@@ -18,10 +18,12 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES
         ${GEN_HEADER_FILES}
-        ${GEN_SOURCE_FILES})
+        ${GEN_SOURCE_FILES} Explosion.cpp Explosion.h)
 
 add_executable(AP_Project ${SOURCE_FILES})
 
 find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Multimedia REQUIRED)
 
 qt5_use_modules(${PROJECT_NAME} Widgets)
+qt5_use_modules(${PROJECT_NAME} Multimedia)

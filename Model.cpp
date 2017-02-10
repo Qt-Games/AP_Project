@@ -7,6 +7,7 @@
 #include "Map.h"
 #include "Player.h"
 #include "mainwindow.h"
+#include "Explosion.h"
 
 void Model::start() {
     this->player = new Player(Model::SceneWidth / 2 - Player::sizeX / 2,

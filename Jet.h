@@ -35,6 +35,9 @@ public:
     virtual int getSizeX() override {
         return Jet::sizeX;
     }
+    virtual int getSizeY() override {
+        return Jet::sizeY;
+    }
 
 
 };

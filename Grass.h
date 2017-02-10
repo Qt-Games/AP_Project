@@ -29,6 +29,10 @@ public:
         return sizeX;
     }
 
+    virtual int getSizeY() override {
+        return sizeY;
+    }
+
     virtual bool isInTheObject(int Xpos,int Ypos);
 
     virtual void hitByBullet() override;

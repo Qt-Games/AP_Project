@@ -14,6 +14,7 @@
 MapStripe::MapStripe(Model* model, DestructableObject *destructableObject, int sideBankWidth, int centerBankWidth, int posY, bool isBridge)
         : model(model), destructableObject(destructableObject), sideBankWidth(sideBankWidth), centerBankWidth(centerBankWidth) {
 
+    explosion = NULL;
     finished = false;
     this->posY = posY;
     int x;
@@ -122,6 +123,11 @@ void MapStripe::advanceTime() {
             }
         }
     }
+    if(explosion != NULL)
+    {
+        explosion->scrollDown();
+    }
+
     posY += Model::ScrollAmount;
 
     if(posY >= Model::SceneHeight)
@@ -130,3 +136,7 @@ void MapStripe::advanceTime() {
     }
 }
 
+void MapStripe::clearExplosion() {
+    delete this->explosion;
+    this->explosion = NULL;
+}

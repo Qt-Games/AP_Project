@@ -16,7 +16,7 @@ public:
     DestructableObject(int posX, int posY, int speed, Direction direction) : ScrollingObject(posX, posY, speed,
                                                                                              direction) { }
 
-    void flip();\
+    void flip();
     virtual bool canPassThroughMapObjects() = 0;
     void Destruct();
     void setPlayer(Player *player);

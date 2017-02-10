@@ -25,6 +25,9 @@ public:
     virtual int getSizeX() override {
         return FuelDepot::sizeX;
     }
+    virtual int getSizeY() override {
+        return FuelDepot::sizeX;
+    }
 
     virtual bool canPassThroughMapObjects() override {
         return false;

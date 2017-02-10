@@ -23,6 +23,9 @@ public:
     virtual int getSizeX() override {
         return this->sizeX;
     }
+    virtual int getSizeY() override {
+        return this->sizeY;
+    }
 
     virtual bool canPassThroughMapObjects() override {
         return false;

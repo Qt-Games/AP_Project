@@ -20,6 +20,7 @@ public:
     ScrollingObject(int posX, int posY, int speed, Direction direction);
 
     virtual int getSizeX() = 0;
+    virtual int getSizeY() = 0;
 
     void move()
     {

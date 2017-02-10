@@ -25,6 +25,9 @@ public:
     virtual int getSizeX() override {
         return Ship::sizeX;
     }
+    virtual int getSizeY() override {
+        return Ship::sizeY;
+    }
 
     virtual bool isInTheObject(int Xpos, int Ypos) override;
 

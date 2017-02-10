@@ -24,6 +24,9 @@ public:
     virtual int getSizeX() override {
         return Helicopter::sizeX;
     }
+    virtual int getSizeY() override {
+        return Helicopter::sizeY;
+    }
 
     virtual bool isInTheObject(int Xpos, int Ypos) override;
 

@@ -8,6 +8,7 @@
 
 #include "DestructableObject.h"
 #include "Model.h"
+#include "Explosion.h"
 #include <thread>
 #include <vector>
 #include <QObject>
@@ -25,6 +26,7 @@ class MapStripe : public QObject {
     bool finished;
     QTimer* timer;
     vector<ScrollingObject*> scrollingObjects;
+    Explosion* explosion;
     DestructableObject* destructableObject;
     Model* model;
 
@@ -36,6 +38,10 @@ public:
     void setPosY(int posY);
     bool isFinished() const;
     void setFinished(bool isFinished);
+    void explodeDestructibleObject()
+    {
+        this->explosion = new Explosion(destructableObject->getPosX(), destructableObject->getPosY(), destructableObject->getSizeX(), destructableObject->getSizeY(), this);
+    }
     virtual ~MapStripe();
 
 
@@ -43,6 +49,8 @@ public slots:
     void advanceTime();
 
     friend class Bullet;
+
+    void clearExplosion();
 };
 
 

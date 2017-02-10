@@ -75,6 +75,10 @@ void Bullet::check_collision() {
            && !((*it)->destructableObject->Destroyed())){
             (*it)->destructableObject->hitByBullet();
             (*it)->explodeDestructibleObject();
+
+            delete (*it)->destructableObject;
+            (*it)->destructableObject=NULL;
+
             if(NumberOfBullets!=0)
                 delete this;
         }
@@ -95,6 +99,10 @@ void Bullet::check_collision() {
            && !((*it)->destructableObject->Destroyed())){
             (*it)->destructableObject->hitByBullet();
             (*it)->explodeDestructibleObject();
+
+            delete (*it)->destructableObject;
+            (*it)->destructableObject=NULL;
+
             if(NumberOfBullets!=0)
                 delete this;
         }

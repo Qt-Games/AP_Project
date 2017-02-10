@@ -3,7 +3,7 @@
 //
 
 #include "Explosion.h"
-#include <QMediaPlayer>
+//#include <QMediaPlayer>
 #include "MapStripe.h"
 
 Explosion::Explosion(int posX, int posY, int sizeX, int sizeY, MapStripe* mapStripe) :
@@ -22,11 +22,11 @@ Explosion::Explosion(int posX, int posY, int sizeX, int sizeY, MapStripe* mapStr
     connect(timer, SIGNAL(timeout()), this, SLOT(advanceTime()));
     timer->start(20);
 
-    QString soundPath(RES_PATH);
-    soundPath.append("/explosion.mp3");
-    QMediaPlayer *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile(soundPath));
-    player->play();
+//    QString soundPath(RES_PATH);
+//    soundPath.append("/explosion.mp3");
+//    QMediaPlayer *player = new QMediaPlayer;
+//    player->setMedia(QUrl::fromLocalFile(soundPath));
+//    player->play();
 
     currentFrame = 0;
 }

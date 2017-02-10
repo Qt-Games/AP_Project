@@ -18,7 +18,7 @@ public:
     static const int sizeY = 100;
     static const int speed = 0;
     static const int points = 150;
-
+    static const int AddedFuelPercentageOnCollision = 30;
     bool hasAddedFuelToPlayer;
 
     FuelDepot(int posX, int posY, Direction direction);

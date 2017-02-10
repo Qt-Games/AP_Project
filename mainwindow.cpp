@@ -3,7 +3,6 @@
 #include "mainwindow.h"
 #include <QGraphicsPixmapItem>
 #include "ui_mainwindow.h"
-#include "playerplane.h"
 #include <QString>
 #include "GraphicScene.h"
 #include "Model.h"

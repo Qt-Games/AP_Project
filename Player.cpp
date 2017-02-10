@@ -102,11 +102,11 @@ void Player::rightKeyPressed() {
 void Player::move() {
     if(lastmove == 1)
     {
-        speed += 2;
+        speed += 1;
     }
     if(lastmove == -1)
     {
-        speed -= 2;
+        speed -= 1;
     }
     if(lastmove == 0)
     {

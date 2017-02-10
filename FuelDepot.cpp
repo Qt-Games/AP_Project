@@ -4,6 +4,7 @@
 
 #include "FuelDepot.h"
 #include "GraphicScene.h"
+#include "Player.h"
 
 FuelDepot::FuelDepot(int posX, int posY, Direction direction):
         DestructableObject(posX, posY, FuelDepot::speed, direction) {
@@ -38,7 +39,16 @@ void FuelDepot::hitByBullet() {
 }
 
 bool FuelDepot::hitByPlane() {
-    std::cout<<"Plane has got some juice!"<<std::endl;
-
+    if(!hasAddedFuelToPlayer)
+    {
+        std::cout<<"Plane has got some juice!"<<std::endl;
+        int fuelPercentage = this->player->getFuelPercentage() + FuelDepot::AddedFuelPercentageOnCollision;
+        if(fuelPercentage > 100)
+        {
+            fuelPercentage = 100;
+        }
+        this->player->setFuelPercentage(fuelPercentage);
+    }
+    hasAddedFuelToPlayer = true;
     return false;
 }

@@ -142,7 +142,8 @@ void Player::check_collision() {
             && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX*0.8, Player::sizeY*0.8)
                && !((*it)->destructableObject->Destroyed())){
             if((*it)->destructableObject->hitByPlane()){
-                this->getGraphicObject()->hide();
+                this->destroy();
+                return;
             }
 
         }
@@ -150,7 +151,8 @@ void Player::check_collision() {
              pit != (*it)->scrollingObjects.end(); pit++) {
             if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX*0.8, Player::sizeY*0.8) && !((*pit)->Destroyed())){
                 if((*pit)->hitByPlane()){
-                    this->getGraphicObject()->hide();
+                    this->destroy();
+                    return;
                 }
             }
         }
@@ -163,6 +165,7 @@ void Player::check_collision() {
               && !((*it)->destructableObject->Destroyed())){
             if((*it)->destructableObject->hitByPlane()){
                 this->destroy();
+                return;
             }
 
         }
@@ -171,6 +174,7 @@ void Player::check_collision() {
             if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX*0.8,Player::sizeY*0.8) && !((*pit)->Destroyed())){
                 if((*pit)->hitByPlane()){
                     this->destroy();
+                    return;
                 }
             }
         }
@@ -179,13 +183,14 @@ void Player::check_collision() {
 
 void Player::destroy() {
 
-    getGraphicObject()->hide();
+    //getGraphicObject()->hide();
     //Explosion tmp_Exp(posX, posY , 100 , 100, NULL);
 
-    //this->model->gameOver();
+    cout<<"Plane has been destroyed"<<endl;
+    timer->stop();
+    this->model->gameOver();
 
     //while(!tmp_Exp.isDone()){}
-    //delete this;
 }
 
 Bullet *Player::getBullet() const {
@@ -201,4 +206,8 @@ void Player::startTimer() {
 
 void Player::setModel(Model* model) {
     this->model = model;
+}
+
+Player::~Player() {
+    delete timer;
 }

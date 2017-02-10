@@ -35,6 +35,9 @@ public:
     static std::deque<MapStripe*> tmpLevel;
 
     Player(int posX, int posY, Direction direction);
+
+    virtual ~Player();
+
     void setModel(Model* model);
     void setScore(int Score);
     void setFuelPercentage(int FuelPercentage);

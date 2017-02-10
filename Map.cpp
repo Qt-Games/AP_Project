@@ -284,5 +284,5 @@ Map::~Map() {
         delete (*it);
     }
     delete timer;
-    cout << "hello";
+    //cout << "hello";
 }

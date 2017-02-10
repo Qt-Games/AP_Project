@@ -100,14 +100,14 @@ void Model::downKeyReleased() {
     lastMove = 0;
 }
 
-void Model::gameOver() {
+void Model::gameOver(const char* status) {
     delete this->player;
     this->player = NULL;
     this->paused = true;
     delete this->map;
     cout << "Game is Over..."<<endl;
     this->map  = NULL;
-    mainWindow->resetView();
+    mainWindow->resetView(status);
 }
 
 

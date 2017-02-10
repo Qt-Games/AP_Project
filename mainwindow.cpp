@@ -59,9 +59,15 @@ MainWindow::MainWindow(Model* model, QWidget *parent) :
 
     mainLayout->addWidget(playerInfoWidget);
 
+    gameOverStatus = new QLabel();
+    gameOverStatus->setAlignment(Qt::AlignCenter);
+    gameOverStatus->setText("You Lost!");
+    gameOverStatus->hide();
+
     startButton = new QPushButton();
     startButton->setText("Start Game !");
     connect(startButton, SIGNAL(clicked()), this, SLOT(startGame()));
+    mainLayout->addWidget(gameOverStatus);
     mainLayout->addWidget(startButton);
 
 
@@ -99,7 +105,7 @@ void MainWindow::updateView() {
 void MainWindow::startGame() {
     startButton->hide();
     startButton->setEnabled(false);
-
+    gameOverStatus->hide();
     graphicsView->show();
     scoreLabel->show();
     scoreValue->show();
@@ -154,10 +160,11 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     QWidget::keyPressEvent(event);
 }
 
-void MainWindow::resetView() {
+void MainWindow::resetView(const char* status) {
     startButton->show();
     startButton->setEnabled(true);
-
+    gameOverStatus->setText(status);
+    gameOverStatus->show();
     graphicsView->hide();
     scoreLabel->hide();
     scoreValue->hide();

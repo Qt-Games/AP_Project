@@ -39,7 +39,7 @@ public:
     void setPaused(bool paused);
     void setMainWindow(MainWindow *mainWindow);
     Player* getPlayer() const;
-    void gameOver();
+    void gameOver(const char* = "You Lost");
     Model();
 
     void advanceTime();

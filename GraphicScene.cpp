@@ -10,6 +10,7 @@ QGraphicsScene *GraphicScene::getInstance() {
     if(instance == NULL)
     {
         instance = new QGraphicsScene();
+        instance->setBackgroundBrush(QBrush(QColor(75, 100 , 255)));
     }
     return instance;
 }

@@ -188,7 +188,7 @@ void Player::destroy() {
 
     cout<<"Plane has been destroyed"<<endl;
     timer->stop();
-    this->model->gameOver();
+    this->model->gameOver("You hit an obstacle!");
 
     //while(!tmp_Exp.isDone()){}
 }

@@ -25,6 +25,7 @@ class MainWindow : public QMainWindow
     QLayout* mainLayout;
     QGraphicsView* graphicsView;
     QGraphicsScene* graphicsScene;
+    QLabel* gameOverStatus;
     QLayout* playerInfoLayout;
     QWidget* playerInfoWidget;
     QPushButton* startButton;
@@ -37,7 +38,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(Model* model,QWidget *parent = 0);
     void updateView();
-    void resetView();
+    void resetView(const char* status);
     ~MainWindow();
 
 protected:

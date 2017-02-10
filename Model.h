@@ -41,11 +41,12 @@ public:
     void setPaused(bool paused);
     void setMainWindow(MainWindow *mainWindow);
     Player* getPlayer() const;
-
+    void gameOver();
     Model();
 
     void advanceTime();
 };
+
 
 
 #endif //AP_PROJECT_MODEL_H

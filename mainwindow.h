@@ -37,6 +37,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(Model* model,QWidget *parent = 0);
     void updateView();
+    void resetView();
     ~MainWindow();
 
 protected:

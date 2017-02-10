@@ -27,7 +27,7 @@ public:
     static std::deque<MapStripe*> level;
     static std::deque<MapStripe*> tmpLevel;
 
-
+    void setModel(Model* model);
     Bullet(int posX, int posY, int speed, Direction direction);
     ~Bullet();
 
@@ -36,9 +36,8 @@ public:
 
 private:
     int pos_X,pos_Y;
-
+    Model* model;
     QTimer* timer;
-
 };
 
 

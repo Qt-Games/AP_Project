@@ -27,6 +27,7 @@ class Player :  public Object{
     Bullet* bullet;
 
     QTimer* timer;
+    Model* model;
 public:
     static const int sizeX = 50;
     static const int sizeY = 50;
@@ -34,17 +35,12 @@ public:
     static std::deque<MapStripe*> tmpLevel;
 
     Player(int posX, int posY, Direction direction);
-
+    void setModel(Model* model);
     void setScore(int Score);
     void setFuelPercentage(int FuelPercentage);
     int getScore() const;
     int getFuelPercentage() const;
-    void startTimer()
-    {
-        timer = new QTimer();
-        connect(timer, SIGNAL(timeout()), this, SLOT(move()));
-        timer->start(10);
-    }
+    void startTimer();
     void rightKeyPressed();
     void leftKeyPressed();
     void spacekeyPressed();
@@ -60,5 +56,6 @@ public:
 public slots:
     void move();
 };
+
 
 #endif //AP_PROJECT_PLAYER_H

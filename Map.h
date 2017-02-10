@@ -28,14 +28,11 @@ public:
     void startGame();
     void startTimer();
 
-    virtual ~Map() {
-        delete timer;
-    }
+    virtual ~Map();
 
 public slots:
     void advanceTime();
 };
-
 
 
 

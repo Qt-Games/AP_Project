@@ -40,6 +40,10 @@ Bullet::Bullet(int posX, int posY, int speed, Direction direction) : Object(posX
 }
 
 void Bullet::moveFront1() {
+    if(this->model->isPaused())
+    {
+        return;
+    }
     if(bulletpxmap==NULL)
         return;
 
@@ -103,10 +107,6 @@ void Bullet::check_collision() {
              }
         }
     }
-
-
-
-
 }
 
 Bullet::~Bullet() {
@@ -115,8 +115,6 @@ Bullet::~Bullet() {
 
 }
 
-
-
-
-
-
+void Bullet::setModel(Model* model) {
+    this->model = model;
+}

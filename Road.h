@@ -11,9 +11,12 @@
 class Road : public ScrollingObject{
     int sizeX;
     int sizeY;
-
+    QGraphicsPixmapItem* roadpxmap;
 public:
     Road(int posX, int posY, int sizeX, int sizeY);
+
+    virtual ~Road() {
+    }
 
     virtual int getSizeX() override {
         return sizeX;

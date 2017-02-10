@@ -9,7 +9,7 @@
 Road::Road(int posX, int posY, int sizeX, int sizeY) :
         ScrollingObject(posX, posY, 0, Direction::Right), sizeX(sizeX), sizeY(sizeY) {
 
-    QGraphicsPixmapItem* roadpxmap=new QGraphicsPixmapItem();
+    roadpxmap=new QGraphicsPixmapItem();
     QString tmpstr(RES_PATH);
     tmpstr.append("/road.png");
 

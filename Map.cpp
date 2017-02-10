@@ -253,7 +253,7 @@ void Map::advanceTime() {
 void Map::startTimer() {
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(advanceTime()));
-    timer->start(500);
+    timer->start(50);
 }
 
 Map::Map(Model* model) : model(model){
@@ -267,4 +267,22 @@ void Map::startGame() {
     addLevel(tmp_level);
 
     startTimer();
+}
+
+Map::~Map() {
+    for(std::deque<MapStripe*>::iterator it=mapStripes.begin();it!=mapStripes.end();it++)
+    {
+        delete (*it);
+    }
+
+    for(std::vector<MapStripe*>::iterator it=trashStripes1.begin();it!=trashStripes1.end();it++)
+    {
+        delete (*it);
+    }
+    for(std::vector<MapStripe*>::iterator it=trashStripes2.begin();it!=trashStripes2.end();it++)
+    {
+        delete (*it);
+    }
+    delete timer;
+    cout << "hello";
 }

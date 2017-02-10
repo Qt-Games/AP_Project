@@ -15,6 +15,15 @@ class Grass: public ScrollingObject {
     int sizeY;
 public:
     Grass(int posX, int posY, int sizeX, int sizeY);
+
+    virtual ~Grass() {
+        if(GreenRec != NULL)
+        {
+            GraphicScene::getInstance()->removeItem(GreenRec);
+            delete GreenRec;
+        }
+    }
+
 private:
     QGraphicsRectItem* GreenRec;
 public:

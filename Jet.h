@@ -17,6 +17,9 @@ public:
 
     Jet(int posX, int posY, Direction direction);
 
+    virtual ~Jet() {
+    }
+
 private:
     virtual bool canPassThroughMapObjects();
 

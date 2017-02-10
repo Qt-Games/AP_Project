@@ -12,9 +12,11 @@
 int Model::ScrollAmount = Model::BaseScrollAmount;
 
 void Model::start() {
+    this->map = new Map(this);
     this->player = new Player(Model::SceneWidth / 2 - Player::sizeX / 2,
                               (Model::SceneHeight - Player::sizeY) * 0.95 -300  ,
                               Direction::Right);
+    this->player->setModel(this);
     this->paused = false;
     map->startGame();
 }
@@ -31,8 +33,6 @@ void Model::setPaused(bool paused) {
 Model::Model(){
     this->player = NULL;
     this->paused = true;
-    this->map = new Map(this);
-
 }
 
 void Model::setMainWindow(MainWindow *mainWindow) {
@@ -41,7 +41,14 @@ void Model::setMainWindow(MainWindow *mainWindow) {
 
 
 void Model::advanceTime() {
+    int fuelPercentage = player->getFuelPercentage() - Model::FuelDecreaseRate;
+    if(fuelPercentage <= 0)
+    {
+        gameOver();
+        return;
+    }
     player->setFuelPercentage(player->getFuelPercentage() - Model::FuelDecreaseRate);
+
     if(lastMove == 1)
     {
         if(Model::ScrollAmount < Model::MaxScrollAmount)
@@ -92,8 +99,14 @@ void Model::downKeyReleased() {
     lastMove = 0;
 }
 
-
-
+void Model::gameOver() {
+    this->player = NULL;
+    this->paused = true;
+    delete this->map;
+    cout << "hello";
+    this->map  = NULL;
+    mainWindow->resetView();
+}
 
 
 

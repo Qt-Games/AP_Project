@@ -19,6 +19,9 @@ public:
 
     Bridge(int posX, int posY, int sizeX, int sizeY);
 
+    virtual ~Bridge() {
+    }
+
     virtual int getSizeX() override {
         return this->sizeX;
     }

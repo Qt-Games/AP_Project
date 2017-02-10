@@ -20,6 +20,11 @@ public:
 
     Helicopter(int posX, int posY, Direction direction);
 
+
+    virtual ~Helicopter() {
+
+    }
+
     virtual int getSizeX() override {
         return Helicopter::sizeX;
     }

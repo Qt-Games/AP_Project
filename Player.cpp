@@ -87,7 +87,10 @@ void Player::otherKeyPressed() {
 
 void Player::spacekeyPressed() {
     if(Bullet::NumberOfBullets<1)
+    {
         bullet=new Bullet((int)getGraphicObject()->x(),(int)getGraphicObject()->y(),20,Direction::Right);
+        bullet->setModel(model);
+    }
 }
 
 void Player::leftKeyPressed() {
@@ -100,6 +103,10 @@ void Player::rightKeyPressed() {
 
 
 void Player::move() {
+    if(this->model->isPaused())
+    {
+        return;
+    }
     if(lastmove == 1)
     {
         speed += 1;
@@ -177,4 +184,15 @@ void Player::destroy() {
 
 Bullet *Player::getBullet() const {
     return bullet;
+}
+
+
+void Player::startTimer() {
+    timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), this, SLOT(move()));
+    timer->start(10);
+}
+
+void Player::setModel(Model* model) {
+    this->model = model;
 }

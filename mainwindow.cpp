@@ -154,6 +154,19 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
     QWidget::keyPressEvent(event);
 }
 
+void MainWindow::resetView() {
+    startButton->show();
+    startButton->setEnabled(true);
+
+    graphicsView->hide();
+    scoreLabel->hide();
+    scoreValue->hide();
+    fuelGaugeLabel->hide();
+    fuelGauge->hide();
+}
+
+
+
 
 
 

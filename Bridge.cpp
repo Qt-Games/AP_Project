@@ -6,7 +6,9 @@
 #include "GraphicScene.h"
 
 Bridge::Bridge(int posX, int posY, int sizeX, int sizeY) :
-        DestructableObject(posX, posY, 0, Direction::Right), sizeX(sizeX), sizeY(sizeY),isDestroyed(false) {
+        DestructableObject(posX, posY, 0, Direction::Right), sizeX(sizeX), sizeY(sizeY) {
+
+    isDestroyed=false;
 
     this->destructionPoints = Bridge::points;
 
@@ -43,6 +45,11 @@ void Bridge::hitByBullet() {
     isDestroyed=true;
     bridgepxmap->hide();
     std::cout<<"Bridge destroyed!"<<std::endl;
+    this->Destruct();
+}
 
+bool Bridge::hitByPlane() {
+    std::cout<<"Plane has been hit by a Bridge!"<<std::endl;
+    return true;
 }
 

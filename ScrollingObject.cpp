@@ -18,6 +18,10 @@ void ScrollingObject::collide() {
 
 }
 
+bool ScrollingObject::Destroyed() {
+    return false;
+}
+
 ScrollingObject::ScrollingObject(int posX, int posY, int speed, Direction direction) :
         Object(posX, posY, speed, direction) {
 

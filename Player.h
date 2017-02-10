@@ -18,6 +18,7 @@ class Player :  public Object{
     int FuelPercentage;
     int lastmove;
     int speed;
+    bool isDestroyed;
 
     QImage* IMGraider;
     QImage* IMGraider_R;
@@ -29,6 +30,8 @@ class Player :  public Object{
 public:
     static const int sizeX = 50;
     static const int sizeY = 50;
+    static std::deque<MapStripe*> level;
+    static std::deque<MapStripe*> tmpLevel;
 
     Player(int posX, int posY, Direction direction);
 
@@ -48,8 +51,11 @@ public:
     void otherKeyPressed();
     void leftKeyReleased();
     void rightKeyReleased();
+    void destroy();
 
     Bullet *getBullet() const;
+
+    void check_collision();
 
 public slots:
     void move();

@@ -49,6 +49,7 @@ public slots:
     void advanceTime();
 
     friend class Bullet;
+    friend class Player;
 
     void clearExplosion();
 };

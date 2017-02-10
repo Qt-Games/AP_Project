@@ -14,6 +14,7 @@ public:
     virtual bool isInTheObject(int Xpos,int Ypos){
         return false;
     };
+    virtual bool Destroyed();
 
     virtual void scrollDown();
     void collide();
@@ -40,7 +41,7 @@ public:
     }
 
     virtual void hitByBullet(){};
-    virtual void hitByPlane(){};
+    virtual bool hitByPlane(){};//return true if the plane is supposed to be destroyed
 };
 
 

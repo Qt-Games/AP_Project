@@ -32,6 +32,9 @@ void Grass::hitByBullet() {
 //    GreenRec->setPen(QPen(QColor(0,0,0,255)));
 }
 
-void Grass::hitByPlane() {
-    ScrollingObject::hitByPlane();
+bool Grass::hitByPlane() {
+    std::cout<<"Grass is collided by a plane"<<std::endl;
+//    GreenRec->setBrush(QBrush(QColor(0,0,0,255)));
+//    GreenRec->setPen(QPen(QColor(0,0,0,255)));
+    return true;
 }

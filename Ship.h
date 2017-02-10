@@ -12,7 +12,7 @@ class Ship : public NonPassingThroughGrassObject{
 
     QGraphicsPixmapItem* shippxmap;
 
-    bool isDestroyed;
+
 
 public:
     static const int sizeX = 100;
@@ -33,7 +33,7 @@ public:
 
     virtual void hitByBullet() override;
 
-    virtual void hitByPlane() override;
+    virtual bool hitByPlane() override;
 
 };
 

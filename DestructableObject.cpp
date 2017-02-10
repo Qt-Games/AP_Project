@@ -6,6 +6,7 @@
 #include "Player.h"
 void DestructableObject::Destruct() {
     player->setScore(player->getScore() + this->destructionPoints);
+    std::cout<<"You have received "<<this->destructionPoints<<" points!"<<std::endl;
 }
 
 void DestructableObject::setPlayer(Player *player) {
@@ -16,4 +17,8 @@ void DestructableObject::flip() {
     QImage image = this->getGraphicObject()->pixmap().toImage();
     getGraphicObject()->setPixmap(QPixmap::fromImage(image.mirrored(true, false)));
     setSpeed(-1 * getSpeed());
+}
+
+bool DestructableObject::Destroyed() {
+    return isDestroyed;
 }

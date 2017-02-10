@@ -6,7 +6,9 @@
 #include "GraphicScene.h"
 
 Helicopter::Helicopter(int posX, int posY, Direction direction) :
-        NonPassingThroughGrassObject(posX, posY, Helicopter::speed, direction),isDestroyed(false) {
+        NonPassingThroughGrassObject(posX, posY, Helicopter::speed, direction) {
+
+    isDestroyed=false;
 
     this->destructionPoints = Helicopter::points;
     helicopterpxmap=new QGraphicsPixmapItem();
@@ -47,10 +49,13 @@ void Helicopter::hitByBullet() {
     isDestroyed=true;
     helicopterpxmap->hide();
     std::cout<<"A Helicopter has been destroyed!"<<std::endl;
+    this->Destruct();
 }
 
-void Helicopter::hitByPlane() {
-    ScrollingObject::hitByPlane();
+bool Helicopter::hitByPlane() {
+    std::cout<<"Plane has been hit by a Helicopter!"<<std::endl;
+
+    return true;
 }
 
 

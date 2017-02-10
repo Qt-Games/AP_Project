@@ -40,7 +40,9 @@ public:
     void setFinished(bool isFinished);
     void explodeDestructibleObject()
     {
-        this->explosion = new Explosion(destructableObject->getPosX(), destructableObject->getPosY(), destructableObject->getSizeX(), destructableObject->getSizeY(), this);
+        int x = destructableObject->getPosX() + destructableObject->getSizeX() / 2 - 50;
+        int y = destructableObject->getPosY() + destructableObject->getSizeY() / 2 - 50;
+        this->explosion = new Explosion(x, y , 100 , 100, this);
     }
     virtual ~MapStripe();
 

@@ -68,6 +68,7 @@ void Bullet::check_collision() {
 
         if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
             (*it)->destructableObject->hitByBullet();
+            (*it)->explodeDestructibleObject();
             if(NumberOfBullets!=0)
                 delete this;
         }
@@ -85,6 +86,7 @@ void Bullet::check_collision() {
 
         if((*it)->destructableObject!=NULL && (*it)->destructableObject->isInTheObject(pos_X+(Bullet::sizeX/2),pos_Y)){
             (*it)->destructableObject->hitByBullet();
+            (*it)->explodeDestructibleObject();
             if(NumberOfBullets!=0)
                 delete this;
         }

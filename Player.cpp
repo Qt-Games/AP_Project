@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Player.h"
+#include "Explosion.h"
 
 std::deque<MapStripe*> Player::level;
 std::deque<MapStripe*> Player::tmpLevel;
@@ -138,18 +139,20 @@ void Player::check_collision() {
     for(std::deque<MapStripe*>::iterator it=tmpLevel.begin();it!=tmpLevel.end();it++){
 
         if((*it)->destructableObject!=NULL
-            && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY)
+            && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX*0.8, Player::sizeY*0.8)
                && !((*it)->destructableObject->Destroyed())){
             if((*it)->destructableObject->hitByPlane()){
-                this->getGraphicObject()->hide();
+                this->destroy();
+                return;
             }
 
         }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
-            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY) && !((*pit)->Destroyed())){
+            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX*0.8, Player::sizeY*0.8) && !((*pit)->Destroyed())){
                 if((*pit)->hitByPlane()){
-                    this->getGraphicObject()->hide();
+                    this->destroy();
+                    return;
                 }
             }
         }
@@ -158,18 +161,20 @@ void Player::check_collision() {
     for(std::deque<MapStripe*>::iterator it=level.begin();it!=level.end();it++){
 
         if((*it)->destructableObject!=NULL
-           && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY)
+           && (*it)->destructableObject->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX*0.8, Player::sizeY*0.8)
               && !((*it)->destructableObject->Destroyed())){
             if((*it)->destructableObject->hitByPlane()){
-                this->;
+                this->destroy();
+                return;
             }
 
         }
         for (vector<ScrollingObject *>::iterator pit = (*it)->scrollingObjects.begin();
              pit != (*it)->scrollingObjects.end(); pit++) {
-            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX, Player::sizeY) && !((*pit)->Destroyed())){
+            if((*pit)->isInTheObject(posX+(Player::sizeX/2),posY, Player::sizeX*0.8,Player::sizeY*0.8) && !((*pit)->Destroyed())){
                 if((*pit)->hitByPlane()){
-                    this->getGraphicObject()->hide();
+                    this->destroy();
+                    return;
                 }
             }
         }
@@ -178,8 +183,14 @@ void Player::check_collision() {
 
 void Player::destroy() {
 
-    getGraphicObject()->hide();
+    //getGraphicObject()->hide();
+    //Explosion tmp_Exp(posX, posY , 100 , 100, NULL);
 
+    cout<<"Plane has been destroyed"<<endl;
+    timer->stop();
+    this->model->gameOver();
+
+    //while(!tmp_Exp.isDone()){}
 }
 
 Bullet *Player::getBullet() const {
@@ -195,4 +206,8 @@ void Player::startTimer() {
 
 void Player::setModel(Model* model) {
     this->model = model;
+}
+
+Player::~Player() {
+    delete timer;
 }

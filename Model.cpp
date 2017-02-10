@@ -44,6 +44,7 @@ void Model::advanceTime() {
     int fuelPercentage = player->getFuelPercentage() - Model::FuelDecreaseRate;
     if(fuelPercentage <= 0)
     {
+        cout << "Fuel has been finished"<<endl;
         gameOver();
         return;
     }
@@ -100,10 +101,11 @@ void Model::downKeyReleased() {
 }
 
 void Model::gameOver() {
+    delete this->player;
     this->player = NULL;
     this->paused = true;
     delete this->map;
-    cout << "hello";
+    cout << "Game is Over..."<<endl;
     this->map  = NULL;
     mainWindow->resetView();
 }
